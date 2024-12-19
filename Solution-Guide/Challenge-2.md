@@ -402,3 +402,20 @@ In this task, you’ll run the Docker app container and then display the setup p
 
 ## Success Criteria:
 
+- The Docker engine is running.
+- You’ve built a Docker container for the app.
+- Created an Azure Container Registry instance.
+- You’ve pushed the app container to ACR.
+- You’ve provisioned an Azure Database for PostgreSQL Flexible Server instance.
+- You can view the app in a web browser.
+- You can add a booking record to the app and verify that the record is saved and is searchable.
+
+## Additional Resources:
+
+-  Refer to the  [Introduction to Docker container]() for detailed information on the Docker container.
+-  [Build a containerized web application with Docker](https://learn.microsoft.com/en-us/training/modules/intro-to-containers/)
+-  [Manage container images in Azure Container Registry](https://learn.microsoft.com/en-us/training/modules/publish-container-image-to-azure-container-registry/)
+-  [Explore PostgreSQL architecture](https://learn.microsoft.com/en-us/training/modules/explore-postgresql-architecture/)
+
+
+## Proceed with the next Challenge by clicking on **Next**>>.
