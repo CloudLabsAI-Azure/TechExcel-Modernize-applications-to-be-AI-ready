@@ -4,7 +4,7 @@
 
 The legacy Contoso Hotel app was written by using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
 
-In this challenge, you’ll deploy the legacy app to a Docker container and then run the container. You’ll provision a PostgreSQL database instance on Azure. You’ll set up and review the app, and then test the app by adding a new booking.
+In this challenge, you will deploy a legacy application to a Docker container and run it successfully. The process begins with building a Docker container for the application by creating a Docker image. Next, you will create an Azure Container Registry (ACR) instance to securely store and manage the app’s container image before pushing the image to the registry. To support the application, you will provision a managed PostgreSQL database instance on Azure, ensuring the app has the necessary backend for data storage. Finally, you will run the containerized application, review its functionality, and test it by adding a new booking. This challenge provides hands-on experience with Docker, Azure Container Registry, and PostgreSQL while working on a practical deployment scenario.
 
 ## Solution Guide
 
