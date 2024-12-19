@@ -4,7 +4,7 @@
 
 The legacy Contoso Hotel app was written by using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
 
-In this exercise, you’ll deploy the legacy app to a Docker container and then run the container. You’ll provision a PostgreSQL database instance on Azure. You’ll set up and review the app, and then test the app by adding a new booking.
+In this challenge, you’ll deploy the legacy app to a Docker container and then run the container. You’ll provision a PostgreSQL database instance on Azure. You’ll set up and review the app, and then test the app by adding a new booking.
 
 ## Solution Guide
 
