@@ -159,7 +159,7 @@ In this task, you’ll create the Docker container and add app components to the
 
     ![](../media/h43.png)   
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corncer menu select **File (1)** >  **Save (2)**.  
+1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File (1)** >  **Save (2)**.  
 
    ![](../media/h44.png)
 
@@ -312,7 +312,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 1. Enter the following command, replace the text `REPLACE_WITH_REGION_YOU_SELECTED_IN_EX01_TASK01` with the Azure region location that you have used earlier in the Challenge 1. Enter the command at the Terminal window prompt and then press **Enter**. This command deploys a PostgreSQL server instance.
 
    ```
-   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_EX01_TASK01"
+   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
    ```
 
     ![](../media/h59.png) 
@@ -340,7 +340,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 1. Enter the following commnad in the Visual Studio Code Terminal window prompt, replace the `ENTER_CONNECTION_STRING_FROM_EX02_TASK04` placeholder text with the **POSTGRES_CONNECTION_STRING** you recorded in the previous task. Then press **Enter**. This command starts the containerized app.
 
    ```
-   docker run -p 8000:8000 -e POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_EX02_TASK04" pycontosohotel:v1.0.0
+   docker run -p 8000:8000 -e POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04" pycontosohotel:v1.0.0
    ```
 
     ![](../media/h61.png) 
