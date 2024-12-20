@@ -1,5 +1,5 @@
 # Challenge 02: Deploy and review the legacy Contoso Hotel app
-### Estimated Time: 90 minutes
+### Estimated Time: 60 minutes
 ## Introduction
 
 The legacy Contoso Hotel app was written by using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
