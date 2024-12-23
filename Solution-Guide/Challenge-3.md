@@ -122,6 +122,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 1. Delete all code between the following region markers in the code (at or around lines 9 - 304).
 
    `#region -------- BACKEND API ENDPOINTS --------`
+   
    `#endregion -------- BACKEND API ENDPOINTS --------`
 
     ![](../media/h91.png)     
@@ -172,7 +173,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
     ![](../media/h101.png) 
 
-1. Select **views.py**. Delete all code between the following region markers in the code (around lines 312 - 332):   
+1. Select **views.py**. Delete all code between the following region markers in the code for Frontend API Endpoints (around lines 312 - 335):   
 
     ![](../media/h102.png) 
 
@@ -184,8 +185,6 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
 In this task, you’ll build separate containers for front-end and back-end components.
 
-1. If not opened, from the top left menu, select the **(...)** ellipses > **Terminal**, then choose **New Terminal**.
-
 1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
 
    ```
@@ -194,7 +193,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h103.png)  
 
-1. Run the below command, update the following variable, replace *ACR_NAME_FROM_EX02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
+1. Run the below command, update the following variable, replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
 
    ```
    $ACR_NAME="ACR_NAME_FROM_CHALLENGE2_TASK03"
