@@ -405,7 +405,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 
 1. Close the browser window.
 
-1. In Visual Studio Code, select Ctrl+C from the Terminal pane to exit the running worker processes.
+1. In Visual Studio Code, select **Ctrl+C** from the Terminal pane to exit the running worker processes.
 
 1. Leave Visual Studio Code open. You’ll use the tool again in the next Challenge.
 
