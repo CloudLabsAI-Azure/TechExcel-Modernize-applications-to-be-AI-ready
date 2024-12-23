@@ -319,11 +319,11 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
      >**Note:** The script first checks for common errors and then provisions the database. It may take 6-10 minutes to deploy the PostgreSQL server instance. You may see several warnings display during deployment.
 
-1. When the deployment completes, the Terminal window will display a message in green font that shows the connection string for the database.
+1. When the deployment completes, the Terminal window will display a message in green font that shows the connection string for the database. Copy and paste the string in a notepad.
 
    ![](../media/h59.png)
 
-    >**Note:** f you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
+    >**Note:** If you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
 
 1. The **POSTGRES_CONNECTION_STRING** should resemble the following. **Record the connection string for use later in the Challenge**.
 
