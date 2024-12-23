@@ -1,5 +1,5 @@
 # Challenge 04: Set up Azure resources and extract data from hotel brochures
-### Estimated Time: 60 minutes
+### Estimated Time: 45 minutes
 ## Introduction
 When people are making travel plans, they often select a hotel based on the location of the hotel or the amenities that the hotel offers. Most hotel websites make it easy to search their hotels by date and location. However, it can be challenging to narrow down the list so that only hotels with specific amenities display.
 
