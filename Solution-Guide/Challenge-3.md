@@ -12,7 +12,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 1. Open Visual Studio Code.
 
-1. If not opened, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. From the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/h72.png)
 
@@ -20,10 +20,16 @@ In this task, you’ll manually separate front-end and back-end components into 
 
    ![](../media/h76.png)
 
+1. if not, enter the below command to navigate back to the **ContosoHotel** folder where the cloned repository resides.
+
+   ```
+   cd ContosoHotel
+   ```
+   
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for front-end components.
 
    ```
-   mkdir -p ContosoHotel/UpdatedApp/Backend 
+   mkdir -p ContosoHotel/UpdatedApp/Frontend 
    ```
 
     ![](../media/h77.png)
@@ -31,7 +37,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for back-end components.
 
    ```
-   mkdir -p ContosoHotel/UpdatedApp/Frontend
+   mkdir -p ContosoHotel/UpdatedApp/Backend
    ```
     ![](../media/h78.png)    
 
