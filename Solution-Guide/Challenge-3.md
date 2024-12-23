@@ -19,13 +19,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 1. Make sure your in **ContosoHotel** folder.  
 
    ![](../media/h76.png)
-
-1. if not, enter the below command to navigate back to the **ContosoHotel** folder where the cloned repository resides.
-
-   ```
-   cd ContosoHotel
-   ```
-   
+  
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for front-end components.
 
    ```
