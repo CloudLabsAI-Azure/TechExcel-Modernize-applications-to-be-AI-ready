@@ -377,7 +377,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 
     - Hotel: **Contoso Suites Athens (1)**
 
-    - Visitor: **Type in the letter `a` into the field and 'double click' on the name that you want to select a from the dropdown list (2)**
+    - Visitor: **Type in the letter `a` into the field and 'double click' on any name that you want to select a from the dropdown list (2)**
 
     - Check-in: **12/28/2024 (3)**
 
@@ -392,6 +392,8 @@ In this task, you’ll run the Docker app container and then display the setup p
 1. Once the booking is Successful, you will see a message like **Successfully created the booking**.
 
    ![](../media/h69.png)
+
+1. Copy and paste the the Visitor name.   
 
 1. On the **Bookings** page, select **List Bookings**.  
 
