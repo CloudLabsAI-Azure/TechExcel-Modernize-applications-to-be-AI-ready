@@ -257,7 +257,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following commands at the Terminal window prompt. These commands tag the back-end container and push the container to ACR.
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the back-end container and push the container to ACR.
 
    ```
    docker tag "pycontosohotel-backend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0"
@@ -280,12 +280,12 @@ In this task, you’ll build separate containers for front-end and back-end comp
 1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenege 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
 
    ```
-   $AZURE_REGION="AZURE_REGION_FROM_EX01_TASK01"
+   $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
    ```
 
     ![](../media/h112.png) 
 
-1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands create the container app environment.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app environment.
 
    ```
    $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -298,7 +298,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter**. These commands create the container app for the back-end app components.
+1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04* . Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the back-end app components.
 
    ```
    az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "POSTGRES_CONNECTION_STRING='ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04'"
@@ -308,7 +308,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h114.png) 
 
-1. Enter the following commands at the Terminal window prompt. These commands create the container app for the front-end app components.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app for the front-end app components.
 
    ```
    az containerapp create --name "frontend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
