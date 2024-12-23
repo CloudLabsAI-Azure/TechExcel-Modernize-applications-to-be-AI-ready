@@ -319,11 +319,11 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
      >**Note:** The script first checks for common errors and then provisions the database. It may take 6-10 minutes to deploy the PostgreSQL server instance. You may see several warnings display during deployment.
 
-1. When the deployment completes, the Terminal window will display a message in green font that shows the connection string for the database.
+1. When the deployment completes, the Terminal window will display a message in green font that shows the connection string for the database. Copy and paste the string in a notepad.
 
    ![](../media/h59.png)
 
-    >**Note:** f you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
+    >**Note:** If you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
 
 1. The **POSTGRES_CONNECTION_STRING** should resemble the following. **Record the connection string for use later in the Challenge**.
 
@@ -337,7 +337,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
 In this task, you’ll run the Docker app container and then display the setup page for the app. You’ll create the database schema and populate the tables with data. You’ll review common app pages and add a booking record. Finally, you’ll search for the record you just added to verify that the record was successfully added to the database.
 
-1. Enter the following commnad in the Visual Studio Code Terminal window prompt, replace the `ENTER_CONNECTION_STRING_FROM_EX02_TASK04` placeholder text with the **POSTGRES_CONNECTION_STRING** you recorded in the previous task. Then press **Enter**. This command starts the containerized app.
+1. Enter the following commnad in the Visual Studio Code Terminal window prompt, replace the `ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04` placeholder text with the **POSTGRES_CONNECTION_STRING** you recorded in the previous task. Then press **Enter**. This command starts the containerized app. Leave the command to run.
 
    ```
    docker run -p 8000:8000 -e POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04" pycontosohotel:v1.0.0
@@ -377,7 +377,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 
     - Hotel: **Contoso Suites Athens (1)**
 
-    - Visitor: **Type in the letter `a` into the field and 'double click' on the name that you want to select a from the dropdown list (2)**
+    - Visitor: **Type in the letter `a` into the field and 'double click' on any name that you want to select a from the dropdown list (2)**
 
     - Check-in: **12/28/2024 (3)**
 
@@ -393,6 +393,8 @@ In this task, you’ll run the Docker app container and then display the setup p
 
    ![](../media/h69.png)
 
+1. Copy and paste the the Visitor name.   
+
 1. On the **Bookings** page, select **List Bookings**.  
 
    ![](../media/h75.png)
@@ -403,9 +405,9 @@ In this task, you’ll run the Docker app container and then display the setup p
 
 1. Close the browser window.
 
-1. In Visual Studio Code, select Ctrl+C from the Terminal pane to exit the running worker processes.
+1. In Visual Studio Code, select **Ctrl+C** from the Terminal pane to exit the running worker processes.
 
-1. Leave Visual Studio Code open. You’ll use the tool again in the next exercise.
+1. Leave Visual Studio Code open. You’ll use the tool again in the next Challenge.
 
 ## Success Criteria:
 

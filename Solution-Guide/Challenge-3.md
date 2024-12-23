@@ -12,18 +12,18 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 1. Open Visual Studio Code.
 
-1. If not opened, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. From the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/h72.png)
 
 1. Make sure your in **ContosoHotel** folder.  
 
    ![](../media/h76.png)
-
+  
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for front-end components.
 
    ```
-   mkdir -p ContosoHotel/UpdatedApp/Backend 
+   mkdir -p ContosoHotel/UpdatedApp/Frontend 
    ```
 
     ![](../media/h77.png)
@@ -31,7 +31,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for back-end components.
 
    ```
-   mkdir -p ContosoHotel/UpdatedApp/Frontend
+   mkdir -p ContosoHotel/UpdatedApp/Backend
    ```
     ![](../media/h78.png)    
 
@@ -122,6 +122,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 1. Delete all code between the following region markers in the code (at or around lines 9 - 304).
 
    `#region -------- BACKEND API ENDPOINTS --------`
+   
    `#endregion -------- BACKEND API ENDPOINTS --------`
 
     ![](../media/h91.png)     
@@ -172,7 +173,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
     ![](../media/h101.png) 
 
-1. Select **views.py**. Delete all code between the following region markers in the code (around lines 312 - 332):   
+1. Select **views.py**. Delete all code between the following region markers in the code for Frontend API Endpoints (around lines 312 - 335):   
 
     ![](../media/h102.png) 
 
@@ -184,8 +185,6 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
 In this task, you’ll build separate containers for front-end and back-end components.
 
-1. If not opened, from the top left menu, select the **(...)** ellipses > **Terminal**, then choose **New Terminal**.
-
 1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
 
    ```
@@ -194,7 +193,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h103.png)  
 
-1. Run the below command, update the following variable, replace *ACR_NAME_FROM_EX02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
+1. Run the below command, update the following variable, replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
 
    ```
    $ACR_NAME="ACR_NAME_FROM_CHALLENGE2_TASK03"
@@ -213,7 +212,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 1. In Visual Studio Code, enter the following command at the Terminal window prompt and press **Enter**. This command ensures that you are working in the correct folder.
 
    ```
-   $PATH_TO_UPDATED_APP =  cd  $PATH_TO_UPDATED_APP\Frontend
+   cd  $PATH_TO_UPDATED_APP\Frontend
    ```
 
     ![](../media/h106.png)  
@@ -229,7 +228,15 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h107.png)  
 
-     >**Note:** It may take 2-3 minutes to build the Docker container.    
+     >**Note:** It may take 2-3 minutes to build the Docker container.
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+
+   ```
+   az acr login --name "$ACR_NAME"
+   ```
+
+    ![](../media/h54.png)       
 
 1. Enter the following commands at the Terminal window prompt. These commands tag the front-end container and push the container to ACR.  
 
@@ -250,7 +257,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following commands at the Terminal window prompt. These commands tag the back-end container and push the container to ACR.
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the back-end container and push the container to ACR.
 
    ```
    docker tag "pycontosohotel-backend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0"
@@ -273,12 +280,12 @@ In this task, you’ll build separate containers for front-end and back-end comp
 1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenege 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
 
    ```
-   $AZURE_REGION="AZURE_REGION_FROM_EX01_TASK01"
+   $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
    ```
 
     ![](../media/h112.png) 
 
-1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands create the container app environment.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app environment.
 
    ```
    $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -291,7 +298,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter**. These commands create the container app for the back-end app components.
+1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04* . Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the back-end app components.
 
    ```
    az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "POSTGRES_CONNECTION_STRING='ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04'"
@@ -301,7 +308,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h114.png) 
 
-1. Enter the following commands at the Terminal window prompt. These commands create the container app for the front-end app components.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app for the front-end app components.
 
    ```
    az containerapp create --name "frontend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
