@@ -337,7 +337,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
 In this task, you’ll run the Docker app container and then display the setup page for the app. You’ll create the database schema and populate the tables with data. You’ll review common app pages and add a booking record. Finally, you’ll search for the record you just added to verify that the record was successfully added to the database.
 
-1. Enter the following commnad in the Visual Studio Code Terminal window prompt, replace the `ENTER_CONNECTION_STRING_FROM_EX02_TASK04` placeholder text with the **POSTGRES_CONNECTION_STRING** you recorded in the previous task. Then press **Enter**. This command starts the containerized app.
+1. Enter the following commnad in the Visual Studio Code Terminal window prompt, replace the `ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04` placeholder text with the **POSTGRES_CONNECTION_STRING** you recorded in the previous task. Then press **Enter**. This command starts the containerized app. Leave the command to run.
 
    ```
    docker run -p 8000:8000 -e POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04" pycontosohotel:v1.0.0
