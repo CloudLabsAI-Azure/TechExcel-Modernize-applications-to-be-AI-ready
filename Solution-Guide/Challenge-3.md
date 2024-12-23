@@ -212,7 +212,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 1. In Visual Studio Code, enter the following command at the Terminal window prompt and press **Enter**. This command ensures that you are working in the correct folder.
 
    ```
-   $PATH_TO_UPDATED_APP =  cd  $PATH_TO_UPDATED_APP\Frontend
+   cd  $PATH_TO_UPDATED_APP\Frontend
    ```
 
     ![](../media/h106.png)  
@@ -228,7 +228,15 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h107.png)  
 
-     >**Note:** It may take 2-3 minutes to build the Docker container.    
+     >**Note:** It may take 2-3 minutes to build the Docker container.
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+
+   ```
+   az acr login --name "$ACR_NAME"
+   ```
+
+    ![](../media/h54.png)       
 
 1. Enter the following commands at the Terminal window prompt. These commands tag the front-end container and push the container to ACR.  
 
