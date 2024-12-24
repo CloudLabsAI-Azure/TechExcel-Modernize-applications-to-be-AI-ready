@@ -1,4 +1,4 @@
-# Challenge 04: Configure an AI Hub and Promptflow
+# Challenge 05: Configure an AI Hub and Promptflow
 ### Estimated Time: 60 minutes
 ## Introduction
 
@@ -154,7 +154,207 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
     ![](../media/h171.png)
 
 
+### Task 2: Import and configure a flow 
 
+A flow encapsulates the logic that tells the chatbot what it can do and how to do things. The flow uses the OpenAI API to directly query the Azure Search index.
+
+In this task, you’ll import a pre-built flow, configure flow settings, and then test the flow.  
+
+1. Return to the Azure AI Studio browser window that is opend in private window.
+
+1. Select the AI hub that you have created previously.
+
+    ![](../media/h173.png)
+
+1. Scroll down and click on **+ New project** on the Hub Overview. 
+
+    ![](../media/h174.png)
+
+1. Provide the Project name as **contosopf (1)** and then click on **Create (2)**.
+
+    ![](../media/h175.png)
+
+1. In the left navigation pane for the project page, in the **Build and customize** section, select **Prompt flow**.
+
+    ![](../media/h176.png)
+
+1. On the **Create, iterate, and debug your orchestration flows** page, select **+Create**.
+
+    ![](../media/h177.png)
+
+1. On the **Create a new flow** page, in the **Upload from local** section, select **Upload**.
+
+    ![](../media/h178.png)
+
+1. On the **Upload from local** page, select **Zip file (1)** and then select **Browse (2)**.      
+
+    ![](../media/h179.png)
+
+1. Go to the `C:/Users/demouser/AssetsRepo/Assets` folder and press **Enter.**
+
+    ![](../media/h180.png)
+
+1. Select **chatflow-oai-datasources..zip (1)** and then select **Open (2)**.    
+
+    ![](../media/h181.png)
+
+1. Under **Select flow** type, select **Chat flow (1)**. Then select **Upload (2)** to import the zip file into the project. 
+
+    ![](../media/h182.png)
+
+     >**Note:** It may take several minutes to upload the flow. Separately, if the Upload button becomes available again, keep click on upload botton.  
+
+1. This will load the prompt flow once uploaded. In the middle pane for the flow, you’ll see one flow for each of the four logical steps in the flow. Review the information in each tile. This will help you understand how the flow functions.
+
+    ![](../media/h183.png)
+
+1. Navigate back to the **Azure portal.**
+
+1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+
+1. Select the PostgreSQL database that you created in a previous Challenge.
+
+    ![](../media/h150.png)
+
+1. In the **Overview section** for the database, copy and paste the value for **Server name** in a notepad. You’ll pass the value into a field in Step 22 of this task. 
+
+    ![](../media/h151.png)
+
+1. Return to the Azure AI Studio browser window that is opend in private window.
+
+1. In the left navigation pane for the flow, select **Management center**.
+
+    ![](../media/h184.png)
+
+1. Select **Connected resouces (1)** in the **Project(contosopf)** section and then click on **+ New connection (2)**.
+
+    ![](../media/h185.png)
+
+1. On the **Add a connection to external assets** page, search for **Custom keys (1)** and select **Custom keys (2)**.    
+
+    ![](../media/h186.png)
+
+1. Select **+ Add key value pairs**.
+
+    ![](../media/h187.png)
+
+1. Enter the following information and select **+ Add key value pairs (3)**.    
+
+    - Custom keys: **hostname (1)**
+    - Value: **Use the server name you copied in Step 16 of this lab (2)**
+
+      ![](../media/h188.png)
+
+1. Enter the following information.
+
+    - Custom keys: **user**
+    - Value: **promptflow**
+
+1. Select **+ Add key value pairs**.
+
+1. Enter the following information.
+
+    - Custom keys: **port**
+    - Value: **5432**
+
+1. Select **+ Add key value pairs**.
+
+1. Enter the following information.
+
+    - Custom keys: **database**
+    - Value: **pycontosohotel**
+
+1. Select **+ Add key value pairs**.
+
+1. Enter the following information.  
+
+    - Custom keys: **passwd**
+    - Value: **1234ABCD!**
+    - Is Secret: **Selected**
+
+      ![](../media/h190.png)
+
+1. In the *Connection name* field, enter **postgresql (1)** and then select **Add connection (2)**.
+
+    ![](../media/h191.png)
+
+1. Select **+ New Connection** again.    
+
+    ![](../media/h192.png)
+
+1. Select **Azure AI Search (1)** and select **Azure AI Search (2)**.
+
+    ![](../media/h193.png)
+
+1. Select **Add connection** to the right of your Azure AI Search Service.    
+
+    ![](../media/h194.png)
+
+1. Click on **Close**.
+
+    ![](../media/h213.png)
+
+1. In the left navigation pane, click on **Go to project.**
+
+    ![](../media/h199.png)
+
+1. In the left navigation pane for the flow, in the **Build and customize** section, select **Prompt flow.** 
+
+    ![](../media/h200.png)
+
+1. Select **Start compute session**. This allows you to run and test the chatbot.    
+
+    ![](../media/h201.png)
+
+1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop down, select the connection that displays **(2)**.
+
+    ![](../media/h202.png)
+
+1. Scroll down to the **chat_with_data** tile and below the Inputs section.   
+
+    - Select Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
+    - Select Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
+    - Change the Value of **search_index** to **brochures-vector (3)**.
+
+      ![](../media/h203.png)
+
+1. Scroll down to the **generate_sql** tile. In the **Connection** field, select the connection that displays.      
+
+    ![](../media/h204.png)
+
+1. Scroll down to the bottom of the **conclude_answer** tile. We’ll input a value into the field that will populate after testing the next steps. 
+
+1. If the compute session has started, select **Chat** to test the flow.
+
+    ![](../media/h205.png)
+
+1. Enter `Where can I ski?` in the chat prompt and select **Enter (1)**. This will give you a warning and *populate the PostgreSQL **(2)** property at the bottom of the* **conclude_answer** tile.    
+
+    ![](../media/h206.png)
+
+1. Select **Value** of **PostgreSQL** and then select **postgresql** from the dropdown list.    
+
+    ![](../media/h207.png)
+
+1. Select the **X** on the warning in the Chat.    
+
+    ![](../media/h208.png)
+
+1. Then send `Where can I ski?` again. Your results should resemble the following:
+
+    ![](../media/h209.png)
+
+    - In the Graph,
+
+      ![](../media/h210.png)
+
+1. Start a new conversation and enter `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?`. Your results should resemble the following:     
+
+    ![](../media/h211.png)
+
+    - In the Graph,
+
+      ![](../media/h212.png)
 
 
 
