@@ -159,7 +159,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    pf flow test --flow . --interactive
    ```
 
-### Task 3: Deploy the flow to Azure Container apps and test the app
+### Task 2: Deploy the flow to Azure Container apps and test the app
 
 In this task you’ll prepare the flow for deployment and deploy the flow. You’ll update the app to display the chatbot page.
 
