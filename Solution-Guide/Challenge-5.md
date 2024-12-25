@@ -247,39 +247,49 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. Enter the following information and select **+ Add key value pairs (3)**.    
 
-    - Custom keys: **hostname (1)**
-    - Value: **Use the server name you copied in Step 16 of this lab (2)**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **hostname (1)**|
+    | Value | **Use the server name you copied in Step 16 of this lab (2)**|    
 
-      ![](../media/h188.png)
+     ![](../media/h188.png)    
 
 1. Enter the following information.
 
-    - Custom keys: **user**
-    - Value: **promptflow**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **user**|
+    | Value | **promptflow**|        
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.
 
-    - Custom keys: **port**
-    - Value: **5432**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **port**|
+    | Value | **5432**|          
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.
 
-    - Custom keys: **database**
-    - Value: **pycontosohotel**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **database**|
+    | Value | **pycontosohotel**|        
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.  
 
-    - Custom keys: **passwd**
-    - Value: **1234ABCD!**
-    - Is Secret: **Selected**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **passwd**|
+    | Value | **1234ABCD!**| 
+    | Is Secret | **Selected**|
 
-      ![](../media/h190.png)
+     ![](../media/h190.png)
 
 1. In the *Connection name* field, enter **postgresql (1)** and then select **Add connection (2)**.
 
