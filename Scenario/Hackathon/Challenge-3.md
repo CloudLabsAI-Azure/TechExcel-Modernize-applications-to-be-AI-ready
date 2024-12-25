@@ -8,7 +8,7 @@ To improve the scalability of the app, Contoso plans to split the front-end comp
 
 ## Challenge Objectives:
 
-> **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod**. 
+> **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod** and use the same region as the resource group.
 
 1. **Separate front-end components from back-end components:**
 
