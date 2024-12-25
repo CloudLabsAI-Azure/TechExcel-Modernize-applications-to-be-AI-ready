@@ -309,7 +309,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
    ![](../media/h58.png)
 
-1. Enter the following command, replace the text `REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE01_TASK01` with the Azure region location that you have used earlier in the Challenge 1. Enter the command at the Terminal window prompt and then press **Enter**. This command deploys a PostgreSQL server instance.
+1. Enter the following command, replace the text `REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE01_TASK01` with the Azure region location that you have used earlier in the Challenge 1 and then press **Enter**. This command deploys a PostgreSQL server instance.
 
    ```
    .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
@@ -411,7 +411,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 
 ## Success Criteria:
 
-- The Docker engine is running.
+- Vrify that the Docker engine is running.
 - You’ve built a Docker container for the app.
 - Created an Azure Container Registry instance.
 - You’ve pushed the app container to ACR.
