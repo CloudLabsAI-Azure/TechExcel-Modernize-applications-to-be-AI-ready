@@ -15,7 +15,7 @@ Here's a simple overview of each service used:
 
 In this task, you’ll create a hub and then create a project within the hub. You’ll also create a PostgreSQL user so that the flow can access the database records.
 
-1. On the Azure Home page, Search for and select the **PostgreSQL database** that you created in a previous Challenge.
+1. On the Azure Home page, select the **PostgreSQL database** that you created in a previous Challenge.
 
     ![](../media/h150.png)
 
