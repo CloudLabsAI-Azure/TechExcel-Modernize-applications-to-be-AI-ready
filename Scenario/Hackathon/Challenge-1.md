@@ -50,7 +50,7 @@ Make sure you have the following from the CloudLabs-provided integrated environm
 1. **Azure OpenAI Service Deployment:**
    
    - Set up an Azure OpenAI Service instance with SKU size Standard `S0`.
-   - Deploy it in the existing resource group named - **<inject key="Resource Group Name"/>**.
+   - Deploy it in the existing resource group named - **Appmod**.
    - Deploy the resource in the **East US** region.
    - Obtain the necessary Azure OpenAI Key and Endpoint.
    - Please ensure the Azure OpenAI Service name follows this format: **OpenAI-xxxxxx**, where xxxxxx should be replaced with your specific **Deployment ID**.    
@@ -62,7 +62,7 @@ Make sure you have the following from the CloudLabs-provided integrated environm
 
 ## Success Criteria:
 
-- Verify that the Azure OpenAI Service is successfully deployed in the existing resource group - <inject key="Resource Group Name"/>.
+- Verify that the Azure OpenAI Service is successfully deployed in the existing resource group named **Appmod**.
 - Verify that the Large Language Models (LLM), `gpt-4o` and `text-embedding-ada-002`, are successfully deployed with the Azure OpenAI Service.
 
 ## Additional Resources:

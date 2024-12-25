@@ -194,7 +194,6 @@ In this task, you’ll use Azure AI Search to import and vectorize data from the
 
 1. Wait for the creation process to complete and select **Close**.  
 
-
     ![](../media/h146.png)  
 
      >**Note:** It should take only a few minutes for the Import and vectorize data tool to index the data from the 40 hotel brochures.
