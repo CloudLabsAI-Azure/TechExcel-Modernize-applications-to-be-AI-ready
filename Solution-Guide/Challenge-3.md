@@ -95,7 +95,6 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands create a subfolder in the **Backend** folder and copy all necessary files to subfolder.    
 
-
    ```
    cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\
    cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\
