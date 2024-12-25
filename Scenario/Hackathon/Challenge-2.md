@@ -1,5 +1,5 @@
 # Challenge 02: Deploy and review the legacy Contoso Hotel app
-### Estimated Time: 60 minutes
+### Estimated Time: 45 minutes
 ## Introduction
 
 The legacy Contoso Hotel app was written by using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
@@ -43,19 +43,19 @@ Make sure you have the following from the CloudLabs-provided integrated environm
    - Launch Docker Desktop. Verify that the Docker engine is running.   
    - Builds the container for the app within the **ContosoHotel** folder, where the cloned repository resides.
 
-1. **Create an Azure Container Registry (ACR) instance and push the app container to ACR**
+1. **Create an Azure Container Registry (ACR) instance and push the app container to ACR:**
 
    - Creates an ACR instance with a basic SKU within the **Appmod** resource group inside the **ContosoHotel** folder.
    - Sign in to ACR. Creates a Docker tag for the app and then pushe the app container to ACR.
 
-1. **Provision a PostgreSQL database to support the app**   
+1. **Provision a PostgreSQL database to support the app:**   
 
    - Run the **Connect-AzAccount** cmdlet to connect Visual Studio Code to Azure with an authenticated account
    - Run the **manageIac.ps1** script from the **ContosoHotel\iac** folder to deploy an Azure Database for PostgreSQL Flexible Server instance.
    > **Note** : Ensure to use the same region as you used in the challenge 1.  
    > **Note**: Make sure to use **Appmod** resource group.
 
-1. **Run the containerized app and add a booking**
+1. **Run the containerized app and add a booking:**
 
    - Run the containerized app on port 8000
    - Paste the following URL `http://localhost:8000/setup` in a web browser.
