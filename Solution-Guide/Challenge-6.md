@@ -308,6 +308,8 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    az containerapp update --name "backend" --resource-group "$RG_NAME" --set-env-vars "CHATBOT_BASEURL=$CONTOSO_CHATBOT_URL"
    ```
 
+1. Make sure you were able to deploy and update the values successfully.
+
 1. Open a new browser tab and paste the **Application URL** that you copied in step 12.
 
 1. Enter the query `Where can I ski?` in the question box and then **send**. You can see the results.
@@ -323,6 +325,17 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    ![](../media/h248.png)  
 
    ![](../media/h249.png)     
+
+## Success Criteria:
+
+- You’ve set up your development environment.
+- You’ve tested the chatbot locally.
+- You’ve updated the app to include the chatbot feature.
+
+
+## Additional Resources:
+
+-  Refer to the  [Prompt flow documentation](https://microsoft.github.io/promptflow/reference/pf-command-reference.html#pf-flow) to learn about the Promt flow.
 
 
 
