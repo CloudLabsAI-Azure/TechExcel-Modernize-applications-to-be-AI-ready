@@ -116,7 +116,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h172.png)
 
-     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resources name. *You’ll need to enter the AI Hub name and the Storage account name later in this task*. 
+     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resources name. *You’ll need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
 
 1. Navigate back to the **Azure portal**.
 
