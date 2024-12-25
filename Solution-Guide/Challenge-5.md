@@ -4,11 +4,18 @@
 
 There are a lot of ways to create a chatbot. For this Challenge, you’ll use Prompt Flow within Azure AI Studio. Azure OpenAI Prompt Flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt Flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
 
+Here's a simple overview of each service used:
+
+- An **Azure AI Studio Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
+- A **flow** encapsulates the logic that tells the chatbot what it can do and how to do things. Creating a flow can be complicated. For this challenge, you’ll use a pre-built flow. The flow uses the OpenAI API to directly query the Azure Search index.
+
+## Solution Guide
+
 ### Task 1: Create a postgresql user and set up an AI Hub and Prompt Flow
 
 In this task, you’ll create a hub and then create a project within the hub. You’ll also create a PostgreSQL user so that the flow can access the database records.
 
-1. On the Azure Home page, Search for and select the **PostgreSQL database** that you created in a previous Challenge.
+1. On the Azure Home page, select the **PostgreSQL database** that you created in a previous Challenge.
 
     ![](../media/h150.png)
 
@@ -109,7 +116,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h172.png)
 
-     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resources name. *You’ll need to enter the AI Hub name and the Storage account name later in this task*. 
+     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resources name. *You’ll need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
 
 1. Navigate back to the **Azure portal**.
 
@@ -240,39 +247,49 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. Enter the following information and select **+ Add key value pairs (3)**.    
 
-    - Custom keys: **hostname (1)**
-    - Value: **Use the server name you copied in Step 16 of this lab (2)**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **hostname (1)**|
+    | Value | **Use the server name you copied in Step 16 of this lab (2)**|    
 
-      ![](../media/h188.png)
+     ![](../media/h188.png)    
 
 1. Enter the following information.
 
-    - Custom keys: **user**
-    - Value: **promptflow**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **user**|
+    | Value | **promptflow**|        
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.
 
-    - Custom keys: **port**
-    - Value: **5432**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **port**|
+    | Value | **5432**|          
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.
 
-    - Custom keys: **database**
-    - Value: **pycontosohotel**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **database**|
+    | Value | **pycontosohotel**|        
 
 1. Select **+ Add key value pairs**.
 
 1. Enter the following information.  
 
-    - Custom keys: **passwd**
-    - Value: **1234ABCD!**
-    - Is Secret: **Selected**
+    | Field | Value |
+    | -- | -- |
+    | Custom keys | **passwd**|
+    | Value | **1234ABCD!**| 
+    | Is Secret | **Selected**|
 
-      ![](../media/h190.png)
+     ![](../media/h190.png)
 
 1. In the *Connection name* field, enter **postgresql (1)** and then select **Add connection (2)**.
 
@@ -355,6 +372,24 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
     - In the Graph,
 
       ![](../media/h212.png)
+
+
+## Success Criteria:
+
+- You’ve successfully created a user in the PostgreSQL database.
+- You’ve created a new AI Studio Hub and created a project.
+- You’ve imported and configured a pre-built flow.
+- You’ve tested the flow and confirmed that the flow returns appropriate results.
+
+## Additional Resources:
+
+-  Refer to the  [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
+-  Refer to the  [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use prompt flow to develop applications that leverage language models in the Azure AI Foundry.
+
+
+## Proceed with the next Challenge by clicking on **Next**>>.
+
+
 
 
 
