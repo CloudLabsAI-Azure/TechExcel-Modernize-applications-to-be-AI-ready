@@ -1,4 +1,4 @@
-# Challenge 02: Integrate the chatbot with the Contoso Hotel application
+# Challenge 06: Integrate the chatbot with the Contoso Hotel application
 ### Estimated Time: 30 minutes
 ## Introduction
 
