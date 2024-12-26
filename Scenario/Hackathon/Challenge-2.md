@@ -61,6 +61,8 @@ Make sure you have the following from the CloudLabs-provided integrated environm
    - Paste the following URL `http://localhost:8000/setup` in a web browser.
    - Run the setup process in the app to add records to the database.
    - Review the app pages.
+   - Add the booking record.
+   - Verify that the new record is saved and close the browser window.
 
 ## Success Criteria:
 
