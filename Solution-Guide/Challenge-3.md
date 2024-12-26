@@ -75,7 +75,11 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 1. Click on the **contoso_hotel** drop down under the **Frontend** folder in the Explorer. You can see the copied files.
 
-    ![](../media/h84.png)  
+    ![](../media/h254.png)  
+
+1. This is the complete folder structure of the **Frontend** directory.
+
+    ![](../media/h256.png)  
 
 1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands copy all necessary files to the **Backend** folder for the updated app.    
 
@@ -104,7 +108,11 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 1. Click on the **contoso_hotel** drop down under the **Backend** folder in the Explorer. You can see the copied files.
 
-    ![](../media/h88.png)       
+    ![](../media/h255.png)   
+
+1. This is the complete folder structure of the **Backend** directory.
+
+    ![](../media/h257.png)          
 
 ### Task 2: Refactor files
 
@@ -112,7 +120,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
 1. In the Explorer pane, expand the **Frontend (1)** folder and then expand the **contoso_hotel (2)** folder.
 
-    ![](../media/h89.png)     
+    ![](../media/h258.png)     
 
 1. Select **views.py**. The file displays in the right side of the Visual Studio Code window.    
 
@@ -170,7 +178,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
 1. In the Explorer pane, expand the **backend (1)** folder and then expand the **contoso_hotel (2)** folder.
 
-    ![](../media/h101.png) 
+    ![](../media/h259.png) 
 
 1. Select **views.py**. Delete all code between the following region markers in the code for Frontend API Endpoints (around lines 312 - 335):   
 
