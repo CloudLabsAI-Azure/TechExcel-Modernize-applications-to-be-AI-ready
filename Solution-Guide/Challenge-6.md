@@ -320,11 +320,21 @@ In this task youâ€™ll prepare the flow for deployment and deploy the flow. Youâ€
 
    ![](../media/h247.png)  
 
-1. Open a new web browser window and go to the URL for the front-end container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app.   
+1. Open a new web browser window and go to the URL for the front-end container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calender** icon.  
 
-   ![](../media/h248.png)  
+   ![](../media/h250.png)  
 
-   ![](../media/h249.png)     
+1. Click on the **chatbot** icon from the bottom right corner.There you can see the chatbot from within the updated Contoso Hotel app.   
+
+   ![](../media/h251.png)   
+
+1. Enter `Where can I ski?` in the *Type a message* box and click on the **Send** button.
+
+   ![](../media/h252.png)   
+
+1. Try another query, enter `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` and click on the **Send** button.
+
+   ![](../media/h253.png)   
 
 ## Success Criteria:
 
