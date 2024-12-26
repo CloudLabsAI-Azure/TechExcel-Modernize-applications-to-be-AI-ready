@@ -1,6 +1,6 @@
 # Modernize applications to be AI ready
 
-Welcome to the App Modernization Hackathon! Today, you're set to dive into the transformative world of AI, with a focus on utilizing the power of Azure OpenAI services. You'll explore cutting-edge tools, frameworks, and best practices to transform legacy systems into agile, scalable, and efficient modern applications. Brace yourself for a day of immersive learning, hands-on experience, and innovation that will empower you to redefine the way applications are designed and deployed.
+Welcome to the Modernize applications to be AI ready Hackathon! Today, you're set to dive into the transformative world of AI, with a focus on utilizing the power of Azure OpenAI services. You'll explore cutting-edge tools, frameworks, and best practices to transform legacy systems into agile, scalable, and efficient modern applications. Brace yourself for a day of immersive learning, hands-on experience, and innovation that will empower you to redefine the way applications are designed and deployed.
 
 ## Introduction
 
