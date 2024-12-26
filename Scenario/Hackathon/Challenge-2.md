@@ -44,6 +44,8 @@ Here's a simple overview of each service used by the app:
    - Paste the following URL `http://localhost:8000/setup` in a web browser.
    - Run the setup process in the app to add records to the database.
    - Review the app pages.
+   - Add the booking record.
+   - Verify that the new record is saved and close the browser window.
 
 ## Success Criteria:
 
