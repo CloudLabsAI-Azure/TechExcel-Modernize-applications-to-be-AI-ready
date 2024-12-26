@@ -17,12 +17,17 @@ To improve the scalability of the app, Contoso plans to split the front-end comp
 
 1. **Refactor files:**
 
-   - Open **views.py** from the FrontEnd folder in Visual Studio Code and remove the **Backend API endpoints** section.
-   - Remove the **dblayer** reference from the **views.py Imports** section.
-   - Remove the code from views.py that checks to see if the database is set up.
-   - Update **Dockerfile** to remove the code that installs the **MSSQL ODBC driver**.
-   - Update **requirements.txt** to remove references to the **pyodbc** and **psycopg2-binary** libraries.
-   - Open **views.py** from the BackEnd folder in Visual Studio Code and remove the **Frontend API endpoints** section.
+   - **Frontend folder**:
+
+      - Open **views.py** from the FrontEnd folder in Visual Studio Code and remove the **Backend API endpoints** section.
+      - Remove the **dblayer** reference from the **views.py Imports** section.
+      - Remove the code from **views.py** that checks to see if the database is set up.
+      - Update **Dockerfile** to remove the code that installs the **MSSQL ODBC driver**.
+      - Update **requirements.txt** to remove references to the **pyodbc** and **psycopg2-binary** libraries.
+
+   - **Backend folder**:   
+
+      - Open **views.py** from the BackEnd folder in Visual Studio Code and remove the **Frontend API endpoints** section.
 
 1. **Build the containers for front-end and back-end components and push the containers to Azure:**   
 
