@@ -8,7 +8,7 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
 
 In this task you’ll test the chatbot locally before you publish the chatbot.
 
-1. Open File Explorer from the bottom menu.
+1. Open **File Explorer** from the bottom menu.
 
    ![](../media/h215.png)
 
@@ -50,7 +50,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
    ![](../media/h222.png)  
 
-1. Update the variables to use the same values that you used in Challenge 05, Task 01.
+1. Update the variables to use the same values that you used in Challenge 05, Task 01. Do not copy and paste this directly into the `.env` file; instead, manually update the values within the file as needed.
 
    ```
    AZURE_OPENAI_ENDPOINT="https://openai-xxxxxx.openai.azure.com/"
@@ -59,7 +59,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    AZURE_AI_SEARCH_ENDPOINT="https://contososrchxxxxxx.search.windows.net"
    AZURE_AI_SEARCH_INDEX="brochures-vector"
    AZURE_AI_SEARCH_API_KEY="xxxxxxxxxxxxxxxxx"
-   PGHOST="mg32xpzwcffkg.postgres.database.azure.com"
+   PGHOST="xxxxxxxxxx.postgres.database.azure.com"
    PGPORT="5432"
    PGUSER="promptflow"
    PGDATABASE="pycontosohotel"
@@ -135,13 +135,13 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    pf flow test --flow . --interactive
    ```
 
-1. Try **Where can I ski?** at the **User:** prompt.
+1. Try `Where can I ski?` at the **User:** prompt.
 
    ![](../media/h232.png)  
 
    ![](../media/h233.png)  
 
-1. Try **How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?** at the **User:** prompt.
+1. `Try How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` at the **User:** prompt.
 
    ![](../media/h234.png)  
 
@@ -244,7 +244,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    $AZURE_OPENAI_API_KEY = "xxxxxxxxxxxxxxx"
    $AZURE_AI_SEARCH_ENDPOINT = "https://contososrchxxxxx.search.windows.net"
    $AZURE_AI_SEARCH_API_KEY = "xxxxxxxxxxxxx"
-   $PGHOST = "znuzgx66szs5y.postgres.database.azure.com"
+   $PGHOST = "xxxxxxx.postgres.database.azure.com"
    ```
 
    ![](../media/h240.png)   
