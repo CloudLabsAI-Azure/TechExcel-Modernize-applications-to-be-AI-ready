@@ -21,6 +21,8 @@ If you have not already cloned the **ContosoHotel** code repository to the envir
 
 1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
 
+   ![](../media/hack1.jpg)
+
 1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/h72.png)
@@ -113,7 +115,7 @@ In this task, you’ll create the Docker container and add app components to the
    Set-Service -Name com.docker.service -StartupType Automatic
    ```
 
-    ![](../media/h37.png)   
+    ![](../media/hack2.png)   
 
      >**Note:** The Set-Service command will fail if you’re not running PowerShell as an administrator.
 
@@ -123,7 +125,7 @@ In this task, you’ll create the Docker container and add app components to the
    Start-Service -Name com.docker.service
    ```
 
-    ![](../media/h38.png)      
+    ![](../media/hack3.png)      
 
 1. Enter the following command at the PowerShell prompt and then press **Enter**. This command checks the status of the Docker daemon. Verify that the results show the Docker daemon is running.    
 
@@ -217,7 +219,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
    ![](../media/h51.png)
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command generates a unique name for the ACR instance.   
+1. Enter the following command at the Terminal window prompt and then press **Enter** twice. This command generates a unique name for the ACR instance. Copy and paste the generated name in the notepad for later use.
 
    ```
    $ACR_NAME = "contosoacr$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -319,13 +321,13 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
      >**Note:** The script first checks for common errors and then provisions the database. It may take 6-10 minutes to deploy the PostgreSQL server instance. You may see several warnings display during deployment.
 
-1. When the deployment completes, the Terminal window will display a message in green font that shows the connection string for the database. Copy and paste the string in a notepad.
+1. When the deployment completes, the Terminal window will display a message in **green** font that shows the connection string for the database. **Copy and paste the string in a notepad**.
 
    ![](../media/h59.png)
 
     >**Note:** If you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
 
-1. The **POSTGRES_CONNECTION_STRING** should resemble the following. **Record the connection string for use later in the Challenge**.
+1. The **POSTGRES_CONNECTION_STRING** should resemble the following. **Copy and paste the connection string obtained in step 5, as you'll need it later in the Challenge.**.
 
     ```
     host=53pkyjrx5j7ve.postgres.database.azure.com;port=5432;database=pycontosohotel;user=contosoadmin;password=1234ABcd!;
@@ -379,9 +381,9 @@ In this task, you’ll run the Docker app container and then display the setup p
 
     - Visitor: **Type in the letter `a` into the field and 'double click' on any name that you want to select a from the dropdown list (2)**
 
-    - Check-in: **12/28/2024 (3)**
+    - Check-in: **01/06/2025 (3)**
 
-    - Check-out: **01/05/2025 (4)**
+    - Check-out: **01/11/2025 (4)**
 
     - Adults: **2 (5)**
 

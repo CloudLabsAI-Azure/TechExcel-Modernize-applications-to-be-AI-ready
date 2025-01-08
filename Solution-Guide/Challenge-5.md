@@ -35,7 +35,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h154.png)
 
-1. Replace the value for P**OSTGRESQL_SERVERNAME** with the Server name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt an press **Enter**. These commands connect to the database.   
+1. Replace the value for **POSTGRESQL_SERVERNAME** with the Server name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt an press **Enter**. These commands connect to the database.   
 
    ```
    export PGHOST="POSTGRESQL_SERVERNAME"
@@ -89,10 +89,6 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 1. Click on **+ Create project**.
 
     ![](../media/h159.png)
-
-1. Click on **Customize.**
-
-    ![](../media/h160.png)
 
 1. Click on **Customize.**
 
@@ -169,9 +165,9 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. Return to the Azure AI Studio browser window that is opend in private window.
 
-1. Select the AI hub that you have created previously.
+1. Click on **All hubs+projects (1)** and then  select the AI hub that you have created previously **(2)**.
 
-    ![](../media/h173.png)
+    ![](../media/hh3.png)
 
 1. Scroll down and click on **+ New project** on the Hub Overview. 
 
@@ -233,7 +229,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h184.png)
 
-1. Select **Connected resouces (1)** in the **Project(contosopf)** section and then click on **+ New connection (2)**.
+1. Select **Connected resources (1)** in the **Project(contosopf)** section and then click on **+ New connection (2)**.
 
     ![](../media/h185.png)
 

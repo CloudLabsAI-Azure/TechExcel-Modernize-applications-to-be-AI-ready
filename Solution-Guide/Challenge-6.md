@@ -8,7 +8,7 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
 
 In this task you’ll test the chatbot locally before you publish the chatbot.
 
-1. Open File Explorer from the bottom menu.
+1. Open **File Explorer** from the bottom menu.
 
    ![](../media/h215.png)
 
@@ -50,7 +50,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
    ![](../media/h222.png)  
 
-1. Update the variables to use the same values that you used in Challenge 05, Task 01.
+1. Update the variables to use the same values that you used in Challenge 05, Task 01. Do not copy and paste this directly into the `.env` file; instead, manually update the values within the file as needed.
 
    ```
    AZURE_OPENAI_ENDPOINT="https://openai-xxxxxx.openai.azure.com/"
@@ -59,7 +59,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    AZURE_AI_SEARCH_ENDPOINT="https://contososrchxxxxxx.search.windows.net"
    AZURE_AI_SEARCH_INDEX="brochures-vector"
    AZURE_AI_SEARCH_API_KEY="xxxxxxxxxxxxxxxxx"
-   PGHOST="mg32xpzwcffkg.postgres.database.azure.com"
+   PGHOST="xxxxxxxxxx.postgres.database.azure.com"
    PGPORT="5432"
    PGUSER="promptflow"
    PGDATABASE="pycontosohotel"
@@ -103,7 +103,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
     ![](../media/h228.png)
 
-1. Enter the following commands in the Terminal and press **Enter** to create a connection to Azure Open AI.
+1. Enter the following commands in the Terminal and press **Enter** after the last command to create a connection to Azure Open AI.
 
    ```
    pf connection create --file azure_openai.yaml --name azure_openai --set "api_base=$env:AZURE_OPENAI_ENDPOINT" --set "api_key=$env:AZURE_OPENAI_API_KEY"
@@ -119,7 +119,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    pf connection list | ConvertFrom-Json | Select-Object name, type |Format-Table
    ```
 
-    ![](../media/230.png)  
+    ![](../media/h230.png)  
 
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command installs all dependencies listed in the **requirements.txt** file. 
 
@@ -135,13 +135,13 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    pf flow test --flow . --interactive
    ```
 
-1. Try **Where can I ski?** at the **User:** prompt.
+1. Try `Where can I ski?` at the **User:** prompt.
 
    ![](../media/h232.png)  
 
    ![](../media/h233.png)  
 
-1. Try **How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?** at the **User:** prompt.
+1. `Try How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` at the **User:** prompt.
 
    ![](../media/h234.png)  
 
@@ -244,7 +244,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    $AZURE_OPENAI_API_KEY = "xxxxxxxxxxxxxxx"
    $AZURE_AI_SEARCH_ENDPOINT = "https://contososrchxxxxx.search.windows.net"
    $AZURE_AI_SEARCH_API_KEY = "xxxxxxxxxxxxx"
-   $PGHOST = "znuzgx66szs5y.postgres.database.azure.com"
+   $PGHOST = "xxxxxxx.postgres.database.azure.com"
    ```
 
    ![](../media/h240.png)   
@@ -253,7 +253,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
       ![](../media/h239.png)     
 
-1. Enter the following to set the variables for values we’ve used previously.        
+1. Enter the following to set the variables for values we’ve used previously and press **Enter** after the last command.        
 
    ```
    $RG_NAME = "Appmod"
@@ -271,8 +271,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    ```
    az containerapp create --name "chatbot" --resource-group "$RG_NAME" --environment "$CONTOSO_HOTEL_ENV" `
    --image "$ACR_NAME.azurecr.io/chatbot:v1.0.0" --target-port 8080 --transport http `
-   --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password 
-   "$CONTOSO_ACR_CREDENTIAL" `
+   --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" `
    --secrets "searchkey=$AZURE_AI_SEARCH_API_KEY" "openaikey=$AZURE_OPENAI_API_KEY" "pgpassword=$PGPASSWORD" `
    --env-vars "AZURE_AI_SEARCH_ENDPOINT=$AZURE_AI_SEARCH_ENDPOINT" "AZURE_AI_SEARCH_API_KEY=secretref:searchkey" `
    "AZURE_OPENAI_ENDPOINT=$AZURE_OPENAI_ENDPOINT" "AZURE_OPENAI_API_KEY=secretref:openaikey" `
@@ -301,7 +300,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h244.png)         
 
-1. Enter the following commands in the Visual Studio Code Terminal window prompt and press **Enter**. These commands update the application front-end. 
+1. Enter the following commands in the Visual Studio Code Terminal window prompt and press **Enter** after the last command. These commands update the application front-end. 
 
    ```
    az containerapp update --name "frontend" --resource-group "$RG_NAME" --set-env-vars "CHATBOT_BASEURL=$CONTOSO_BACKEND_URL"

@@ -126,18 +126,18 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio, that you can
 
 1. On the **Deploy model gpt-4o** and enter the following details:
 
-    - Deployment name: text-turbo(1)
-    - Deployment type: Standard(2)
-    - Model version: select the default (3)
-    - Tokens per Minute Rate Limit (thousands): 20K (4)
-    - Enable dynamic quota: Enabled (5)
-    - Click on Deploy (6)
+    - Deployment name: **text-turbo(1)**
+    - Deployment type: **Standard(2)**
+    - Model version: **select the default (3)**
+    - Tokens per Minute Rate Limit (thousands): **20K (4)**
+    - Enable dynamic quota: **Enabled (5)**
+    - Click on **Deploy (6)**
         
       ![](../media/h5.png)
 
       >**Note:** If the **Customize** option doesn't appear, you can directly enter the model deployment details. 
 
-1. Back on the **Deployments (1)** page again, then select **+ Deploy Model**. Next, **choose Deploy Base Model (2)**.
+1. Back on the **Deployments (1)** page again, then select **+ Deploy Model**. Next, choose **Deploy Base Model (2)**.
 
      ![](../media/h6.png)
 
@@ -151,12 +151,12 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio, that you can
 
 1. On the **Deploy model text-embedding-ada-002** page and enter the following details:
 
-    - Deployment name: text-ada-002(1)
-    - Deployment type: Standard(2)
-    - Model version: Use the default version(3)
-    - Tokens per Minute Rate Limit (thousands): 20K (4)
-    - Enable dynamic quota: Enabled (5)
-    - Click on Deploy (6)
+    - Deployment name: **text-ada-002(1)**
+    - Deployment type: **Standard(2)**
+    - Model version: **Use the default version(3)**
+    - Tokens per Minute Rate Limit (thousands): **20K (4)**
+    - Enable dynamic quota: **Enabled (5)**
+    - Click on **Deploy (6)**
         
       ![](../media/h8.png)
 
