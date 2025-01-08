@@ -18,7 +18,7 @@ Here's a simple overview of each service used:
 In this task, you’ll create an Azure Blog Storage account and then upload a set of PDF files to the storage account. Each PDF file is a brochure for one of the hotels represented in the Contoso Hotels app. Then, you’ll provision an Azure Search Service instance. Finally, you’ll provision an Azure OpenAI service instance and deploy models to the instance.
 
 
-1. In Visual Studio Code, enter the following commands at the Terminal window prompt and press **Enter**. These commands create a **storage account** and a **storage container**.
+1. In Visual Studio Code, enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create a **storage account** and a **storage container**.
 
    ```
    $CONTOSO_STORAGE_ACCOUNT_NAME="contososa$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -30,7 +30,7 @@ In this task, you’ll create an Azure Blog Storage account and then upload a se
 
 1. On the Azure Home page, select **Resource groups** and then select **Appmod**. 
 
-1.  Locate the row for the **Storage account** that was created and *record the Storage account name*. You’ll need the name in an upcoming task.
+1.  Locate the row for the **Storage account** that was created, *Copy and paste the **Storage account** name in a notepad*. You’ll need the name in an upcoming task.
 
     ![](../media/h125.png)
 
@@ -63,7 +63,7 @@ In this task, you’ll create an Azure Blog Storage account and then upload a se
 
 1. On the Azure Home page, select **Resource groups** and then select **Appmod**. 
 
-1. In the list of resources that displays, record the name for the **Search Service instance** that you created. You’ll need the name in an upcoming task.
+1. In the list of resources that displays, copy and paste the name for the **Search Service instance** that you created in a notepad. You’ll need the name in an upcoming task.
 
     ![](../media/h128.png)
 
@@ -78,7 +78,7 @@ In this task, you’ll create a set of managed identities so that the various Az
 
     ![](../media/h128.png)
 
-1. In the left navigation pane, in the **Settings (1)** section, select **Identity (2)**. Verfy that the value for the Status field on the System assigned tab is **On (3)**.    
+1. In the left navigation pane, in the **Settings (1)** section, select **Identity (2)**. Verify that the value for the Status field on the System assigned tab is **On (3)**.    
 
     ![](../media/h129.png)
 
@@ -103,9 +103,9 @@ In this task, you’ll create a set of managed identities so that the various Az
 1. Modify the values for the variables to reflect the names for the resources that you created in previous challenges and tasks and then press **Enter**.
 
    ```
-   $CONTOSO_SEARCH_SERVICE_NAME="ENTER_NAME_YOU_RECORDED_TASK01_STEP08"
-   $CONTOSO_STORAGE_ACCOUNT_NAME="ENTER_NAME_YOU_RECORDED_TASK01_STEP03"
-   $CONTOSO_OPENAI_NAME="ENTER_NAME_YOU_RECORDED_CHALLENGE01_TASK01"
+   $CONTOSO_SEARCH_SERVICE_NAME="ENTER_SEARCH_ SERVICE_NAME_YOU_RECORDED_TASK01_STEP08"
+   $CONTOSO_STORAGE_ACCOUNT_NAME="ENTER_STORAGE_ACCOUNT_NAME_YOU_RECORDED_TASK01_STEP03"
+   $CONTOSO_OPENAI_NAME="ENTER_OPENAI_NAME_YOU_RECORDED_CHALLENGE01_TASK01"
    ```
 
     ![](../media/h133.png)
@@ -114,7 +114,7 @@ In this task, you’ll create a set of managed identities so that the various Az
 
    ```
    $SEARCH_IDENTITY=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group Appmod --query identity.principalId -o tsv)
-   $AI_IDENTITY=$(az cognitiveservices account identity show --name $CONTOSO_AI_NAME --resource-group Appmod --query principalId -o tsv)
+   $AI_IDENTITY=$(az cognitiveservices account identity show --name $CONTOSO_OPENAI_NAME --resource-group Appmod --query principalId -o tsv)
    $STORAGE_SCOPE=$(az storage account show --name $CONTOSO_STORAGE_ACCOUNT_NAME --resource-group Appmod --query id -o tsv)
    az role assignment create --role "Storage Blob Data Contributor" --assignee $SEARCH_IDENTITY --scope $STORAGE_SCOPE
    az role assignment create --role "Storage Blob Data Contributor" --assignee $AI_IDENTITY --scope $STORAGE_SCOPE
@@ -125,7 +125,7 @@ In this task, you’ll create a set of managed identities so that the various Az
 1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow the *Azure Search to access the Azure OpenAI Service instance you created*.
 
    ```
-   $AI_SCOPE=$(az cognitiveservices account show --name $CONTOSO_AI_NAME --resource-group Appmod --query id -o tsv)
+   $AI_SCOPE=$(az cognitiveservices account show --name $CONTOSO_OPENAI_NAME --resource-group Appmod --query id -o tsv)
    az role assignment create --role "Cognitive Services OpenAI Contributor" --assignee $SEARCH_IDENTITY --scope $AI_SCOPE
    ```
 
