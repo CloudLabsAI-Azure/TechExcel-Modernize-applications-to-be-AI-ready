@@ -21,6 +21,8 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
    - Deploy the Container app and configure environmental variables.
    - Update the Contoso Hotel app to display the chatbot page.
 
+     <validation step="487703c2-6b5c-4059-ae13-a8898f10f02e" />      
+
 ## Success Criteria:
 
 - You’ve set up your development environment.

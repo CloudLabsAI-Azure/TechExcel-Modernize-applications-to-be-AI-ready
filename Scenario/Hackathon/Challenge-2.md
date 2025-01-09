@@ -31,12 +31,16 @@ Here's a simple overview of each service used by the app:
    - Creates an ACR instance with a basic SKU within the **Appmod** resource group inside the **ContosoHotel** folder.
    - Sign in to ACR. Creates a Docker tag for the app and then push the app container to ACR.
 
+     <validation step="f093ed04-190b-4416-bd7a-59a113e42a4e" />   
+
 1. **Provision a PostgreSQL database to support the app:**   
 
    - Run the **Connect-AzAccount** cmdlet to connect Visual Studio Code to Azure with an authenticated account
    - Run the **manageIac.ps1** script from the **ContosoHotel\iac** folder to deploy an Azure Database for PostgreSQL Flexible Server instance.
    > **Note**: Ensure to use the same region as you used in challenge 1.  
    > **Note**: Make sure to use **Appmod** resource group.
+
+     <validation step="f093ed04-190b-4416-bd7a-59a113e42a4e" />   
 
 1. **Run the containerized app and add a booking:**
 
