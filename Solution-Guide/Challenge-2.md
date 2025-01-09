@@ -389,11 +389,11 @@ In this task, you’ll run the Docker app container and then display the setup p
 
     - Rooms: **1 (6)**
 
-      ![](../media/h68.png)
+      ![](../media/hh4.png)
 
 1. Once the booking is Successful, you will see a message like **Successfully created the booking**.
 
-   ![](../media/h69.png)
+   ![](../media/hh5.png)
 
 1. Copy and paste the the Visitor name.   
 
@@ -403,7 +403,7 @@ In this task, you’ll run the Docker app container and then display the setup p
 
 1. Enter the Visitor name you selected while adding booking, in the Search field. The booking that you created should appear in the list of bookings.  
 
-   ![](../media/h70.png)
+   ![](../media/hh6.png)
 
 1. Close the browser window.
 
