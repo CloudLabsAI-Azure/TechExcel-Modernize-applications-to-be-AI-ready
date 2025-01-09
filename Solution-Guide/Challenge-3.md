@@ -47,7 +47,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 
    ![](../media/h80.png)
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands copy all necessary files to the **Frontend** folder for the updated app.   
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands copy all necessary files to the **Frontend** folder for the updated app.   
 
    ```
    cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
@@ -224,7 +224,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h106.png)  
 
-1. Enter the following command at the Terminal window prompt and press **Enter**. This command builds the container for the front-end app components.
+1. Enter the following command at the Terminal window prompt and press **Enter** after the last command. This command builds the container for the front-end app components.
 
    >**Note:** Before running the command ensure that the Docker is running.
 
