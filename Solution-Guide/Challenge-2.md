@@ -219,7 +219,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
    ![](../media/h51.png)
 
-1. Enter the following command at the Terminal window prompt and then press **Enter** twice. This command generates a unique name for the ACR instance. Copy and paste the generated name in the notepad for later use.
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command generates a unique name for the ACR instance. Copy and paste the generated name in the notepad for later use.
 
    ```
    $ACR_NAME = "contosoacr$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -381,9 +381,9 @@ In this task, you’ll run the Docker app container and then display the setup p
 
     - Visitor: **Type in the letter `a` into the field and 'double click' on any name that you want to select a from the dropdown list (2)**
 
-    - Check-in: **01/06/2025 (3)**
+    - Check-in: **03/08/2025 (3)**
 
-    - Check-out: **01/11/2025 (4)**
+    - Check-out: **03/09/2025 (4)**
 
     - Adults: **2 (5)**
 
