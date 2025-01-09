@@ -36,6 +36,8 @@ To improve the scalability of the app, Contoso plans to split the front-end comp
    - Create container apps for front-end and back-end components.
    - Run the **az containerapp ingress cors** command to manage Cross-Origin Resource Sharing (CORS) policies for the container apps.
 
+     <validation step="207cf525-c031-4b78-87e0-309f7f9f3b25" />   
+
 ## Success Criteria:
 
 - You’ve created the UpdatedApp folder and the FrontEnd and Backend subfolders.

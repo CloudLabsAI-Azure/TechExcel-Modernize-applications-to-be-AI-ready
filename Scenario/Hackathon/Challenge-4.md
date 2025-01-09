@@ -39,6 +39,8 @@ Here's a simple overview of each service used:
    - Index the data.
    - Test the index.
 
+     <validation step="932c0914-39fe-4f3b-b876-6d0169c84b56" />   
+
 ## Success Criteria:
 
 - You’ve uploaded the hotel brochures to the container in the Azure Storage account.
