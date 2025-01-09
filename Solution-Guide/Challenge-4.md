@@ -37,10 +37,10 @@ In this task, you’ll create an Azure Blog Storage account and then upload a se
 1. Navigate back to the Visual Studio Code, enter the following command at the Terminal window prompt and press **Enter**. This command clones assets for this workshop including hotel brochures from a GitHub repository to a folder named **AssetsRepo**.
 
    ```
-   git clone https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready "C:/Users/demouser/AssetsRepo"
+   git clone https://github.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready "C:/Users/demouser/AssetsRepo"
    ```
 
-    ![](../media/h124.png)
+    ![](../media/h-124.png)
 
 1. Enter the following command at the Terminal window prompt and press **Enter**. This command uploads the brochures to the storage container that you created earlier in this task.   
 
