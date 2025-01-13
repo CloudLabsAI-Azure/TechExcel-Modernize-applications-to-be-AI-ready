@@ -19,25 +19,25 @@ Here's a simple overview of each service used:
 
 1. **Create Azure services:**
 
-   - Create an Azure Storage account and container.
+   - Create an **Azure Storage account** and **container**.
    - Clone the GitHub repository `https://github.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready`, which contains hotel brochures, into your folder named **AssetsRepo**.
    - Upload the brochures to the storage container.
-   - Create an Azure AI Search Service instance.
+   - Create an **Azure AI Search Service** instance.
 
 1. **Configure managed identities for deployed Azure resources:**  
 
-   - Configure the Azure OpenAI and Azure AI Search instances to use system-assigned managed identities.
-   - Configure a managed identity to allow the Azure AI Search and Azure OpenAI instances to access the Azure Blob Storage account.
-   - Configure a managed identity to allow Azure AI Search instance to access the Azure OpenAI Service instance.
-   - Configure a managed identity to allow Azure OpenAI Service instance to access the Azure AI Search instance.
+   - Configure the **Azure OpenAI** and **Azure AI Search** instances to use **system-assigned managed identities**.
+   - Configure a managed identity to allow the **Azure AI Search** and **Azure OpenAI** instances to access the **Azure Blob Storage** account.
+   - Configure a managed identity to allow **Azure AI Search** instance to access the **Azure OpenAI Service** instance.
+   - Configure a managed identity to allow **Azure OpenAI Service** instance to access the **Azure AI Search** instance.
 
 1. **Configure Azure AI Search to extract data from the brochures and test the search index:**
 
-   - Launch the import and vectorize data and connect to Azure Blob Storage.
-   - Create an Azure OpenAI Service instance and deploy models to the instance.
+   - Launch the **import and vectorize data** and connect to **Azure Blob Storage**.
+   - Create an **Azure OpenAI Service** instance and deploy models to the instance.
    - Vectorize text from the brochures.
    - Index the data.
-   - Test the index.
+   - Test the index by searching for `Skiing`. The results should list data about **skiing** and should also contain a text vector 
 
      <validation step="932c0914-39fe-4f3b-b876-6d0169c84b56" />   
 

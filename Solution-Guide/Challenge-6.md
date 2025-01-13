@@ -141,7 +141,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
    ![](../media/h233.png)  
 
-1. `Try How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` at the **User:** prompt.
+1. Try `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` at the **User:** prompt.
 
    ![](../media/h234.png)  
 

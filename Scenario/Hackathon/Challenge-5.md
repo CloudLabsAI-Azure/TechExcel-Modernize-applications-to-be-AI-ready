@@ -15,15 +15,22 @@ Here's a simple overview of each service used:
 
 1. **Create a postgresql user and set up an AI Hub and Prompt Flow:**
 
-   - Create a user for the PostgreSQL database that allows the chatbot read-only access to the Hotels, Visitors, and Bookings tables.
-   - Set up and configure an AI Studio Hub.
-   - Create a project in the hub.
+   - Naviagte to **Cloud Shell** terminal in Azure portal and select **Bash**.
+   - Enter the given commands at the Cloud Shell prompt to connect to the **database**.
+   - Create a user for the **PostgreSQL database** that allows the chatbot read-only access to the Hotels, Visitors, and Bookings tables.
+   -  Creates a unique name for an **AI Hub**. Set up and configure an **AI Studio Hub**.
+   - Create a **project** in the **hub**.
+   - Assign the **Storage Blob Data Owner** role to the newly created Storage account.
+   - Assign the **Storage Blob Data Reader** role to the **AI Hub**.
 
 1. **Import and configure a flow:** 
 
+   - Create a New project named **contosopf** on the AI hub.
+   - Navigate to **Prompt flow**, create a new flow by uploading **chatflow-oai-datasources..zip** zip file.
    - Import a pre-built flow into the project. 
-   - Configure the flow.
-   - Test the flow.
+   - Add a new connection to the external assets using **Custom keys** and **Azure AI Search**.
+   - Configure the flow by starting the **Compute session** and adding the Connection details such as AI search name, OpenAI name and search_index name.
+   - Test the flow by entering the prompts `Where can I ski?` and `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` in the chat. View the results returned by the flow.
 
 ## Success Criteria:
 
