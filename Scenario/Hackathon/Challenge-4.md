@@ -19,10 +19,10 @@ Here's a simple overview of each service used:
 
 1. **Create Azure services:**
 
-   - Create an Azure Storage account and container.
+   - Create an **Azure Storage account** and **container**.
    - Clone the GitHub repository `https://github.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready`, which contains hotel brochures, into your folder named **AssetsRepo**.
    - Upload the brochures to the storage container.
-   - Create an Azure AI Search Service instance.
+   - Create an **Azure AI Search Service** instance.
 
 1. **Configure managed identities for deployed Azure resources:**  
 
