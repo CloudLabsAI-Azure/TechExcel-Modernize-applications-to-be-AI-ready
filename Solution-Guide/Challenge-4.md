@@ -204,7 +204,7 @@ In this task, you’ll use Azure AI Search to import and vectorize data from the
 
      >**Note:** The Status for the indexer should be Succeeded. If the Status indicates that indexing is still in progress, wait a few minutes and refresh the page.
 
-1. In the left navigation pane for the Search Service instance, in the S**earch management** section, select **Indexes (1)** and then select the index **(2)**.
+1. In the left navigation pane for the Search Service instance, in the **Search management** section, select **Indexes (1)** and then select the index **(2)**.
 
     ![](../media/h148.png)  
 
