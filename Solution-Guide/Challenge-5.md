@@ -100,7 +100,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
     - Subscription: **Leave the default Subscription (2)**
     - Resource group: Select **Appmod (3)** from the drop down list.
     - Location: **Enter the location for the region where you deployed all other resources (4)**
-    - Connect Azure AI Services or OpenAI: **Select the name for the OpenAI service instance that you deployed in challenge 01 (5)**
+    - Connect Azure AI Services or Azure OpenAI Service: **Select the name for the OpenAI service instance that you deployed in challenge 01 (5)**
 
       ![](../media/h161.png)    
 
@@ -112,7 +112,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h172.png)
 
-     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resources name. *You’ll need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
+     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resource name. *You’ll need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
 
 1. Navigate back to the **Azure portal**.
 
