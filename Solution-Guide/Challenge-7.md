@@ -1,4 +1,4 @@
-## Task 1: Generate NGC API KEY
+### Task 1: Generate NGC API KEY
 
 > **Note:** This process of getting the NGC API key is no longer recommended. The participant is recommended to get the API key through build.nvidia.com as mentioned on the Scenario page.
 
@@ -133,7 +133,76 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia7.png)
 
-## Task 2: 
+### Task 2: 
+
+1. Naviagate back to **Azure Portal**, in the search bar search and select **Virtual machines** 
+
+    ![](../media/vmselect.png)
+
+2. In the **Virtual machines** tab, select **+ Create** **(1)** and click on **Azure Virtual machines** **(2)**.
+
+    ![](../media/vmcreate.png)
+
+3. In the Create a virtual machine enter the fallowing details
+
+    - **Subscription**: Select avaliable Subscription.
+    - **Resource group**: Select **Appmod**.
+    - **Virtual machine name**: Provide an unique Virtual machine name (e.g nvidia-gpu)
+    - **Region**:
+    - **Availability options**: from the drop-down select **no infrastructure redundancy required**
+    - **Security type**: from the drop-down select **Standard**
+    - **Image**: click on **see all images**
+
+        - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI with vGPU driver** **(1)** and in the **NVIDIA GPU-Optimized VMI with vGPU driver** click on **Select** **(2)** drop-dowm and select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** **(3)** .
+
+            ![](../media/vmimageselect.png)
+
+    - **Size**: click on **See all size** 
+
+        - In the **Select a VM size** search **NC4as** **(1)** and select **NC4as_T4_v3** **(2)** and click on **Select** **(3)**.
+
+            ![](../media/vmsize.png)
+    
+        ![](../media/vmbasic1.png)
+
+4. Under **Administrator account**, select the fallowing deatils and click on **Next: Disks** **(5)**
+
+    - **Authentication type**: Select Password **(1)**
+    - **Username**: Provide a Username for vm **(2)**
+    - **password**: Enter the password **(3)**
+    - **Confirm password**: Enter the password **(4)**
+
+        ![](../media/vmbasic2.png)
+
+5. In the **Disks** tab select the **OS disk size** from the drop-down **128 GiB** **(1)** and **OS disk type** as **Standard SSD (locally-redudant storage)** **(2)** and click on **Review + Create** **(3)**.
+
+    ![](../media/vmdisks.png)
+
+6. In the **Review + Create** tab click on **Create**.
+
+    ![](../media/review+create.png)
+
+7. Once the deployment got succedded click on **Microsoft.Compute/virtualMachines**
+
+    ![](../media/select-deployed-vm.png)
+
+8. In the **Virtual machines**, expend the **Connect** **(1)** tab, click on **Connect** **(2)**, in the Connect click in **Select** **(3)** under Navtive SSH and once the Configure prerequisites for Native SSH succedded under Copy and execute SSH command copy the **SSH to VM with specified private key** **Select** **(4)**.
+
+    ![](../media/vmsshcopy.png)
+
+    > **Note**: Paste the SSH endpoint in a not notebook
+
+9. In the JumpVM search for **cmd** **(1)** and select **Command Promt** **(2)**
+
+    ![](../media/select-cmd.png)
+
+10. Paste the recoded **SSH endpoint** **(1)** and hit **Enter** button, in **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button and enter the **password** **(3)** and hit **Enter** button.
+
+    ![](../media/connectssh.png)
+
+    > **Note**: Once you connected to the virtual Machines take 2-3 mintutes to complement setup proccess please wait till it get completed.
+
+### Task 3:
 
 1. NVIDIA Container Toolkit Setup
    
