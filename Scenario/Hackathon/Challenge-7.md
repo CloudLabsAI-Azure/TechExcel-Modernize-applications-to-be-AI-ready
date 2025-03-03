@@ -1,8 +1,14 @@
+
+## Prerequisites
+
+- **NVIDIA AI Enterprise License**: Riva ASR NIM is available for self-hosting under the NVIDIA AI Enterprise (NVAIE) License.
+- **NVIDIA GPU(s)**: Riva ASR NIM runs on any NVIDIA GPU with sufficient GPU memory (e.g. Standard NC4as_T4_v3).
+
 ### 1. **Generate NGC API KEY**
 
-   - Login or Create Nvidia account 
+   - Login or Create a Nvidia account 
 
-   - Navigate to https://build.nvidia.com/ login using your personal email id. If not create an account.
+   - Navigate to https://build.nvidia.com/ and log in using your email id. If not create an account.
 
    - Verify you are provided with 1000 free credits, each translating into one API call by clicking on **Profile**. 
    
@@ -14,11 +20,11 @@
 
       ![](../../media/nv8.png)
 
-   - In the search bar, look for **Llama-3.1-8b-instruct**.
+   - In the search bar, look for **parakeet-ctc-1.1b-asr**.
 
       ![](../../media/nv7.png)
 
-   - Scroll down and select **Llama-3.1-8b-instruct**. 
+   - Scroll down and select **parakeet-ctc-1.1b-asr**. 
 
       ![](../../media/nv6.png)
 
@@ -111,3 +117,22 @@
       ```
 
       > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on your network speed.
+
+   - Once the NVIDIA Riva ASR deployment is succeeded, Open a new terminal Connect to the VM and run the following command to check if the service is ready to handle inference requests.
+
+     ```
+     curl -X 'GET' 'http://localhost:9000/v1/health/ready'
+     ```
+
+   - If the service is ready, you get a response similar to the following.
+
+     ```
+     {"status":"ready"}
+     ```
+
+     
+## Additional Resources:
+
+[Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
+[Python Client Repository](https://github.com/nvidia-riva/python-clients)
+[C++ Client Repository](https://github.com/nvidia-riva/cpp-clients)
