@@ -133,7 +133,9 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia7.png)
 
-### Task 2: 
+## Task 2: Create and Connect to a GPU-Enabled Virtual Machine in Azure
+
+Looking at your document, Task 2 needs a proper title to match the formatting of the other tasks. Based on the content that follows (creating a VM with NVIDIA GPU capabilities and connecting to it via SSH), this title accurately describes the actions being performed.
 
 1. Naviagate back to **Azure Portal**, in the search bar search and select **Virtual machines** 
 
@@ -202,32 +204,32 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
     > **Note**: Once you connected to the virtual Machines take 2-3 mintutes to complement setup proccess please wait till it get completed.
 
-### Task 3:
+### Task 3: # Task 3: Set Up and Run NVIDIA Riva ASR Container
 
-1. NVIDIA Container Toolkit Setup
+Looking at your document, Task 3 needs a proper title and formatting. Here's how it should be structured:
+
+### Task 3: Set Up and Run NVIDIA Riva ASR Container
+
+1. Set up the NVIDIA Container Toolkit by adding your user to the docker group:
    
-   ```
+   ```bash
    sudo gpasswd -a $USER docker
    ```
 
-1. NGC API Key Setup
+2. Configure your NGC API Key:
 
    ```bash
-   # Set your NGC API Key
+   # Set your NGC API Key (replace with your actual key)
    export NGC_API_KEY="your-ngc-api-key"
 
-   # Add to shell configuration
-   # For bash
+   # Add to shell configuration for persistence
    echo "export NGC_API_KEY=your-ngc-api-key" >> ~/.bashrc
 
-   # For zsh
-   echo "export NGC_API_KEY=your-ngc-api-key" >> ~/.zshrc
-
-   # Login to NGC container registry
+   # Log in to NGC container registry
    echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
    ```
 
-1. Run NVIDIA Riva ASR Container
+3. Run the NVIDIA Riva ASR Container:
    
    ```bash
    # Set model selector
