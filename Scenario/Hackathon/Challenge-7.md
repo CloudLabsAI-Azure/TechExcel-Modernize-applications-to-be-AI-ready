@@ -1,4 +1,4 @@
-1. **Generate NGC API KEY**
+### 1. **Generate NGC API KEY**
 
    - Login or Create Nvidia account 
 
@@ -12,48 +12,102 @@
 
    - You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either close it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
 
-      ![](../../Coach/media/nv8.png)
+      ![](../../media/nv8.png)
 
    - In the search bar, look for **Llama-3.1-8b-instruct**.
 
-      ![](../../Coach/media/nv7.png)
+      ![](../../media/nv7.png)
 
    - Scroll down and select **Llama-3.1-8b-instruct**. 
 
-      ![](../../Coach/media/nv6.png)
+      ![](../../media/nv6.png)
 
    - On the left-hand side, click **Get Container**.
 
-      ![](../../Coach/media/nv5.png)
+      ![](../../media/nv5.png)
 
    - A pop-up will appear on the **Approval Required** page. Click **Join** for the **NVIDIA Developer Program**, and it will redirect you to the NVIDIA Developer Portal.
 
-      ![](../../Coach/media/nv4.png)
+      ![](../../media/nv4.png)
 
    - On the **NVIDIA Developer Portal**, under **Integrate NIM into your application**, provide the necessary details and click **Join**.
 
-      ![](../../Coach/media/nv3.png)
+      ![](../../media/nv3.png)
 
    - Navigate back to your **NVIDIA Account**. From **Organization**, click **Subscriptions** on the left. Here, you will see the **Active** status for the NVIDIA Developer Program.
 
-      ![](../../Coach/media/nv2.png)
+      ![](../../media/nv2.png)
 
    - Click on **Account** at the top of the page and navigate to the **Setup** section.
 
-      ![](../../Coach/media/nvidia4.png)
+      ![](../../media/nvidia4.png)
 
    - Click on **Generate API Key** to create a new key for accessing the necessary services.
 
-      ![](../../Coach/media/nvidia5.png)
+      ![](../../media/nvidia5.png)
 
    - From the top, click on **+ Generate API Key** to create a new API key.
 
-      ![](../../Coach/media/nvidia8.png)
+      ![](../../media/nvidia8.png)
 
    - Click on **Confirm** to generate your new API key.
 
-      ![](../../Coach/media/nvidia9.png)
+      ![](../../media/nvidia9.png)
 
    - Carefully copy your generated API key, essential for accessing various services and features paste the API key in the notebook. Ensure you store it securely, as it may not be displayed again after you leave the page.
 
-      ![](../../Coach/media/nvidia7.png)
+      ![](../../media/nvidia7.png)
+
+### 2. Create and Connect to a GPU-Enabled Virtual Machine in Azure
+
+   - **Create a GPU Virtual Machine** : Select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** as the image and Choose **NC4as_T4_v3** as the VM size
+
+   - **Configure Storage**: Set **OS disk size** to **128 GiB** and Select **Standard SSD (locally-redundant storage)** as the OS disk type and create
+
+   - **Connect to the VM**: Connected to the GPU Virtual Machine using SSH
+
+### 3. Set Up and Run NVIDIA Riva ASR Container
+
+   - Set up the NVIDIA Container Toolkit by adding your user to the docker group:
+      
+      ```bash
+      sudo gpasswd -a $USER docker
+      
+      # Apply changes (logout/login required)
+      newgrp docker
+      ```
+
+   - Configure your NGC API Key:
+
+      ```bash
+      # Set your NGC API Key (replace with your actual key)
+      export NGC_API_KEY="your-ngc-api-key"
+
+      # Add to shell configuration for persistence
+      echo "export NGC_API_KEY=your-ngc-api-key" >> ~/.bashrc
+
+      # Log in to NGC container registry
+      echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
+      ```
+
+   - Run the NVIDIA Riva ASR Container:
+      
+      ```bash
+      # Set model selector
+      export NIM_TAGS_SELECTOR="name=parakeet-1-1b-ctc-riva-en-us,mode=all"
+
+      # Run the container
+      docker run -it --rm --name=riva-asr \
+         --runtime=nvidia \
+         --gpus '"device=0"' \
+         --shm-size=8GB \
+         -e NGC_API_KEY \
+         -e NIM_HTTP_API_PORT=9000 \
+         -e NIM_GRPC_API_PORT=50051 \
+         -p 9000:9000 \
+         -p 50051:50051 \
+         -e NIM_TAGS_SELECTOR \
+         nvcr.io/nim/nvidia/riva-asr:1.3.0
+      ```
+
+      > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on your network speed.
