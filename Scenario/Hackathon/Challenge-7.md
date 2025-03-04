@@ -1,10 +1,21 @@
+# Challenge 0
+
+### Estimated Time: 60 minutes
+
+## Introduction
+
+At this point you have a chatbot that can query the hotel brochures. In this Challenge, you will integrate the chatbot into the updated Contoso Hotel application.
+
+## Challenge Objectives:
 
 ## Prerequisites
 
 - **NVIDIA AI Enterprise License**: Riva ASR NIM is available for self-hosting under the NVIDIA AI Enterprise (NVAIE) License.
 - **NVIDIA GPU(s)**: Riva ASR NIM runs on any NVIDIA GPU with sufficient GPU memory (e.g. Standard NC4as_T4_v3).
 
-### 1. **Generate NGC API KEY**
+## Challenge Objectives:
+
+1. **Generate NGC API KEY**
 
    - Login or Create a Nvidia account 
 
@@ -64,7 +75,7 @@
 
       ![](../../media/nvidia7.png)
 
-### 2. Create and Connect to a GPU-Enabled Virtual Machine in Azure
+2. Create and Connect to a GPU-Enabled Virtual Machine in Azure
 
    - **Create a GPU Virtual Machine** : Select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** as the image and Choose **NC4as_T4_v3** as the VM size
 
@@ -72,7 +83,7 @@
 
    - **Connect to the VM**: Connected to the GPU Virtual Machine using SSH
 
-### 3. Set Up and Run NVIDIA Riva ASR Container
+3. Set Up and Run NVIDIA Riva ASR Container
 
    - Set up the NVIDIA Container Toolkit by adding your user to the docker group:
       
@@ -127,8 +138,8 @@
 
      ```
      {"status":"ready"}
-     ```
-### 4: Configure Network Security Group Rules for External Access
+
+4: Configure Network Security Group Rules for External Access
 
    - In the **Network Security Groups (NSG)**, configure **Inbound Security Rules** to allow traffic for the hackathon setup:  
 
