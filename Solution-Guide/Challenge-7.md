@@ -14,7 +14,7 @@ Click on the **Login** button in the top-right corner to create a new account. E
    >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account; however, this option does not include free credits.
 
 1. **Create Your NVIDIA Account**:
-You will be redirected to a page where you can create your NVIDIA account. Provide your **Personal email address** **(1)** and then click on **Create (2)**.This account is required to download RIVA and start using them in your Azure platform.
+You will be redirected to a page where you can create your NVIDIA account. Provide your **Personal email address** **(1)** and then click on **Create (2)**.This account is required to download RIVA and start using it in your Azure platform.
 
    ![](../media/i-13.png)
 
@@ -137,7 +137,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
 Looking at your document, Task 2 needs a proper title to match the formatting of the other tasks. Based on the content that follows (creating a VM with NVIDIA GPU capabilities and connecting to it via SSH), this title accurately describes the actions being performed.
 
-1. Naviagate back to **Azure Portal**, in the search bar search and select **Virtual machines** 
+1. Navigate back to **Azure Portal**, in the search bar search and select **Virtual machines** 
 
     ![](../media/vmselect.png)
 
@@ -145,11 +145,11 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/vmcreate.png)
 
-3. In the Create a virtual machine enter the fallowing details
+3. In the Create a virtual machine enter the following details
 
     - **Subscription**: Select avaliable Subscription.
     - **Resource group**: Select **Appmod**.
-    - **Virtual machine name**: Provide an unique Virtual machine name (e.g nvidia-gpu)
+    - **Virtual machine name**: Provide a unique Virtual machine name (e.g nvidia-gpu)
     - **Region**:
     - **Availability options**: from the drop-down select **no infrastructure redundancy required**
     - **Security type**: from the drop-down select **Standard**
@@ -167,7 +167,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
     
         ![](../media/vmbasic1.png)
 
-4. Under **Administrator account**, select the fallowing deatils and click on **Next: Disks** **(5)**
+4. Under **Administrator account**, select the following details and click on **Next: Disks** **(5)**
 
     - **Authentication type**: Select Password **(1)**
     - **Username**: Provide a Username for vm **(2)**
@@ -184,29 +184,25 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/review+create.png)
 
-7. Once the deployment got succedded click on **Microsoft.Compute/virtualMachines**
+7. Once the deployment has succeeded click on **Microsoft.Compute/virtualMachines**
 
     ![](../media/select-deployed-vm.png)
 
-8. In the **Virtual machines**, expend the **Connect** **(1)** tab, click on **Connect** **(2)**, in the Connect click in **Select** **(3)** under Navtive SSH and once the Configure prerequisites for Native SSH succedded under Copy and execute SSH command copy the **SSH to VM with specified private key** **Select** **(4)**.
+8. In the **Virtual machines**, expend the **Connect** **(1)** tab, click on **Connect** **(2)**, in the Connect click on **Select** **(3)** under Navtive SSH and once the Configure prerequisites for Native SSH succeeded under Copy and execute SSH command copy the **SSH to VM with specified private key** **Select** **(4)**.
 
     ![](../media/vmsshcopy.png)
 
     > **Note**: Paste the SSH endpoint in a not notebook
 
-9. In the JumpVM search for **cmd** **(1)** and select **Command Promt** **(2)**
+9. In the JumpVM search for **cmd** **(1)** and select **Command Prompt** **(2)**
 
     ![](../media/select-cmd.png)
 
-10. Paste the recoded **SSH endpoint** **(1)** and hit **Enter** button, in **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button and enter the **password** **(3)** and hit **Enter** button.
+10. Paste the recoded **SSH endpoint** **(1)** and hit the **Enter** button, in **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button and enter the **password** **(3)** and hit **Enter** button.
 
     ![](../media/connectssh.png)
 
-    > **Note**: Once you connected to the virtual Machines take 2-3 mintutes to complement setup proccess please wait till it get completed.
-
-### Task 3: # Task 3: Set Up and Run NVIDIA Riva ASR Container
-
-Looking at your document, Task 3 needs a proper title and formatting. Here's how it should be structured:
+    > **Note**: Once you are connected to the virtual Machines takes 2-3 minutes to complete the setup process please wait till it gets completed.
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 
@@ -214,6 +210,9 @@ Looking at your document, Task 3 needs a proper title and formatting. Here's how
    
    ```bash
    sudo gpasswd -a $USER docker
+
+   # Apply changes (logout/login required)
+   newgrp docker
    ```
 
 2. Configure your NGC API Key:
@@ -249,6 +248,6 @@ Looking at your document, Task 3 needs a proper title and formatting. Here's how
       nvcr.io/nim/nvidia/riva-asr:1.3.0
    ```
 
-   > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on your network speed.
+   > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on network speed.
 
 [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
