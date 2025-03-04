@@ -206,14 +206,15 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 
-1. Set up the NVIDIA Container Toolkit by adding your user to the docker group:
+1. Run the fallowing command to set up the NVIDIA Container Toolkit by adding your user to the docker group:
    
    ```bash
    sudo gpasswd -a $USER docker
-
-   # Apply changes (logout/login required)
-   newgrp docker
+   exit
    ```
+   
+
+1. Relogin into the VM by paste the recoded **SSH endpoint** **(1)**, hit the **Enter** button and enter the **password** **(2)**.
 
 2. Configure your NGC API Key:
 
@@ -249,4 +250,10 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on network speed.
 
-[Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
+4. 
+
+## Additional Resources:
+
+- [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
+- [Python Client Repository](https://github.com/nvidia-riva/python-clients)
+- [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients)
