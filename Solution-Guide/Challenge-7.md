@@ -155,7 +155,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
     - **Security type**: from the drop-down select **Standard**
     - **Image**: click on **see all images**
 
-        - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI with vGPU driver** **(1)** and in the **NVIDIA GPU-Optimized VMI with vGPU driver** click on **Select** **(2)** drop-dowm and select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** **(3)** .
+        - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI** **(1)** and in the **NVIDIA GPU-Optimized VMI** click on **Select** **(2)** drop-dowm and select **NVIDIA GPU-Optimized VMI - v24.10.1 - x64 Gen 2** **(3)** .
 
             ![](../media/vmimageselect.png)
 
@@ -212,11 +212,14 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    sudo gpasswd -a $USER docker
    exit
    ```
-   
 
-1. Relogin into the VM by paste the recoded **SSH endpoint** **(1)**, hit the **Enter** button and enter the **password** **(2)**.
+   ![](../media/exit.png)   
 
-2. Configure your NGC API Key:
+2. Relogin into the VM by paste the recoded **SSH endpoint** **(1)**, hit the **Enter** button and enter the **password** **(2)**.
+
+   ![](../media/reconnect.png)
+
+3. Run the fallowing command to configure your NGC API Key:
 
    ```bash
    # Set your NGC API Key (replace with your actual key)
@@ -228,8 +231,11 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    # Log in to NGC container registry
    echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
    ```
+   ![](../media/login-nvidia.png)
 
-3. Run the NVIDIA Riva ASR Container:
+   > **Note**: Replace your-ngc-api-key with your generated NGC_API_KEY in task 1.
+
+4. Run the fallowing command to download, deploy and run NVIDIA Riva model into docker desktop:
    
    ```bash
    # Set model selector
@@ -248,12 +254,76 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
       nvcr.io/nim/nvidia/riva-asr:1.3.0
    ```
 
+   ![](../media/download-deploy-run.png)
+
    > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on network speed.
 
-4. 
+6. Once the NVIDIA Riva model is succedded start the new CMD session connect to the VM throught SSH.
+
+   ![](../media/succedded-nvidiamodel.png)
+
+7. Run the following command to check if the service is ready to handle inference requests.
+
+     ```
+     curl -X 'GET' 'http://localhost:9000/v1/health/ready'
+     ```
+
+   - If the service is ready, you get a response similar to the following.
+
+     ```
+     {"status":"ready"}
+     ```
+
+     ![](../media/status-update.png)
+
+### Task 4: Configure Network Security Group Rules for External Access
+
+1. Naviagte back to Azure portal, in search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
+
+   ![](../media/select-nsg.png)
+
+1. In the **Network security groups**, copy the the name on **Resource group name**  **(1)** and **NCG name** **(2)** of nvidia-gpu.
+
+   ![](../media/nsg-name.png)
+
+1. Configure Azure NSG rules
+
+   ```
+   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-http --protocol tcp --priority 100  --destination-port-range 9000
+   ```
+
+   ```
+   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-grpc --protocol tcp --priority 110 --destination-port-range 50051
+   ```
+
+   ![](../media/nsg-9000.png)
+
+   ![](../media/nsg-50051.png)
+
+   > **Note**: replace youRGName with Resource group name and myNSG with Network security groups name of nvidia-gpu 
+
+1. In the Azure portal, in search bar **Virtual machines** **(1)**, and select **Virtual machines** **(2)**.
+
+   ![](../media/search-vm.png)
+
+1. In the **Virtual machines**, copy the public ip of **nvidia-gpu** Virtual machines.
+
+   ![](../media/search-vmip.png)
+
+1. Add a new tab i the browser naviagte to below URL to check if the service is ready to handle inference requests.
+
+   ```
+   http://<nvidia-gpu-public-ip>:9000/v1/health/ready
+   ```
+
+   ![](../media/web-trigger.png)
+
+
+### Task 5:
 
 ## Additional Resources:
 
 - [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
-- [Python Client Repository](https://github.com/nvidia-riva/python-clients)
-- [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients)
+- [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
+- [Python Client Repository](https://github.com/nvidia-riva/python-clients.git)
+- [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients.git)
