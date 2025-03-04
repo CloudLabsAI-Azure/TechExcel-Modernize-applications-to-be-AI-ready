@@ -104,7 +104,6 @@
 
       # Run the container
       docker run -it --rm --name=riva-asr \
-         --runtime=nvidia \
          --gpus '"device=0"' \
          --shm-size=8GB \
          -e NGC_API_KEY \
