@@ -152,6 +152,14 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
       http://<nvidia-gpu-public-ip>:9000/v1/health/ready
       ```
 
+## Success Criteria:
+
+- Successfully generated an NGC API key from NVIDIA and verified account access.
+- Verify the successful deployment of the Virtual Machine with SKU size of **Standard NC4as T4 v3** and disk size of **Standard SSD LRS 128 GiB**.
+- Successfully deployed the NVIDIA Riva ASR.
+- Configured Network Security Group rules to open ports 9000 and 50551
+- Verified the Riva ASR service is running and accessible by checking the health endpoint
+  both locally and remotely via browser (http://<nvidia-gpu-public-ip>:9000/v1/health/ready).
      
 ## Additional Resources:
 
