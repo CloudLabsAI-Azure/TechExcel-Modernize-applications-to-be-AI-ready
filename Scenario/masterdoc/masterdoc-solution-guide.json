@@ -27,8 +27,11 @@
      {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/main/Solution-Guide/Challenge-6.md",
        "Order": 6
-     }
-    
+     },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/main/Solution-Guide/Challenge-7.md",
+      "Order": 7
+    }    
   ]
  } 
 ]
