@@ -1,3 +1,5 @@
+Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
+
 ### Task 1: Generate NGC API KEY
 
 > **Note:** This process of getting the NGC API key is no longer recommended. The participant is recommended to get the API key through build.nvidia.com as mentioned on the Scenario page.
@@ -319,7 +321,9 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    ![](../media/web-trigger.png)
 
 
-### Task 5:
+### Task 5: 
+
+
 
 ## Additional Resources:
 

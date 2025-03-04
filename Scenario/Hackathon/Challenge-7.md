@@ -128,10 +128,23 @@
      ```
      {"status":"ready"}
      ```
+### 4: Configure Network Security Group Rules for External Access
+
+   - In the **Network Security Groups (NSG)**, configure **Inbound Security Rules** to allow traffic for the hackathon setup:  
+
+      - Open port `9000` with the `TCP` protocol and set the priority to `100`.  
+      - Open port `50551` with the `TCP` protocol and set the priority to `101`.  
+
+   - Open a new tab in the browser and navigate to the following URL to verify if the service is ready to handle inference requests.
+
+      ```
+      http://<nvidia-gpu-public-ip>:9000/v1/health/ready
+      ```
 
      
 ## Additional Resources:
 
-[Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
-[Python Client Repository](https://github.com/nvidia-riva/python-clients)
-[C++ Client Repository](https://github.com/nvidia-riva/cpp-clients)
+- [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
+- [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
+- [Python Client Repository](https://github.com/nvidia-riva/python-clients.git)
+- [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients.git)
