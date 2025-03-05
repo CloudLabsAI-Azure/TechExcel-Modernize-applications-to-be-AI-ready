@@ -369,6 +369,98 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
       ![](../media/h212.png)
 
+### Task 3: Deploy of configured prompt flow
+
+1. 
+
+### Task 4: Configure Network Security Group Rules for External Access
+
+1. Navigate back to the Azure portal, in the search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
+
+   ![](../media/select-nsg.png)
+
+1. In the **Network security groups**, copy the the name on **Resource group name**  **(1)** and **NCG name** **(2)** of nvidia-gpu.
+
+   ![](../media/nsg-name.png)
+
+1. Configure Azure NSG rules
+
+   ```
+   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-http --protocol tcp --priority 100  --destination-port-range 9000
+   ```
+
+   ```
+   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-grpc --protocol tcp --priority 110 --destination-port-range 50051
+   ```
+
+   ![](../media/nsg-9000.png)
+
+   ![](../media/nsg-50051.png)
+
+   > **Note**: replace youRGName with Resource group name and myNSG with Network security groups name of nvidia-gpu 
+
+1. In the Azure portal, in search bar **Virtual machines** **(1)**, and select **Virtual machines** **(2)**.
+
+   ![](../media/search-vm.png)
+
+1. In the **Virtual machines**, copy the public ip of **nvidia-gpu** Virtual machines.
+
+   ![](../media/search-vmip.png)
+
+1. Add a new tab in the browser navigate to the below URL to check if the service is ready to handle inference requests.
+
+   ```
+   http://<nvidia-gpu-public-ip>:9000/v1/health/ready
+   ```
+
+   ![](../media/web-trigger.png)
+
+### Task 5: Setting Up and Running the AI-Powered Speech-to-Text and Chat Application
+
+1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
+
+1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+
+   ![](../media/Active-image42.png)
+
+1. Execute the following command in the terminal to clone the repository to a local folder: (it doesn't matter which folder).
+
+   ```
+   git clone https://github.com/CloudLabsAI-Azure/NVIDIA-Speech-to-text.git
+   ```
+    
+    ![](../media/Active-image43.png)
+
+1. When the repository has been cloned, open the folder in Visual Studio Code by following these steps:
+
+    - From the top left corner menu select **File (1)** >  **Open Folder (2)**.
+
+       ![](../media/Active-image44.png)
+      
+    - Within the file explorer in **Quick access** select **NVIDIA-Speech-to-text (1)** then click on **Select folder (2)**.
+
+       ![](../media/Active-image45.png)
+      
+    - If **Do you trust the authors of the files in this folder?** prompted click on **Yes, I trust the authors**.
+
+         ![](../media/Active-image46.png)
+
+       > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+
+1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+
+   ![](../media/Active-image42.png)
+
+1. Run the fallowing command to install the Python package
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+    ![](../media/Active-imagenew1.png)
+
+1. 
+
 
 ## Success Criteria:
 

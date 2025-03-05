@@ -47,7 +47,7 @@ Here's a simple overview of each service used:
       - Open port `9000` with the `TCP` protocol and set the priority to `100`.  
       - Open port `50551` with the `TCP` protocol and set the priority to `101`.  
 
-   - Copy the **Public IP** GPU Virtual Machine into a notebook. 
+   - Copy the **Public IP** of GPU Virtual Machine into a notebook. 
      
    - Open a new tab in the browser and navigate to the following URL to verify if the service is ready to handle inference requests.
 
@@ -55,7 +55,35 @@ Here's a simple overview of each service used:
       http://<nvidia-gpu-public-ip>:9000/v1/health/ready
       ```
 
-      ![](../med)
+      ![](../../media/web-trigger.png)
+
+1. **Setting Up and Running the AI-Powered Speech-to-Text and Chat Application** 
+
+   - **Clone the repository** in Visual Studio Code `https://github.com/CloudLabsAI-Azure/NVIDIA-Speech-to-text.git`.  
+      > **Hint**: You can use the provided repository https://github.com/CloudLabsAI-Azure/NVIDIA-Speech-to-text. to explore and perform the scenarios listed below.  
+
+   - **Install the prerequisites** from `requirements.txt`.  
+      > **Hint**: Use `pip` to install the dependencies from `requirements.txt`.  
+
+   - **Update the `.env` file** with the following details:  
+      - **Public IP** of the GPU Virtual Machine  
+      - **Target URI** of the endpoint  
+      - **Primary Key**  
+
+   - **Run the application** by executing `app.py` using Python.  
+
+   - This application **supports both Riva Speech-to-Text and Chat with Azure AI services** running in **Prompt Flow**, which has been deployed.  
+
+   - You can use **pre-created sample audio** files from the `audio` folder, such as:  
+      - `Sample 1.wav` with the question **"Where can I ski?"**  
+      - `Sample 2.wav` with the question **"How many free rooms do hotels in Switzerland have, grouped by hotel, on 2024-10-10?"**  
+
+   - Alternatively, you can **record your own audio** and send it.
+
+1. **Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application**  (Optinal task)
+
+- Package the application into a container and push it to **Azure Container Registry (ACR)**.  
+- Create **Container Apps** for the AI-Powered Speech-to-Text and Chat Application.
 
 ## Success Criteria:
 

@@ -93,7 +93,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nv6.png)
 
-1. On the left-hand side, click **Get Container**.
+1. On the Right-hand side, click **Get Container**.
 
    ![](../media/nv5.png)
 
