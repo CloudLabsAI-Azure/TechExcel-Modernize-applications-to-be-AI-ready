@@ -1,10 +1,10 @@
 # Challenge 0
 
-### Estimated Time: 60 minutes
+### Estimated Time: 30 minutes
 
 ## Introduction
 
-At this point you have a chatbot that can query the hotel brochures. In this Challenge, you will integrate the chatbot into the updated Contoso Hotel application.
+
 
 ## Challenge Objectives:
 
@@ -126,9 +126,9 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
          nvcr.io/nim/nvidia/riva-asr:1.3.0
       ```
 
-      > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on your network speed.
+      > **Note**: It may take up to 60 minutes for the Docker container to be ready and start accepting requests. Please proceed with the next challenge monitor the deployment every 20 minutes
 
-   - Once the NVIDIA Riva ASR deployment is succeeded, Open a new terminal Connect to the VM and run the following command to check if the service is ready to handle inference requests.
+   - Once the NVIDIA Riva ASR deployment has succeeded, Open a new terminal Connect to the VM, and run the following command to check if the service is ready to handle inference requests.
 
      ```
      curl -X 'GET' 'http://localhost:9000/v1/health/ready'
@@ -138,6 +138,7 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
 
      ```
      {"status":"ready"}
+     ```
 
 4: Configure Network Security Group Rules for External Access
 
@@ -158,8 +159,7 @@ At this point you have a chatbot that can query the hotel brochures. In this Cha
 - Verify the successful deployment of the Virtual Machine with SKU size of **Standard NC4as T4 v3** and disk size of **Standard SSD LRS 128 GiB**.
 - Successfully deployed the NVIDIA Riva ASR.
 - Configured Network Security Group rules to open ports 9000 and 50551
-- Verified the Riva ASR service is running and accessible by checking the health endpoint
-  both locally and remotely via browser (http://<nvidia-gpu-public-ip>:9000/v1/health/ready).
+- Verified the Riva ASR service is running and accessible by checking the health endpoint both locally and remotely via browser (http://<nvidia-gpu-public-ip>:9000/v1/health/ready).
      
 ## Additional Resources:
 
