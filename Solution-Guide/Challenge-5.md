@@ -23,7 +23,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h151.png)
 
-1. On the menu bar for the database server, select **Cloud Shell** icon.
+1. On the pane bar for the database server, select **Cloud Shell** icon.
 
     ![](../media/h152.png)
 
@@ -371,7 +371,27 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 ### Task 3: Deploy of configured prompt flow
 
-1. 
+1. In the prompt flow tab, click on **Deploy**.
+
+    ![](../media/newimag1.png)
+
+1. In the **Basic settings** tab of Deploy prompt flow, select the Virtual machine size as **Standard_D2a_v4** **(1)** and click on **Review + Create** **(2)** button.
+
+    ![](../media/newimag2.png)
+
+1. In the **Review** tab of Deploy prompt flow, click on **Create** **(1)** button.
+
+    ![](../media/newimag3.png)
+
+    > **Note**: The deployment of endpoint may take 5 minutes please wait.
+
+1. Once the deployment got succedded, from the left side pane select **Models + endpoints** **(1)** under **My assests** session, and select the newly deployed endpoint **Contosopf-suffix** **(2)**.
+
+    ![](../media/newimag4.png)
+
+1. In the **contosopf-suffix** endpoint, copy the **Target URI** **(1)** and **Primary key** **(2)** under the Endpoint. Paste the values in a notepad.
+
+    ![](../media/newimag5.png)
 
 ### Task 4: Configure Network Security Group Rules for External Access
 
@@ -383,10 +403,10 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/nsg-name.png)
 
-1. Configure Azure NSG rules
+1. Configure Azure NSG rules for **nvidia-gpu** Virtual machines
 
    ```
-   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-http --protocol tcp --priority 100  --destination-port-range 9000
+   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-http --protocol tcp --priority 100 --destination-port-range 9000
    ```
 
    ```
@@ -419,7 +439,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. Open **Visual Studio Code** from the Lab VM desktop by double-clicking on it.
 
-1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. In **Visual Studio Code**, from the top left pane, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/Active-image42.png)
 
@@ -433,7 +453,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. When the repository has been cloned, open the folder in Visual Studio Code by following these steps:
 
-    - From the top left corner menu select **File (1)** >  **Open Folder (2)**.
+    - From the top left corner pane select **File (1)** >  **Open Folder (2)**.
 
        ![](../media/Active-image44.png)
       
@@ -447,7 +467,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
        > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
-1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. In **Visual Studio Code**, from the top left pane, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/Active-image42.png)
 
@@ -459,8 +479,13 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/Active-imagenew1.png)
 
-1. 
+1. In the `.env` file update the vlaues `publicip` with **public ip** of nvidia-gpu Virtual machines, `Azure AI Foundry Model Endpoint URL` with **Target URI** **(1)** and `Azure AI Foundry Model Key` with **Primary key** **(2)**. 
 
+    ![](../media/newimag6.png)
+
+1. In **Visual Studio Code**, from the top left pane, select the file **Files** **(1)** and click on **Save** **(2)**.
+
+    ![](../media/newimag7.png)
 
 ## Success Criteria:
 
