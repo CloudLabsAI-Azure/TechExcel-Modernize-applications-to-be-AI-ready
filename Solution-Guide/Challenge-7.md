@@ -208,7 +208,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 
-1. Run the fallowing command to set up the NVIDIA Container Toolkit by adding your user to the docker group:
+1. Run the following command to set up the NVIDIA Container Toolkit by adding your user to the docker group:
    
    ```bash
    sudo gpasswd -a $USER docker
@@ -221,7 +221,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/reconnect.png)
 
-3. Run the fallowing command to configure your NGC API Key:
+3. Run the following command to configure your NGC API Key:
 
    ```bash
    # Set your NGC API Key (replace with your actual key)
@@ -237,7 +237,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: Replace your-ngc-api-key with your generated NGC_API_KEY in task 1.
 
-4. Run the fallowing command to download, deploy and run NVIDIA Riva model into docker desktop:
+4. Run the following command to download, deploy, and run the NVIDIA Riva model into the docker desktop:
    
    ```bash
    # Set model selector
@@ -260,7 +260,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on network speed.
 
-6. Once the NVIDIA Riva model is succedded start the new CMD session connect to the VM throught SSH.
+6. Once the NVIDIA Riva model has succeeded start the new CMD session and connect to the VM through SSH.
 
    ![](../media/succedded-nvidiamodel.png)
 
@@ -280,7 +280,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ### Task 4: Configure Network Security Group Rules for External Access
 
-1. Naviagte back to Azure portal, in search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
+1. Navigate back to the Azure portal, in the search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
 
    ![](../media/select-nsg.png)
 
@@ -312,7 +312,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/search-vmip.png)
 
-1. Add a new tab i the browser naviagte to below URL to check if the service is ready to handle inference requests.
+1. Add a new tab in the browser navigate to the below URL to check if the service is ready to handle inference requests.
 
    ```
    http://<nvidia-gpu-public-ip>:9000/v1/health/ready
