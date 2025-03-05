@@ -487,6 +487,33 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/newimag7.png)
 
+1. In **Visual Studio Code**, from the top left pane, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+
+   ![](../media/Active-image42.png)
+
+1. Run the fallowing command the run the application locally.
+
+    ```
+    python app.py
+    ```
+   
+   ![](../media/newimag8.png)
+
+1. Open a web browser, copy and paste the following URL `http://127.0.0.1:5000/`
+
+1. This application **supports both Riva Speech-to-Text and Chat with Azure AI services** running in **Prompt Flow**, which has been deployed.
+
+1. The **AI Speech Assistant** page displays.
+
+   ![](../media/newimag9.png)
+
+1. On the **AI Speech Assistant** page, click on **upload audio file** **(1)**, in the pop-up window naviagte to **NVIDIA-Speech-to-text\audio** **(2)** folder select any **one sample** **(3)** audio file click on **Open** **(3)** button.
+
+    - `Sample 1.wav` with the question **"Where can I ski?"**  
+    - `Sample 2.wav` with the question **"How many free rooms do hotels in Switzerland have, grouped by hotel, on 2024-10-10?"**  
+
+1. 
+
 ## Success Criteria:
 
 - You’ve successfully created a user in the PostgreSQL database.
@@ -501,9 +528,3 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 
 ## Proceed with the next Challenge by clicking on **Next**>>.
-
-
-
-
-
-
