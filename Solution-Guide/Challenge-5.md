@@ -514,6 +514,99 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. 
 
+### Task 5: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optinal task)
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command builds the container for the chatapp. Wait while the container builds.
+
+   ```
+   docker build -t "chatapp:v1.0.0" .
+   ```
+   ![](../media/newimag10.png)
+
+    >**Note:** It may take 2-3 minutes to build the container.
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command connects the Terminal window with your Azure subscription so that you deploy Azure resources to the correct subscription.
+
+   ```
+   az login
+   ```
+
+    ![](../media/h46.png)  
+
+1. Minimize the Visual Studio Code.
+
+    - On the Let’s get you signed in page, select **Work or School account (1)** and then select **Continue (2)**. 
+
+      ![](../media/h47.png)      
+
+    - Sign in using your Azure credentials.
+
+    - On the **Sign in** page, Enter the **Username (1)** and click on **Next (2)**.
+
+      ![](../media/h48.png)     
+
+       >**Note:** **Username**, you can find in the Lab VM's **Environment** page.
+
+    - Enter the **Password (1)** and then click on **Sign in (2)**.  
+
+      ![](../media/h49.png)     
+
+       >**Note:** **Password**, you can find in the Lab VM's **Environment** page.   
+
+    - On the **Stay signed in to all your apps** page, select **No sign in to this app only.**
+
+      ![](../media/h50.png)         
+
+1. Naviagte back to the Visual Studio code, press **Enter** for **Select a subscription and tenant**.      
+
+   ![](../media/h51.png)
+
+1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
+
+   ```
+   az acr list --query "[].{Name:name}" --output table
+   ```
+
+   ![](../media/newimag12.png)
+
+1. From the terminal copy the name Container registry which start with **contosoacr{suffix}**.
+
+   ![](../media/newimag13.png)
+
+1. Run the fallowinf command to Container registry name 
+
+    ```
+    $ACR_NAME= "continer_name"
+    ```
+
+    > Note: Replace **continer_name** with **contosoacr{suffix}** which you copied in previous step
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+
+   ```
+   az acr login --name "$ACR_NAME"
+   ```
+
+    ![](../media/newimag11.png)
+
+     >**Note:** You may see an error message stating the Azure could not connect to the registry login server. This error usually indicates that even though the container registry instance is provisioned, there’s still some configuration happening. Wait a few minutes and run the command again.
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command creates a Docker tag for the app.  
+
+   ```
+   docker tag "chatapp:v1.0.0" "$ACR_NAME.azurecr.io/chatapp:v1.0.0"
+   ```
+
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command pushes the app container to ACR.    
+
+   ```
+   docker push "$ACR_NAME.azurecr.io/chatapp:v1.0.0"
+   ```
+
+    ![](../media/newimag14.png)
+
+     >**Note:** It may take 1-2 minutes to push the app container to ACR.
+
 ## Success Criteria:
 
 - You’ve successfully created a user in the PostgreSQL database.
