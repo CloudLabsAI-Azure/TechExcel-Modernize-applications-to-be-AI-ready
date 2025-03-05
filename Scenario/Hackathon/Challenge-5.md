@@ -1,5 +1,5 @@
 # Challenge 05: Configure an AI Hub and Promptflow
-### Estimated Time: 60 minutes
+### Estimated Time: 90 minutes
 ## Introduction
 
 There are a lot of ways to create a chatbot. For this Challenge, you’ll use Prompt Flow within Azure AI Studio. Azure OpenAI Prompt Flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt Flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
@@ -29,8 +29,33 @@ Here's a simple overview of each service used:
    - Navigate to **Prompt flow**, create a new flow by uploading **chatflow-oai-datasources..zip** zip file.
    - Import a pre-built flow into the project. 
    - Add a new connection to the external assets using **Custom keys** and **Azure AI Search**.
-   - Configure the flow by starting the **Compute session** and adding the Connection details such as AI search name, OpenAI name and search_index name.
+   - Configure the flow by starting the **Compute session** and adding the Connection details such as AI search name, OpenAI name, and search_index name.
    - Test the flow by entering the prompts `Where can I ski?` and `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` in the chat. View the results returned by the flow.
+
+1. **Deploy of configured prompt flow**
+
+   - Deploy the prompt flow as a managed online endpoint for real-time inference, with Virtual machine SKU of **Standard_D2a_v4**.
+
+     > **Note**: This may take up to 5 minutes to deploy.   
+
+   - Copy the endpoint **Target URI** and **Primary key** into a notebook.
+
+1. **Configure Network Security Group Rules for External Access**
+
+   - In the **Network Security Groups (NSG)** of GPU Virtual Machine, configure **Inbound Security Rules** to allow traffic for the hackathon setup:  
+
+      - Open port `9000` with the `TCP` protocol and set the priority to `100`.  
+      - Open port `50551` with the `TCP` protocol and set the priority to `101`.  
+
+   - Copy the **Public IP** GPU Virtual Machine into a notebook. 
+     
+   - Open a new tab in the browser and navigate to the following URL to verify if the service is ready to handle inference requests.
+
+      ```
+      http://<nvidia-gpu-public-ip>:9000/v1/health/ready
+      ```
+
+      ![](../med)
 
 ## Success Criteria:
 
@@ -41,6 +66,7 @@ Here's a simple overview of each service used:
 
 ## Additional Resources:
 
--  Refer to the  [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
--  Refer to the  [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use prompt flow to develop applications that leverage language models in the Azure AI Foundry.
+-  Refer to the [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
+-  Refer to the [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use prompt flow to develop applications that leverage language models in the Azure AI Foundry.
+-  Refer to the [Deploy a flow in prompt flow](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-deploy-for-real-time-inference?view=azureml-api-2) to learn about how to Deploy a flow as a managed online endpoint for real-time inference
 
