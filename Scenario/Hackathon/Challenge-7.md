@@ -138,7 +138,7 @@ At this point, you have a chatbot that can query the hotel brochures. In this Ch
 
      ```
      {"status":"ready"}
-
+     ```
 
 ## Success Criteria:
 
