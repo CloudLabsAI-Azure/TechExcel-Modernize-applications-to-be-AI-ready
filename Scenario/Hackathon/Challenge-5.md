@@ -80,7 +80,7 @@ Here's a simple overview of each service used:
 
    - Alternatively, you can **record your own audio** and send it.
 
-1. **Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application**  (Optinal task)
+1. **Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application**  (Optional task)
 
 - Package the application into a container and push it to **Azure Container Registry (ACR)**.  
 - Create **Container Apps** for the AI-Powered Speech-to-Text and Chat Application.
