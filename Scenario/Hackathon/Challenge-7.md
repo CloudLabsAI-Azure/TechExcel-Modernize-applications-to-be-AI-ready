@@ -1,5 +1,7 @@
 # Challenge 02: Deploy and Utilize NVIDIA Riva ASR on Azure
 
+### Estimated Time: 45 minutes
+
 ## Introduction
 
 In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience with deploying AI models and using cloud resources to create AI-ready applications.
