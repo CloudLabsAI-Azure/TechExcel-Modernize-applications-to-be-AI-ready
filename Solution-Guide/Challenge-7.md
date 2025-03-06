@@ -1,9 +1,10 @@
-# Challenge Name
-Deploy and Utilize NVIDIA Riva ASR on Azure
+# Challenge: Deploy and Utilize NVIDIA Riva ASR on Azure
 
 ## Introduction
 
 In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience with deploying AI models and using cloud resources to create AI-ready applications.
+
+Riva ASR NIM APIs provide easy access to state-of-the-art automatic speech recognition (ASR) models for multiple languages. Riva ASR NIM models are built on the NVIDIA software platform, incorporating CUDA, TensorRT, and Triton to offer out-of-the-box GPU acceleration.
 
 Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
 

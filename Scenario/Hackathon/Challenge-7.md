@@ -1,12 +1,12 @@
-# Challenge 0
-
-### Estimated Time: 60 minutes
+# Challenge: Deploy and Utilize NVIDIA Riva ASR on Azure
 
 ## Introduction
 
-At this point, you have a chatbot that can query the hotel brochures. In this Challenge, you will integrate the chatbot into the updated Contoso Hotel application.
+In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience with deploying AI models and using cloud resources to create AI-ready applications.
 
-## Challenge Objectives:
+Riva ASR NIM APIs provide easy access to state-of-the-art automatic speech recognition (ASR) models for multiple languages. Riva ASR NIM models are built on the NVIDIA software platform, incorporating CUDA, TensorRT, and Triton to offer out-of-the-box GPU acceleration.
+
+Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
 
 ## Prerequisites
 
@@ -140,17 +140,14 @@ At this point, you have a chatbot that can query the hotel brochures. In this Ch
      {"status":"ready"}
      ```
 
-## Success Criteria:
+## Success Criteria
 
-- Successfully generated an NGC API key from NVIDIA and verified account access.
-- Verify the successful deployment of the Virtual Machine with SKU size of **Standard NC4as T4 v3** and disk size of **Standard SSD LRS 128 GiB**.
-- Successfully deployed the NVIDIA Riva ASR.
-- Configured Network Security Group rules to open ports 9000 and 50551
-- Verified the Riva ASR service is running and accessible by checking the health endpoint both locally and remotely via browser (http://<nvidia-gpu-public-ip>:9000/v1/health/ready).
-     
+- Successfully generate the NGC API Key through the NVIDIA build platform.
+- Create and connect to a GPU-enabled virtual machine in Azure.
+- Set up and run the NVIDIA Riva ASR container within the virtual machine.
+
 ## Additional Resources:
 
 - [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
-- [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
 - [Python Client Repository](https://github.com/nvidia-riva/python-clients.git)
 - [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients.git)
