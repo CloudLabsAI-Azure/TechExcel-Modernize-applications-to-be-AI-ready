@@ -510,9 +510,25 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 1. On the **AI Speech Assistant** page, click on **upload audio file** **(1)**, in the pop-up window naviagte to **NVIDIA-Speech-to-text\audio** **(2)** folder select any **one sample** **(3)** audio file click on **Open** **(3)** button.
 
     - `Sample 1.wav` with the question **"Where can I ski?"**  
-    - `Sample 2.wav` with the question **"How many free rooms do hotels in Switzerland have, grouped by hotel, on 2024-10-10?"**  
+    - `Sample 2.wav` with the question **"How many free rooms do hotels in Switzerland have, grouped by hotel, on 2024-10-10?"**
 
-1. 
+        ![](../media/newimag15.png)
+
+1. Select the `Sample 1.wav` **(1)** audio file, click on **send** **(2)** button and you will get response from RIVA model in **response** **(3)** session and **text box** **(4)**.
+
+   ![](../media/newimag18.png)
+
+1. The response text from the **RIVA model** appears in the **text box** **(1)** as `## Where can I ski`. Click on the **Send** **(2)** button to trigger the **Prompt Flow**.
+
+    ![](../media/newimag19.png)
+
+1. You can view the response from the **Prompt Flow** chat application.
+
+    ![](../media/newimag16.png)
+
+1. Simlar way you can try with `Sample 2.wav`
+
+   ![](../media/newimag17.png)
 
 ### Task 5: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optinal task)
 
@@ -606,6 +622,28 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
     ![](../media/newimag14.png)
 
      >**Note:** It may take 1-2 minutes to push the app container to ACR.
+
+1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenege 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
+
+   ```
+   $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
+   ```
+
+    ![](../media/h112.png) 
+
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app environment.
+
+    ![](../media/h113.png) 
+
+     >**Note:** It may take 2-3 minutes for these commands to complete.
+
+1. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the chat app components.
+
+   ```
+   az containerapp create --name "Chatapp" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 5000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL"
+   $CONTOSO_Chat_URL = "https://$(az containerapp show --name "Chatapp" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   Write-Host -ForegroundColor Green  "Chatapp URL is: $CONTOSO_Chat_URL"
+   ```
 
 ## Success Criteria:
 
