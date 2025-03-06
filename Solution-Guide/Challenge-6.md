@@ -345,13 +345,3 @@ In this task youâ€™ll prepare the flow for deployment and deploy the flow. Youâ€
 ## Additional Resources:
 
 -  Refer to the  [Prompt flow documentation](https://microsoft.github.io/promptflow/reference/pf-command-reference.html#pf-flow) to learn about the Promt flow.
-
-
-
-
-
-
-
-
- 
-

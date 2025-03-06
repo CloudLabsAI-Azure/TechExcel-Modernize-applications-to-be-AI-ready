@@ -650,6 +650,8 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 - You’ve imported and configured a pre-built flow.
 - You’ve tested the flow and confirmed that the flow returns appropriate results.
 - Configure the necessary network security group rules to allow external access.
+- Deploy the configured prompt flow to a virtual machine.
+- Configure the necessary network security group rules to allow external access.
 - Verify that the NVIDIA Riva ASR service is running and can handle inference requests.
 
 ## Additional Resources:

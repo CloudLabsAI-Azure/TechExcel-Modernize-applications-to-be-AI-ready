@@ -229,4 +229,3 @@ In this task, you’ll use Azure AI Search to import and vectorize data from the
 - Refer to the [Azure Search Overview](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) to get additional information about Azure search.
 
 ## Proceed with the next Challenge by clicking on **Next**>>.
-    
