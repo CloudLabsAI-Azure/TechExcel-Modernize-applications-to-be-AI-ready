@@ -631,19 +631,17 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h112.png) 
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app environment.
-
-    ![](../media/h113.png) 
-
-     >**Note:** It may take 2-3 minutes for these commands to complete.
-
 1. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the chat app components.
 
    ```
-   az containerapp create --name "Chatapp" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 5000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL"
-   $CONTOSO_Chat_URL = "https://$(az containerapp show --name "Chatapp" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
-   Write-Host -ForegroundColor Green  "Chatapp URL is: $CONTOSO_Chat_URL"
+   $chatapp = "chatapp$(Get-Random -Minimum 100000 -Maximum 999999)"
+
+   az containerapp create --name "$chatapp" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/chatapp:v1.0.0" --target-port 5000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL"
+   $CONTOSO_CHAT_URL = "https://$(az containerapp show --name "$chatapp" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   Write-Host -ForegroundColor Green  "Chatapp URL is: $CONTOSO_CHAT_URL"
    ```
+
+1. Copy the Chatapp URL, open a new web browser window and go to the URL for the Chatapp container.
 
 ## Success Criteria:
 
