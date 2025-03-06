@@ -33,8 +33,6 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you 
 
    - In the search bar, look for **parakeet-ctc-1.1b-asr**.
 
-      ![](../../media/nv7.png)
-
    - Scroll down and select **parakeet-ctc-1.1b-asr**. 
 
       ![](../../media/nv6.png)
