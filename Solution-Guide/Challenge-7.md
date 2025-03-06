@@ -6,7 +6,9 @@ In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech
 
 Riva ASR NIM APIs provide easy access to state-of-the-art automatic speech recognition (ASR) models for multiple languages. Riva ASR NIM models are built on the NVIDIA software platform, incorporating CUDA, TensorRT, and Triton to offer out-of-the-box GPU acceleration.
 
-Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
+Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
+
+> **Note**: This challenge must be completed successfully as it is a prerequisite for Challenge 6. Ensure that all tasks and steps outlined in this challenge are executed properly and that the desired outcomes are achieved before proceeding to Challenge 6.
 
 ### Task 1: Generate NGC API KEY
 
@@ -266,7 +268,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/download-deploy-run.png)
 
-   > **Note**: It may take up to 30 minutes for the Docker container to be ready and start accepting requests, depending on network speed.
+   > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
 
 6. Once the NVIDIA Riva model has succeeded start the new CMD session and connect to the VM through SSH.
 
