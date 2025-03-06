@@ -1,4 +1,4 @@
-# Challenge 05: Configure an AI Hub and Promptflow
+# Challenge 06: Configure an AI Hub and Promptflow
 ### Estimated Time: 60 minutes
 ## Introduction
 

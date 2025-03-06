@@ -1,4 +1,4 @@
-# Challenge 02: Deploy and review the legacy Contoso Hotel app
+# Challenge 03: Deploy and review the legacy Contoso Hotel app
 ### Estimated Time: 45 minutes
 ## Introduction
 

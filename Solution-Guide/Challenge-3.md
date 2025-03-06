@@ -1,4 +1,4 @@
-# Challenge 03: Split and repackage the Contoso Hotel app components and deploy the updated app
+# Challenge 04: Split and repackage the Contoso Hotel app components and deploy the updated app
 ### Estimated Time: 60 minutes
 ## Introduction
 

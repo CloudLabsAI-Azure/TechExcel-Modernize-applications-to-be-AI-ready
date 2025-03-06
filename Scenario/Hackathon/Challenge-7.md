@@ -1,4 +1,4 @@
-# Challenge: Deploy and Utilize NVIDIA Riva ASR on Azure
+# Challenge 02: Deploy and Utilize NVIDIA Riva ASR on Azure
 
 ## Introduction
 
