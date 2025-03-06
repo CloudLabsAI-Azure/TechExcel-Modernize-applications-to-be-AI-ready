@@ -205,7 +205,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h182.png)
 
-     >**Note:** It may take several minutes to upload the flow. Separately, if the Upload button becomes available again, keep click on upload botton.  
+     >**Note:** It may take several minutes to upload the flow. Separately, if the Upload button becomes available again, keep clicking on the Upload button.  
 
 1. This will load the prompt flow once uploaded. In the middle pane for the flow, you’ll see one flow for each of the four logical steps in the flow. Review the information in each tile. This will help you understand how the flow functions.
 
@@ -223,9 +223,9 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h151.png)
 
-1. Return to the Azure AI Studio browser window that is opend in private window.
+1. Return to the Azure AI Studio browser window that is opened in a private window.
 
-1. In the left navigation pane for the flow, select **Management center**.
+1. In the left navigation pane for the flow, select **Management Center**.
 
     ![](../media/h184.png)
 
@@ -319,14 +319,14 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h201.png)
 
-1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop down, select the connection that displays **(2)**.
+1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop-down, select the connection that displays **(2)**.
 
     ![](../media/h202.png)
 
 1. Scroll down to the **chat_with_data** tile and below the Inputs section.   
 
-    - Select Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
-    - Select Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
+    - Select the Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
+    - Select the Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
     - Change the Value of **search_index** to **brochures-vector (3)**.
 
       ![](../media/h203.png)
@@ -383,9 +383,9 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/newimag3.png)
 
-    > **Note**: The deployment of endpoint may take 5 minutes please wait.
+    > **Note**: The deployment of the endpoint may take 5 minutes please wait.
 
-1. Once the deployment got succedded, from the left side pane select **Models + endpoints** **(1)** under **My assests** session, and select the newly deployed endpoint **Contosopf-suffix** **(2)**.
+1. Once the deployment has succeeded, from the left side pane select **Models + endpoints** **(1)** under **My assests** session, and select the newly deployed endpoint **Contosopf-suffix** **(2)**.
 
     ![](../media/newimag4.png)
 
@@ -427,7 +427,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/search-vmip.png)
 
-1. Add a new tab in the browser navigate to the below URL to check if the service is ready to handle inference requests.
+1. Add a new tab in the browser and navigate to the below URL to check if the service is ready to handle inference requests.
 
    ```
    http://<nvidia-gpu-public-ip>:9000/v1/health/ready
@@ -471,7 +471,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/Active-image42.png)
 
-1. Run the fallowing command to install the Python package
+1. Run the following command to install the Python package
 
     ```
     pip install -r requirements.txt
@@ -479,7 +479,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/Active-imagenew1.png)
 
-1. In the `.env` file update the vlaues `publicip` with **public ip** of nvidia-gpu Virtual machines, `Azure AI Foundry Model Endpoint URL` with **Target URI** **(1)** and `Azure AI Foundry Model Key` with **Primary key** **(2)**. 
+1. In the `.env` file update the values `publicip` with **public ip** of nvidia-gpu Virtual machines, `Azure AI Foundry Model Endpoint URL` with **Target URI** **(1)** and `Azure AI Foundry Model Key` with **Primary key** **(2)**. 
 
     ![](../media/newimag6.png)
 
@@ -491,7 +491,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/Active-image42.png)
 
-1. Run the fallowing command the run the application locally.
+1. Run the following command the run the application locally.
 
     ```
     python app.py
@@ -530,7 +530,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/newimag17.png)
 
-### Task 5: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optinal task)
+### Task 6: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optional task)
 
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command builds the container for the chatapp. Wait while the container builds.
 
@@ -623,7 +623,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
      >**Note:** It may take 1-2 minutes to push the app container to ACR.
 
-1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenege 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
+1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenge 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
 
    ```
    $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
@@ -641,7 +641,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
    Write-Host -ForegroundColor Green  "Chatapp URL is: $CONTOSO_CHAT_URL"
    ```
 
-1. Copy the Chatapp URL, open a new web browser window and go to the URL for the Chatapp container.
+1. Copy the Chatapp URL, open a new web browser window, and go to the URL for the Chatapp container.
 
 ## Success Criteria:
 
