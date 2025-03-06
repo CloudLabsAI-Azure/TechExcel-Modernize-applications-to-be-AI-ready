@@ -1,3 +1,10 @@
+# Challenge Name
+Deploy and Utilize NVIDIA Riva ASR on Azure
+
+## Introduction
+
+In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience with deploying AI models and using cloud resources to create AI-ready applications.
+
 Riva ASR supports Mono, 16-bit audio in WAV, OPUS and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
 
 ### Task 1: Generate NGC API KEY
@@ -278,56 +285,15 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
      ![](../media/status-update.png)
 
-### Task 4: Configure Network Security Group Rules for External Access
 
-1. Navigate back to the Azure portal, in the search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
+## Success Criteria
 
-   ![](../media/select-nsg.png)
-
-1. In the **Network security groups**, copy the the name on **Resource group name**  **(1)** and **NCG name** **(2)** of nvidia-gpu.
-
-   ![](../media/nsg-name.png)
-
-1. Configure Azure NSG rules
-
-   ```
-   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-http --protocol tcp --priority 100  --destination-port-range 9000
-   ```
-
-   ```
-   az network nsg rule create --resource-group youRGName --nsg-name myNSG --name allow-grpc --protocol tcp --priority 110 --destination-port-range 50051
-   ```
-
-   ![](../media/nsg-9000.png)
-
-   ![](../media/nsg-50051.png)
-
-   > **Note**: replace youRGName with Resource group name and myNSG with Network security groups name of nvidia-gpu 
-
-1. In the Azure portal, in search bar **Virtual machines** **(1)**, and select **Virtual machines** **(2)**.
-
-   ![](../media/search-vm.png)
-
-1. In the **Virtual machines**, copy the public ip of **nvidia-gpu** Virtual machines.
-
-   ![](../media/search-vmip.png)
-
-1. Add a new tab in the browser navigate to the below URL to check if the service is ready to handle inference requests.
-
-   ```
-   http://<nvidia-gpu-public-ip>:9000/v1/health/ready
-   ```
-
-   ![](../media/web-trigger.png)
-
-
-### Task 5: 
-
-
+- Successfully generate the NGC API Key through the NVIDIA build platform.
+- Create and connect to a GPU-enabled virtual machine in Azure.
+- Set up and run the NVIDIA Riva ASR container within the virtual machine.
 
 ## Additional Resources:
 
 - [Getting Started — NVIDIA NIM Riva ASR](https://docs.nvidia.com/nim/riva/asr/latest/getting-started.html)
-- [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
 - [Python Client Repository](https://github.com/nvidia-riva/python-clients.git)
 - [C++ Client Repository](https://github.com/nvidia-riva/cpp-clients.git)

@@ -91,10 +91,13 @@ Here's a simple overview of each service used:
 - You’ve created a new AI Studio Hub and created a project.
 - You’ve imported and configured a pre-built flow.
 - You’ve tested the flow and confirmed that the flow returns appropriate results.
+- Configure the necessary network security group rules to allow external access.
+- Verify that the NVIDIA Riva ASR service is running and can handle inference requests.
 
 ## Additional Resources:
 
 -  Refer to the [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
 -  Refer to the [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use prompt flow to develop applications that leverage language models in the Azure AI Foundry.
 -  Refer to the [Deploy a flow in prompt flow](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-deploy-for-real-time-inference?view=azureml-api-2) to learn about how to Deploy a flow as a managed online endpoint for real-time inference
+- [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
 
