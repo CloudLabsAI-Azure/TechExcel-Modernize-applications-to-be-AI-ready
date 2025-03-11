@@ -1,59 +1,59 @@
-# Challenge 04: Split and repackage the Contoso Hotel app components and deploy the updated app
+# Challenge 04: Split and Repackage the Contoso Hotel App Components and Deploy the Updated App
 
-### Estimated Time: 45 minutes
+### Estimated Time: 45 Minutes
 
 ## Introduction
 
-To improve the scalability of the app, Contoso plans to split the front-end components (HTML, CSS, and JavaScript files) from back-end components (APIs). In this Challenge you’ll split the components and refactor some code. Then, you’ll deploy the front-end and back-end components to separate containers. Finally, you’ll push the containers to ACR and run the updated app.
+To improve the app's scalability, Contoso plans to split the frontend components (HTML, CSS, and JavaScript files) from backend components (APIs). In this challenge, you will split the components and refactor some code. Then, you will deploy the frontend and backend components to separate containers. Finally, you will push the containers to ACR and run the updated app.
 
 ## Challenge Objectives:
 
 > **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod** and use the same region as the resource group.
 
-1. **Separate front-end components from back-end components:**
+1. **Separate frontend components from backend components:**
 
    - Create a folder named **UpdatedApp** with subfolders **FrontEnd** and **Backend**.
-   - Copy all front-end files to the **FrontEnd** folder and all back-end files to the **Backend** folder.
+   - Copy all frontend files to the **FrontEnd** folder and all backend files to the **Backend** folder.
 
-1. **Refactor files:**
+1. **Refactor Files:**
 
-   - **Frontend folder**:
+   - **Frontend Folder**:
 
       - Open **views.py** from the FrontEnd folder in Visual Studio Code and remove the **Backend API endpoints** section.
       - Remove the **dblayer** reference from the **views.py Imports** section.
       - Remove the code from **views.py** that checks to see if the database is set up.
-      - Update **Dockerfile** to remove the code that installs the **MSSQL ODBC driver**.
+      - Update the **Dockerfile** to remove the code that installs the **MSSQL ODBC driver**.
       - Update **requirements.txt** to remove references to the **pyodbc** and **psycopg2-binary** libraries.
 
-   - **Backend folder**:   
+   - **Backend Folder**:   
 
       - Open **views.py** from the BackEnd folder in Visual Studio Code and remove the **Frontend API endpoints** section.
 
-1. **Build the containers for front-end and back-end components and push the containers to Azure:**   
+1. **Build the containers for frontend and backend components and push the containers to Azure:**   
 
-   - Build separate containers for front-end and back-end application components.
+   - Build separate containers for frontend and backend application components.
    - Run the **az containerapp env create** cmdlet to create an ACR environment for the app.
-   - Create container apps for front-end and back-end components.
+   - Create container apps for frontend and backend components.
    - Run the **az containerapp ingress cors** command to manage Cross-Origin Resource Sharing (CORS) policies for the container apps.
 
      <validation step="207cf525-c031-4b78-87e0-309f7f9f3b25" />   
 
 ## Success Criteria:
 
-- You’ve created the UpdatedApp folder and the FrontEnd and Backend subfolders.
-- You’ve copied the required files to the FrontEnd and Backend subfolders.
-- You’ve updated views.py, Dockerfile, and requirements.txt files in the FrontEnd folder and removed back-end code and references to data libraries.
-- You’ve updated views.py in the BackEnd folder and removed front-end code.
-- You’ve created Docker containers for front-end and back-end application components.
-- You’ve created an ACR environment and container apps.
-- You’ve configured CORS policies.
+- You have created the UpdatedApp folder and the frontend and backend subfolders.
+- You have copied the required files to the frontend and backend subfolders.
+- You have updated the views.py, Dockerfile, and requirements.txt files in the FrontEnd folder and removed backend code and references to data libraries.
+- You have updated views.py in the Backend folder and removed the frontend code.
+- You have created Docker containers for frontend and backend application components.
+- You have created an ACR environment and container apps.
+- You have configured CORS policies.
 
 ## Additional Resources:
 
--  Refer [Decompose a monolithic application](https://learn.microsoft.com/en-us/training/modules/microservices-architecture/) to learn about decomposing a monolithic application into a microservices architecture
+-  Refer to [Decompose a monolithic application](https://learn.microsoft.com/en-us/training/modules/microservices-architecture/) to learn about decomposing a monolithic application into a microservices architecture.
 
--  Refer to [az containerapp create](https://learn.microsoft.com/en-us/cli/azure/containerapp?view=azure-cli-latest#az-containerapp-create) to learn about creating az container app.
+-  Refer to [az containerapp create](https://learn.microsoft.com/en-us/cli/azure/containerapp?view=azure-cli-latest#az-containerapp-create) to learn how to create an az container app.
 
-## Proceed with the next Challenge by clicking on **Next**>>.
+## Proceed with the next challenge by clicking on **Next**>>.
 
 
