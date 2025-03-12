@@ -1,8 +1,8 @@
-# Challenge 03: Deploy and review the legacy Contoso Hotel app
-### Estimated Time: 60 minutes
+# Challenge 03: Deploy and Review the Legacy Contoso Hotel app
+### Estimated Time: 60 Minutes
 ## Introduction
 
-The legacy Contoso Hotel app was written by using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
+The legacy Contoso Hotel app was written using Python code. App components run inside a Docker container. The app can connect to a SQL Server or PostgreSQL database (on-premises or online).
 
 In this challenge, you will deploy a legacy application to a Docker container and run it successfully. The process begins with building a Docker container for the application by creating a Docker image. Next, you will create an Azure Container Registry (ACR) instance to securely store and manage the app’s container image before pushing the image to the registry. To support the application, you will provision a managed PostgreSQL database instance on Azure, ensuring the app has the necessary backend for data storage. Finally, you will run the containerized application, review its functionality, and test it by adding a new booking. This challenge provides hands-on experience with Docker, Azure Container Registry, and PostgreSQL while working on a practical deployment scenario.
 
@@ -15,7 +15,7 @@ Here's a simple overview of each service used by the app:
 
 ## Solution Guide
 
-### Task 1: Clone the repository for this course
+### Task 1: Clone the Repository for This Course
 
 If you have not already cloned the **ContosoHotel** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
 
@@ -36,28 +36,28 @@ If you have not already cloned the **ContosoHotel** code repository to the envir
 
 1. When the repository has been cloned, open the folder in Visual Studio Code by following these steps:
 
-    - From the top left corncer menu select **File (1)** >  **Open Folder (2)**.
+    - From the top left corner menu, select **File (1)** >  **Open Folder (2)**.
 
        ![](../media/h73.png)
       
-    - Within the file explorer in **Quick access** select **ContosoHotel (1)** then click on **Select folder (2)**.
+    - Within the file explorer in **Quick access,** select **ContosoHotel (1),** then click on **Select folder (2)**.
 
        ![](../media/h26.png)
       
-    - If **Do you trust the authors of the files in this folder?** prompted click on **Yes, I trust the authors**.
+    - If **Do you trust the authors of the files in this folder?** option is prompted, click on **Yes, I trust the authors**.
 
          ![](../media/h27.png)
 
        > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
 
-### Task 2: Build a Docker container for the app
+### Task 2: Build a Docker Container for the App
 
-In this task, you’ll create the Docker container and add app components to the container.
+In this task, you will create the Docker container and add app components to the container.
 
 **Docker** is an open-source platform that automates the deployment, scaling, and management of applications. It uses containerization technology to package an application and its dependencies into a container, ensuring that it runs consistently across different environments.
 
-1. In the lab Vm, from the Start bar search for **Docker (1)** and select **Docker Desktop (2)** from the results.
+1. In the lab VM, from the Start bar, search for **Docker (1)** and select **Docker Desktop (2)** from the results.
 
    ![](../media/h71.png)
 
@@ -81,11 +81,11 @@ In this task, you’ll create the Docker container and add app components to the
 
    ![](../media/h32.png)
 
-1. After Docker Engine starts, the Docker UI should resemble the following screenshot. Docker will display any running containers.
+1. After the Docker Engine starts, the Docker UI should resemble the following screenshot. Docker will display any running containers.
 
    ![](../media/h33.png)
 
-    >**Note**: Minimize Docker Desktop but don’t close the app.
+    >**Note**: Minimize the Docker Desktop but don’t close the app.
 
 1. Navigate back to the Visual Studio Terminal. If closed, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.    
 
@@ -105,7 +105,7 @@ In this task, you’ll create the Docker container and add app components to the
 
     ![](../media/h35.png)   
 
-1. As soon as you entered the command, a PowerShell window opens.   
+1. As soon as you enter the command, a PowerShell window opens.   
 
    ![](../media/h36.png)
 
@@ -145,7 +145,7 @@ In this task, you’ll create the Docker container and add app components to the
 
     ![](../media/h40.png)   
 
-1. From the top left corncer menu select **File (1)** >  **Open File (2)**.
+1. From the top left corner menu, select **File (1)** >  **Open File (2)**.
 
    ![](../media/h41.png)
 
@@ -161,7 +161,7 @@ In this task, you’ll create the Docker container and add app components to the
 
     ![](../media/h43.png)   
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File (1)** >  **Save (2)**.  
+1. Save your changes by pressing **Ctrl+S** in your keyboard, or from the top left corner menu, select **File (1)** >  **Save (2)**.  
 
    ![](../media/h44.png)
 
@@ -177,13 +177,13 @@ In this task, you’ll create the Docker container and add app components to the
 
 1. Leave Visual Studio Code open. You’ll use the tool in the next task.     
 
-### Task 3: Create an Azure Container Registry (ACR) instance and push the app container to ACR
+### Task 3: Create an Azure Container Registry (ACR) Instance and Push the App Container to ACR
 
 In this task, you will create an Azure Container Registry (ACR) instance to store and manage Docker images. You will then push your application’s container image to the registry for secure storage and deployment.
 
 **Azure Container Registry (ACR)** is a managed, private Docker registry service provided by Microsoft Azure. It allows you to store and manage container images and artifacts in a secure and scalable manner.
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command connects the Terminal window with your Azure subscription so that you deploy Azure resources to the correct subscription.
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command connects the Terminal window with your Azure subscription so that you can deploy Azure resources to the correct subscription.
 
    ```
    az login
@@ -193,7 +193,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
 1. Minimize the Visual Studio Code.
 
-    - On the Let’s get you signed in page, select **Work or School account (1)** and then select **Continue (2)**. 
+    - On the "Let’s get you signed in" page, select **Work or School account (1)** and then select **Continue (2)**. 
 
       ![](../media/h47.png)      
 
@@ -203,7 +203,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
       ![](../media/h48.png)     
 
-       >**Note:** **Username**, you can find in the Lab VM's **Environment** page.
+       >**Note:** **Username**, you can find on the Lab VM's **Environment** page.
 
     - Enter the **Password (1)** and then click on **Sign in (2)**.  
 
@@ -215,11 +215,11 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
       ![](../media/h50.png)         
 
-1. Naviagte back to the Visual Studio code, press **Enter** for **Select a subscription and tenant**.      
+1. Navigate back to the Visual Studio code. Press **Enter** or **Select a subscription and tenant**.      
 
    ![](../media/h51.png)
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command generates a unique name for the ACR instance. Copy and paste the generated name in the notepad for later use.
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command generates a unique name for the ACR instance. Copy and paste the generated name into the notepad for later use.
 
    ```
    $ACR_NAME = "contosoacr$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -236,9 +236,9 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
     ![](../media/h53.png)  
 
-     >**Note:** Record the ACR name. You’ll need to supply the ACR name again later in th Challenge.
+     >**Note:** Record the ACR name. You’ll need to supply the ACR name again later in the challenge.
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you into the ACR instance. 
 
    ```
    az acr login --name "$ACR_NAME"
@@ -246,7 +246,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
     ![](../media/h54.png)  
 
-     >**Note:** You may see an error message stating the Azure could not connect to the registry login server. This error usually indicates that even though the container registry instance is provisioned, there’s still some configuration happening. Wait a few minutes and run the command again.
+     >**Note:** You may see an error message stating Azure could not connect to the registry login server. This error usually indicates that even though the container registry instance is provisioned, some configuration is still happening. Wait a few minutes and run the command again.
 
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command creates a Docker tag for the app.  
 
