@@ -32,7 +32,7 @@ In this task, you will test the chatbot locally before you publish the chatbot.
 
    ![](../media/h73.png)
 
-1. Navigate into the `C:\Users\demouser\AssetsRepo\Assets`. Select **lab-6-promptflow (1)** folder, and then select **Select folder (2).**
+1. Navigate into `C:\Users\demouser\AssetsRepo\Assets`. Select **lab-6-promptflow (1)** folder, and then select **Select folder (2).**
 
    ![](../media/h220.png)
 
@@ -150,7 +150,7 @@ In this task, you will test the chatbot locally before you publish the chatbot.
 1. If you encounter this error, **Error: “pf.flow.test failed with UserErrorException: TypeError: Execution failure in ‘chat_with_data’**.
 
     - The installed **OpenAI** Python package may be incompatible with the script and throw the error shown. 
-    - In the terminal you can check its version using `pip show openai`.
+    - In the terminal, you can check its version using `pip show openai`.
     - Downgrade the package by using `pip install openai==1.58.1`.
     
 1. Run the interactive flow again:    
