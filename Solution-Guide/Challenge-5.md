@@ -1,29 +1,29 @@
 # Challenge 06: Configure an AI Hub and Promptflow
-### Estimated Time: 60 minutes
+### Estimated Time: 60 Minutes
 ## Introduction
 
-There are a lot of ways to create a chatbot. For this Challenge, you’ll use Prompt Flow within Azure AI Studio. Azure OpenAI Prompt Flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt Flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
+There are a lot of ways to create a chatbot. For this challenge, you will use Prompt Flow within Azure AI Studio. Azure OpenAI Prompt Flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt Flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
 
 Here's a simple overview of each service used:
 
 - An **Azure AI Studio Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
-- A **flow** encapsulates the logic that tells the chatbot what it can do and how to do things. Creating a flow can be complicated. For this challenge, you’ll use a pre-built flow. The flow uses the OpenAI API to directly query the Azure Search index.
+- A **flow** encapsulates the logic that tells the chatbot what it can do and how to do things. Creating a flow can be complicated. For this challenge, you will use a pre-built flow. The flow uses the OpenAI API to directly query the Azure Search index.
 
 ## Solution Guide
 
-### Task 1: Create a postgresql user and set up an AI Hub and Prompt Flow
+### Task 1: Create a PostgreSQL user and set up an AI Hub and Prompt Flow
 
-In this task, you’ll create a hub and then create a project within the hub. You’ll also create a PostgreSQL user so that the flow can access the database records.
+In this task, you will create a hub and then create a project within the hub. You’ll also create a PostgreSQL user so that the flow can access the database records.
 
-1. On the Azure Home page, select the **PostgreSQL database** that you created in a previous Challenge.
+1. On the Azure Home page, select the **PostgreSQL database** that you created in a previous challenge.
 
     ![](../media/h150.png)
 
-1. Copy and paste the the **Server name** that appears in the **Overview** section for your database server in a notepad.
+1. Copy and paste the **Server name** that appears in the **Overview** section of your database server into a notepad.
 
     ![](../media/h151.png)
 
-1. On the pane bar for the database server, select **Cloud Shell** icon.
+1. On the pane bar for the database server, select the **Cloud Shell** icon.
 
     ![](../media/h152.png)
 
@@ -31,11 +31,11 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h153.png)
 
-1. Select your **Subscription** from the dropdown list **(1)** and then select **Apply (2)**.
+1. Select your **Subscription** from the drop-down list **(1)** and then select **Apply (2)**.
 
     ![](../media/h154.png)
 
-1. Replace the value for **POSTGRESQL_SERVERNAME** with the Server name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt an press **Enter**. These commands connect to the database.   
+1. Replace the value for **POSTGRESQL_SERVERNAME** with the Server name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt and press **Enter**. These commands connect to the database.   
 
    ```
    export PGHOST="POSTGRESQL_SERVERNAME"
@@ -48,7 +48,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h155.png)
 
-1. Next to `pycontosohotel`, Enter the following SQL statement at the Cloud Shell prompt and press **Enter**. This statement creates a read-only user for the Prompt flow chatbot:
+1. Next to `pycontosohotel`, enter the following SQL statement at the Cloud Shell prompt and press **Enter**. This statement creates a read-only user for the Prompt flow chatbot:
 
    ```
    CREATE USER promptflow WITH PASSWORD '1234ABCD!';
@@ -56,7 +56,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h156.png)
 
-1. Next to `pycontosohotel`, Enter the following SQL statement at the Cloud Shell prompt and press **Enter**.These statements grant the user access to the database tables.
+1. Next to `pycontosohotel`, enter the following SQL statement at the Cloud Shell prompt and press **Enter**. These statements grant the user access to the database tables.
 
    ```
    GRANT SELECT ON TABLE hotels TO promptflow;
@@ -78,7 +78,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
      >**Note:** Record the name of the AI Hub. You’ll use the name later in this task.
 
-1. Open a **New InPrivate window**, navigate to `https://ai.azure.com/`.     
+1. Open a **New InPrivate window** and navigate to `https://ai.azure.com/`.     
 
 1. Select **Sign in**. 
 
@@ -94,11 +94,11 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h160.png)
 
-1. On the **Create a project** page, provide the following details and then click on **Next (6)**.
+1. On the **Create a project** page, provide the following details and click on **Next (6)**.
 
     - Hub name: **Enter AI Hub name that you recorded in step 9 of this task (1)**.
     - Subscription: **Leave the default Subscription (2)**
-    - Resource group: Select **Appmod (3)** from the drop down list.
+    - Resource group: Select **Appmod (3)** from the drop-down list.
     - Location: **Enter the location for the region where you deployed all other resources (4)**
     - Connect Azure AI Services or Azure OpenAI Service: **Select the name for the OpenAI service instance that you deployed in challenge 01 (5)**
 
@@ -112,7 +112,7 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h172.png)
 
-     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resource name. *You’ll need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
+     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resource name. *You will need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
 
 1. Navigate back to the **Azure portal**.
 
@@ -128,11 +128,11 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h164.png)
 
-1. In the Search field, enter **Storage Blob Data Owner (1)** and then select **Storage Blob Data Owner (2)** from the list of search results. Select **Next (3)**.
+1. In the Search field, enter **Storage Blob Data Owner (1)** and then select **Storage Blob Data Owner (2)** from the search results list. Select **Next (3)**.
 
     ![](../media/h165.png)
 
-1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for your username provided in the Environment tab **(2)** and select your user name **(3)**. Select **Select (4)** to close the Select members pane.    
+1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for your username provided in the Environment tab **(2)** and select your username **(3)**. Click on **Select (4)** to close the **Select members** pane.    
 
     ![](../media/h166.png)
 
@@ -144,11 +144,11 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
 
     ![](../media/h168.png)
 
-1. In the Search field, enter **Storage Blob Data Reader (1)** and then select **Storage Blob Data Reader (2)** from the list of search results. Select **Next (3)**.
+1. In the Search field, enter **Storage Blob Data Reader (1)** and then select **Storage Blob Data Reader (2)** from the search results list. Select **Next (3)**.
 
     ![](../media/h169.png)
 
-1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for and select the name for the *AI Hub that you created in Step 9 of this task* **(2)(3)** and then select **Select (4)**.
+1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for and select the name for the *AI Hub that you created in Step 9 of this task* **(2) (3)** and then choose **Select (4)**.
 
     ![](../media/h170.png)
 
@@ -157,15 +157,15 @@ In this task, you’ll create a hub and then create a project within the hub. Yo
     ![](../media/h171.png)
 
 
-### Task 2: Import and configure a flow 
+### Task 2: Import and Configure a Flow 
 
 A flow encapsulates the logic that tells the chatbot what it can do and how to do things. The flow uses the OpenAI API to directly query the Azure Search index.
 
-In this task, you’ll import a pre-built flow, configure flow settings, and then test the flow.  
+In this task, you will import a pre-built flow, configure flow settings, and then test the flow.  
 
-1. Return to the Azure AI Studio browser window that is opend in private window.
+1. Return to the Azure AI Studio browser window, which is opened in a private window.
 
-1. Click on **All hubs+projects (1)** and then  select the AI hub that you have created previously **(2)**.
+1. Click on **All hubs+projects (1)** and then select the AI hub that you have created previously **(2)**.
 
     ![](../media/hh3.png)
 
@@ -173,7 +173,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h174.png)
 
-1. Provide the Project name as **contosopf (1)** and then click on **Create (2)**.
+1. Provide the project name as **contosopf (1),** then click on **Create (2)**.
 
     ![](../media/h175.png)
 
@@ -201,7 +201,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h181.png)
 
-1. Under **Select flow** type, select **Chat flow (1)**. Then select **Upload (2)** to import the zip file into the project. 
+1. Under **Select flow** type, select **Chat flow (1)**. Then, choose **Upload (2)** to import the zip file into the project. 
 
     ![](../media/h182.png)
 
@@ -215,21 +215,21 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
 
-1. Select the PostgreSQL database that you created in a previous Challenge.
+1. Select the PostgreSQL database that you created in a previous challenge.
 
     ![](../media/h150.png)
 
-1. In the **Overview section** for the database, copy and paste the value for **Server name** in a notepad. You’ll pass the value into a field in Step 22 of this task. 
+1. In the **Overview section** for the database, copy and paste the value of the **Server name** into Notepad. You will pass the value into a field in Step 22 of this task. 
 
     ![](../media/h151.png)
 
-1. Return to the Azure AI Studio browser window that is opened in a private window.
+1. Return to the Azure AI Studio browser window, which is opened in a private window.
 
 1. In the left navigation pane for the flow, select **Management Center**.
 
     ![](../media/h184.png)
 
-1. Select **Connected resources (1)** in the **Project(contosopf)** section and then click on **+ New connection (2)**.
+1. Select **Connected resources (1)** in the **Project (contosopf)** section and then click on **+ New connection (2)**.
 
     ![](../media/h185.png)
 
@@ -287,7 +287,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
      ![](../media/h190.png)
 
-1. In the *Connection name* field, enter **postgresql (1)** and then select **Add connection (2)**.
+1. In the *Connection name* field, enter **PostgreSQL (1)** and select **Add connection (2)**.
 
     ![](../media/h191.png)
 
@@ -319,15 +319,15 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h201.png)
 
-1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop-down, select the connection that displays **(2)**.
+1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop-down, and select the connection that displays **(2)**.
 
     ![](../media/h202.png)
 
 1. Scroll down to the **chat_with_data** tile and below the Inputs section.   
 
-    - Select the Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
-    - Select the Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
-    - Change the Value of **search_index** to **brochures-vector (3)**.
+    - Select the value of **search_connection** and then select your Azure AI Search Service from the drop-down list **(1)**.
+    - Select the value of **ai_connection** and then select your Azure OpenAI resource from the drop-down list **(2)**.
+    - Change the value of **search_index** to **brochures-vector (3)**.
 
       ![](../media/h203.png)
 
@@ -345,11 +345,11 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h206.png)
 
-1. Select **Value** of **PostgreSQL** and then select **postgresql** from the dropdown list.    
+1. Select **Value** of **PostgreSQL** and then choose **PostgreSQL** from the dropdown list.    
 
     ![](../media/h207.png)
 
-1. Select the **X** on the warning in the Chat.    
+1. Select the **X** on the warning in the chat.    
 
     ![](../media/h208.png)
 
@@ -361,7 +361,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
       ![](../media/h210.png)
 
-1. Start a new conversation and enter `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?`. Your results should resemble the following:     
+1. Start a new conversation and enter, "`How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?`" Your results should resemble the following:     
 
     ![](../media/h211.png)
 
@@ -369,23 +369,23 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
       ![](../media/h212.png)
 
-### Task 3: Deploy of configured prompt flow
+### Task 3: Deployment of Configured Prompt Flow
 
 1. In the prompt flow tab, click on **Deploy**.
 
     ![](../media/newimag1.png)
 
-1. In the **Basic settings** tab of Deploy prompt flow, select the Virtual machine size as **Standard_D2a_v4** **(1)** and click on **Review + Create** **(2)** button.
+1. In the **Basic settings** tab of the Deploy prompt flow, select the Virtual machine size as **Standard_D2a_v4** **(1)** and click on the **Review + Create** **(2)** button.
 
     ![](../media/newimag2.png)
 
-1. In the **Review** tab of Deploy prompt flow, click on **Create** **(1)** button.
+1. In the **Review** tab of the Deploy prompt flow, click on the **Create** **(1)** button.
 
     ![](../media/newimag3.png)
 
-    > **Note**: The deployment of the endpoint may take 5 minutes please wait.
+    > **Note**: The deployment of the endpoint may take 5 minutes, so please wait.
 
-1. Once the deployment has succeeded, from the left side pane select **Models + endpoints** **(1)** under **My assests** session, and select the newly deployed endpoint **Contosopf-suffix** **(2)**.
+1. Once the deployment has succeeded, from the left side pane, select **Models + endpoints** **(1)** under the **My assets** session, and open the newly deployed endpoint **Contosopf-suffix** **(2)**.
 
     ![](../media/newimag4.png)
 
@@ -395,11 +395,11 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 ### Task 4: Configure Network Security Group Rules for External Access
 
-1. Navigate back to the Azure portal, in the search bar **Network security groups** **(1)**, and select **Network security groups** **(2)**.
+1. Navigate back to the Azure portal, in the search bar, **Network security groups** **(1)**, and select **Network security groups** **(2)**.
 
    ![](../media/select-nsg.png)
 
-1. In the **Network security groups**, copy the the name on **Resource group name**  **(1)** and **NCG name** **(2)** of nvidia-gpu.
+1. In the **Network security groups**, copy the name on the **Resource group name**  **(1)** and the **NCG name** **(2)** of nvidia-gpu.
 
    ![](../media/nsg-name.png)
 
@@ -419,15 +419,15 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    > **Note**: replace youRGName with Resource group name and myNSG with Network security groups name of nvidia-gpu 
 
-1. In the Azure portal, in search bar **Virtual machines** **(1)**, and select **Virtual machines** **(2)**.
+1. In the Azure portal, use the search bar to search for **Virtual machines** **(1)** and select **Virtual machines** **(2)**.
 
    ![](../media/search-vm.png)
 
-1. In the **Virtual machines**, copy the public ip of **nvidia-gpu** Virtual machines.
+1. In the **Virtual machines**, copy the public IP of **nvidia-gpu** Virtual machines.
 
    ![](../media/search-vmip.png)
 
-1. Add a new tab in the browser and navigate to the below URL to check if the service is ready to handle inference requests.
+1. Add a new tab in the browser and navigate to the URL below to check if the service is ready to handle inference requests.
 
    ```
    http://<nvidia-gpu-public-ip>:9000/v1/health/ready
@@ -453,15 +453,15 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 1. When the repository has been cloned, open the folder in Visual Studio Code by following these steps:
 
-    - From the top left corner pane select **File (1)** >  **Open Folder (2)**.
+    - From the top left corner pane, select **File (1)** >  **Open Folder (2)**.
 
        ![](../media/Active-image44.png)
       
-    - Within the file explorer in **Quick access** select **NVIDIA-Speech-to-text (1)** then click on **Select folder (2)**.
+    - Within the file explorer in **Quick access,** select **NVIDIA-Speech-to-text (1),** then click on **Select folder (2)**.
 
        ![](../media/Active-image45.png)
       
-    - If **Do you trust the authors of the files in this folder?** prompted click on **Yes, I trust the authors**.
+    - If **Do you trust the authors of the files in this folder?** prompted, click on **Yes, I trust the authors**.
 
          ![](../media/Active-image46.png)
 
@@ -471,7 +471,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/Active-image42.png)
 
-1. Run the following command to install the Python package
+1. Run the following command to install the Python package.
 
     ```
     pip install -r requirements.txt
@@ -479,7 +479,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/Active-imagenew1.png)
 
-1. In the `.env` file update the values `publicip` with **public ip** of nvidia-gpu Virtual machines, `Azure AI Foundry Model Endpoint URL` with **Target URI** **(1)** and `Azure AI Foundry Model Key` with **Primary key** **(2)**. 
+1. In the `.env` file, update the values `publicip` with the **public IP** of nvidia-gpu Virtual machines, `Azure AI Foundry Model Endpoint URL` with **Target URI** **(1)** and `Azure AI Foundry Model Key` with **Primary key** **(2)**. 
 
     ![](../media/newimag6.png)
 
@@ -491,7 +491,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/Active-image42.png)
 
-1. Run the following command the run the application locally.
+1. Run the following command: "Run the application" locally.
 
     ```
     python app.py
@@ -499,7 +499,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
    
    ![](../media/newimag8.png)
 
-1. Open a web browser, copy and paste the following URL `http://127.0.0.1:5000/`
+1. Open a web browser, copy and paste the following URL: `http://127.0.0.1:5000/`
 
 1. This application **supports both Riva Speech-to-Text and Chat with Azure AI services** running in **Prompt Flow**, which has been deployed.
 
@@ -507,18 +507,18 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/newimag9.png)
 
-1. On the **AI Speech Assistant** page, click on **upload audio file** **(1)**, in the pop-up window naviagte to **NVIDIA-Speech-to-text\audio** **(2)** folder select any **one sample** **(3)** audio file click on **Open** **(3)** button.
+1. On the **AI Speech Assistant** page, click on **upload audio file** **(1)**. In the pop-up window, navigate to the **NVIDIA-Speech-to-text\audio** **(2)** folder, select any **one sample** **(3)** audio file, and click on the **Open** **(3)** button.
 
     - `Sample 1.wav` with the question **"Where can I ski?"**  
     - `Sample 2.wav` with the question **"How many free rooms do hotels in Switzerland have, grouped by hotel, on 2024-10-10?"**
 
         ![](../media/newimag15.png)
 
-1. Select the `Sample 1.wav` **(1)** audio file, click on **send** **(2)** button and you will get response from RIVA model in **response** **(3)** session and **text box** **(4)**.
+1. Select the `Sample 1.wav` **(1)** audio file, click on the **send** **(2)** button, and you will get a response from the RIVA model in **response** **(3)** session and **text box** **(4)**.
 
    ![](../media/newimag18.png)
 
-1. The response text from the **RIVA model** appears in the **text box** **(1)** as `## Where can I ski`. Click on the **Send** **(2)** button to trigger the **Prompt Flow**.
+1. The response text from the **RIVA model** appears in the **text box** **(1)** as `## Where can I ski?` Click on the **Send** **(2)** button to trigger the **Prompt Flow**.
 
     ![](../media/newimag19.png)
 
@@ -526,13 +526,13 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/newimag16.png)
 
-1. Simlar way you can try with `Sample 2.wav`
+1. Similarly, you can try with `Sample 2.wav`.
 
    ![](../media/newimag17.png)
 
-### Task 6: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optional task)
+### Task 6: Containerizing and Deploying the AI-Powered Speech-to-Text and Chat Application (Optional Task)
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command builds the container for the chatapp. Wait while the container builds.
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command builds the container for the chat app. Wait while the container builds.
 
    ```
    docker build -t "chatapp:v1.0.0" .
@@ -541,7 +541,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     >**Note:** It may take 2-3 minutes to build the container.
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command connects the Terminal window with your Azure subscription so that you deploy Azure resources to the correct subscription.
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command connects the Terminal window with your Azure subscription so that you can deploy Azure resources to the correct subscription.
 
    ```
    az login
@@ -549,7 +549,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h46.png)  
 
-1. Minimize the Visual Studio Code.
+1. Minimize Visual Studio Code.
 
     - On the Let’s get you signed in page, select **Work or School account (1)** and then select **Continue (2)**. 
 
@@ -557,27 +557,27 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     - Sign in using your Azure credentials.
 
-    - On the **Sign in** page, Enter the **Username (1)** and click on **Next (2)**.
+    - On the **Sign in** page, enter the **Username (1)** and click on **Next (2)**.
 
       ![](../media/h48.png)     
 
-       >**Note:** **Username**, you can find in the Lab VM's **Environment** page.
+       >**Note:** You can find the **Username** on the Lab VM's **Environment** page.
 
     - Enter the **Password (1)** and then click on **Sign in (2)**.  
 
       ![](../media/h49.png)     
 
-       >**Note:** **Password**, you can find in the Lab VM's **Environment** page.   
+       >**Note:** You can find the **Password**, on the Lab VM's **Environment** page.   
 
     - On the **Stay signed in to all your apps** page, select **No sign in to this app only.**
 
       ![](../media/h50.png)         
 
-1. Naviagte back to the Visual Studio code, press **Enter** for **Select a subscription and tenant**.      
+1. Navigate back to Visual Studio Code. Press **Enter** to **Select a subscription and tenant**.      
 
    ![](../media/h51.png)
 
-1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
+1. Run the command below to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
 
    ```
    az acr list --query "[].{Name:name}" --output table
@@ -585,19 +585,19 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
    ![](../media/newimag12.png)
 
-1. From the terminal copy the name Container registry which start with **contosoacr{suffix}**.
+1. From the Terminal copy the name of the Container registry, which starts with **contosoacr{suffix}**.
 
    ![](../media/newimag13.png)
 
-1. Run the fallowinf command to Container registry name 
+1. Run the following command on the Container registry name. 
 
     ```
     $ACR_NAME= "continer_name"
     ```
 
-    > Note: Replace **continer_name** with **contosoacr{suffix}** which you copied in previous step
+    > Note: Replace **continer_name** with **contosoacr{suffix},** which you copied in previous step.
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you into the ACR instance. 
 
    ```
    az acr login --name "$ACR_NAME"
@@ -605,7 +605,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/newimag11.png)
 
-     >**Note:** You may see an error message stating the Azure could not connect to the registry login server. This error usually indicates that even though the container registry instance is provisioned, there’s still some configuration happening. Wait a few minutes and run the command again.
+     >**Note:** You may see an error message stating Azure could not connect to the registry login server. This error usually indicates that even though the container registry instance is provisioned, some configuration is still happening. Wait a few minutes and run the command again.
 
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command creates a Docker tag for the app.  
 
@@ -645,19 +645,19 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
 ## Success Criteria:
 
-- You’ve successfully created a user in the PostgreSQL database.
-- You’ve created a new AI Studio Hub and created a project.
-- You’ve imported and configured a pre-built flow.
-- You’ve tested the flow and confirmed that the flow returns appropriate results.
-- Configure the necessary network security group rules to allow external access.
-- Deploy the configured prompt flow to a virtual machine.
-- Configure the necessary network security group rules to allow external access.
-- Verify that the NVIDIA Riva ASR service is running and can handle inference requests.
+- You have successfully created a user in the PostgreSQL database.
+- You have created a new AI Studio Hub and created a project.
+- You have imported and configured a pre-built flow.
+- You have tested the flow and confirmed that the flow returns appropriate results.
+- Configured the necessary network security group rules to allow external access.
+- Deployed the configured prompt flow to a virtual machine.
+- Configured the necessary network security group rules to allow external access.
+- Verified that the NVIDIA Riva ASR service is running and can handle inference requests.
 
 ## Additional Resources:
 
 -  Refer to the  [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
--  Refer to the  [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use prompt flow to develop applications that leverage language models in the Azure AI Foundry.
+-  Refer to the [Get started with prompt flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) guide to learn how to use it and develop applications that leverage language models in the Azure AI Foundry.
 
 
-## Proceed with the next Challenge by clicking on **Next**>>.
+## Proceed with the next challenge by clicking on **Next**>>.
