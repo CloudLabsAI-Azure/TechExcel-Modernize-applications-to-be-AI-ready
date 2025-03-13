@@ -38,14 +38,14 @@ You will be redirected to a page where you can create your NVIDIA account. Provi
    - Password: Provide your **Password (2)**
    - Confirm password: Enter your password again **(3)**
    - Stay logged in: Check the box **(4)**
-   - Enable **I am human** check box **(5)**
+   - Enable the **I am human** check box **(5)**
 
      >**Note:** You may be asked to choose the pictures. If requested, please complete and verify.
 
    ![](../media/i-14.png)
 
 1. **Verify Your Email Address**:
-Log into your **email** and you will get a verification code to complete the verification process.
+Log into your **email,** and you will get a verification code to complete the verification process.
 
 1. Enter the **code (1)** and click on **Continue (2)**.
 
@@ -57,13 +57,13 @@ Once verification is complete, you will be redirected to a page with privacy-rel
    ![](../media/nvaie-5.png)
 
 1. **Create Your NGC (NVIDIA GPU Cloud) Account**:
-In the next step, create your NGC account by providing your NVIDIA cloud account name. Provide any name for Account name and click on **Create NVDIA Cloud Account**.
+In the next step, create your NGC account by providing your NVIDIA cloud account name. Provide a name for the account and click on **Create NVIDIA Cloud Account**.
 
    ![](../media/nvaie-6.png)
 
 ### Success!
 
-You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with free 1000 credits to try out RIVA.
+You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 1000 free credits to try out RIVA.
 
    ![](../media/nvaie-credits.png)
 
@@ -75,7 +75,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvaie-7.png)
   
-- You can also call these RIVA in your Python application using the OpenAI library (refer to the Python code on the right) or using [Riva Python client API and CLI utils](https://github.com/nvidia-riva/python-clients.git).
+- You can also call these RIVA in your Python application using the OpenAI library (refer to the Python code on the right) or using the [Riva Python client API and CLI utils](https://github.com/nvidia-riva/python-clients.git).
 
    ![](../media/nvaie-8.png)
 
@@ -151,7 +151,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
 Looking at your document, Task 2 needs a proper title to match the formatting of the other tasks. Based on the content that follows (creating a VM with NVIDIA GPU capabilities and connecting to it via SSH), this title accurately describes the actions being performed.
 
-1. Navigate back to **Azure Portal**, in the search bar search for and select **Virtual machines.** 
+1. Navigate back to **Azure Portal.** In the search bar, search for and select **Virtual machines.** 
 
     ![](../media/vmselect.png)
 
@@ -173,7 +173,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
             ![](../media/vmimageselect.png)
 
-    - **Size**: click on **See all size** 
+    - **Size**: Click on **See all size** 
 
         - In the **Select a VM size,** search **NC4as** **(1),** and select **NC4as_T4_v3** **(2),** and click on **Select** **(3)**.
 
@@ -184,7 +184,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 4. Under **Administrator account**, select the following details and click on **Next: Disks** **(5)**
 
     - **Authentication type**: Select Password **(1)**
-    - **Username**: Provide a Username for vm **(2)**
+    - **Username**: Provide a Username for VM **(2)**
     - **password**: Enter the password **(3)**
     - **Confirm password**: Enter the password **(4)**
 
@@ -202,7 +202,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/select-deployed-vm.png)
 
-8. In the **Virtual machines**, expend the **Connect** **(1)** tab, click on **Connect** **(2)**, in the Connect click on **Select** **(3)** under Navtive SSH and once the Configure prerequisites for Native SSH succeeded under Copy and execute SSH command copy the **SSH to VM with specified private key** **Select** **(4)**.
+8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copy the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
 
     ![](../media/vmsshcopy.png)
 
@@ -220,7 +220,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 
-1. Run the following command to set up the NVIDIA Container Toolkit by adding your user to the docker group:
+1. Run the following command to set up the NVIDIA Container Toolkit by adding your user to the Docker group:
    
    ```bash
    sudo gpasswd -a $USER docker
@@ -249,7 +249,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: Replace your-ngc-api-key with your generated NGC_API_KEY in task 1.
 
-4. Run the following command to download, deploy, and run the NVIDIA Riva model into the docker desktop:
+4. Run the following command to download, deploy, and run the NVIDIA Riva model into the Docker desktop:
    
    ```bash
    # Set model selector
@@ -293,7 +293,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ## Success Criteria
 
-- Successfully generate the NGC API Key through the NVIDIA build platform.
+- Successfully generate the NGC API key through the NVIDIA build platform.
 - Create and connect to a GPU-enabled virtual machine in Azure.
 - Set up and run the NVIDIA Riva ASR container within the virtual machine.
 
