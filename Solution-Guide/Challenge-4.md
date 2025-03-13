@@ -11,7 +11,7 @@ Here's a simple overview of each service used:
 
 - **Azure AI services:** Azure AI services are a set of cloud-based APIs you can use in AI applications and data flows.
 
-- **Azure AI Search:** Azure AI Search includes a wizard that allows you to import and vectorize data. You’ll use the wizard to extract and vectorize data from the hotel brochures.
+- **Azure AI Search:** Azure AI Search includes a wizard that allows you to import and vectorize data. You will use the wizard to extract and vectorize data from the hotel brochures.
         
 ### Task 1: Create Azure services
 
@@ -28,7 +28,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
     ![](../media/h123.png)
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**. 
+1. On the Azure home page, select **Resource groups** and then select **Appmod**. 
 
 1.  Locate the row for the created **Storage account.** *Copy and paste the **Storage account** name into Notepad*. You will need the name in an upcoming task.
 
@@ -42,7 +42,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
     ![](../media/h-124.png)
 
-1. Enter the following command at the Terminal window prompt and press the **Enter**. This command uploads the brochures to the storage container you created earlier in this task.   
+1. Enter the following command at the Terminal window prompt and press **Enter**. This command uploads the brochures to the storage container you created earlier in this task.   
 
    ```
    az storage blob upload-batch --account-name $CONTOSO_STORAGE_ACCOUNT_NAME --destination brochures --source "C:\Users\demouser\AssetsRepo\Assets\PDFs" --pattern "*.pdf" --overwrite
@@ -50,7 +50,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
     ![](../media/h126.png)
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter**. These commands create the **Azure Search Service instance**.
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands create the **Azure Search Service instance**.
 
    ```
    $CONTOSO_SEARCH_SERVICE_NAME="contososrch$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -61,9 +61,9 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
      >**Note:** It may take 10-15 minutes for provisioning to complete.
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**. 
+1. On the Azure home page, select **Resource groups** and then select **Appmod**. 
 
-1. Copy and paste the name of the **Search Service instance** you created previously into Notepad from the list of resources. You will need the name in an upcoming task..
+1. Copy and paste the name of the **Search Service instance** you created previously into Notepad from the list of resources. You will need the name in an upcoming task.
 
     ![](../media/h128.png)
 
@@ -72,7 +72,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
 In this task, you will create a set of managed identities so that the various Azure resources you created can communicate with each other.
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. In the list of services, select the **Azure AI Search instance** you created.
 
@@ -84,7 +84,7 @@ In this task, you will create a set of managed identities so that the various Az
 
 1. If prompted, select **Yes** to confirm the change.
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. In the list of services, select the **Azure OpenAI resource** you created.
 
@@ -110,7 +110,7 @@ In this task, you will create a set of managed identities so that the various Az
 
     ![](../media/h133.png)
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter** after the last command. These commands allow *Azure Search and Azure OpenAI instances to access the Azure Blob Storage account.*    
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow *Azure Search and Azure OpenAI instances to access the Azure Blob Storage account.*    
 
    ```
    $SEARCH_IDENTITY=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group Appmod --query identity.principalId -o tsv)
@@ -122,7 +122,7 @@ In this task, you will create a set of managed identities so that the various Az
 
     ![](../media/h134.png)
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow the *Azure Search to access the Azure OpenAI Service instance you created*.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow *Azure Search to access the Azure OpenAI Service instance you created*.
 
    ```
    $AI_SCOPE=$(az cognitiveservices account show --name $CONTOSO_OPENAI_NAME --resource-group Appmod --query id -o tsv)
@@ -150,7 +150,7 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 
 1. Navigate to the **Azure portal**.
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. In the list of resources that displays, select the **Azure AI Search service instance** from the list of resources.
 
@@ -208,7 +208,7 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 
     ![](../media/h148.png)  
 
-1. In the Search field, enter **Skiing (1)** and select **Search (2)**. Review the output from the search operation. The results should list data about **skiing** and should also contain a text vector.
+1. In the search field, enter **Skiing (1)** and select **Search (2)**. Review the output from the search operation. The results should list data about **skiing** and should also contain a text vector.
 
     ![](../media/h149.png)  
 
@@ -226,6 +226,6 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 ## Additional Resources:
 
 - Refer to the [Implement managed identities](https://learn.microsoft.com/en-us/training/modules/implement-managed-identities/) to learn how managed identities can help you deploy secure solutions on Azure without the need to manage credentials.
-- Refer to the [Azure Search Overview](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) to get additional information about Azure search.
+- Refer to the [Azure Search Overview](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) to get additional information about Azure Search.
 
 ## Proceed with the next challenge by clicking on **Next**>>.
