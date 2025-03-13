@@ -52,7 +52,7 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 
 1. **Challenge 07: Integrate the chatbot with the Contoso Hotel application**   
 
-   - In this challenge, you will integrate the chatbot into the updated Contoso Hotel application by setting up Visual Studio Code to run the chatbot flow locally, then deploy it to Azure Container Apps, and test its integration with the Contoso Hotel application to enhance user interaction capabilities.
+   - In this challenge, you will integrate the chatbot into the updated Contoso Hotel application by setting up Visual Studio Code to run the chatbot flow locally. Then deploy it to Azure Container Apps and test its integration with the Contoso Hotel application to enhance user interaction capabilities.
 
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to contact your coach.
 
