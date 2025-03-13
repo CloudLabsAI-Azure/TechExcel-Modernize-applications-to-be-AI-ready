@@ -49,11 +49,11 @@ Your task is to deploy the Azure OpenAI Service and Large Language Models (LLMs)
 
     ![](../media/h15.png)
    
-1. If you see the pop up **Stay Signed in?**, click **No**.
+1. If you see the pop-up **Stay Signed in?**, click **No**.
 
     ![](../media/h24.png)
 
-1. If a **Welcome to Microsoft Azure** pop up window appears, click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, click **Cancel** to skip the tour.
 
     ![](../media/h23.png)
 
@@ -100,7 +100,7 @@ In this task, you will learn how to set up and deploy the Azure OpenAI service w
 
 ### Task 2: Deploy a Model
 
-Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can use to deploy, manage, and explore models. You'll start your exploration of Azure OpenAI by using Azure OpenAI Studio to deploy a model.
+Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can use to deploy, manage, and explore models. You will start your exploration of Azure OpenAI by using Azure OpenAI Studio to deploy a model.
 
 1. On the Azure Portal page, in the Search resources, services, and docs (G+/) box at the top of the portal, enter **Azure OpenAI (1)**, and then select **Azure OpenAI (2)** under **Services**.
 
@@ -124,7 +124,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
     ![](../media/h3.png)
 
-1. Within the **"Deploy model"** pop up interface, click on **Customize**.
+1. Within the **"Deploy model"** pop-up interface, click on **Customize**.
 
     ![](../media/h4.png)
 
@@ -157,7 +157,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
     - Deployment name: **text-ada-002 (1)**
     - Deployment type: **Standard (2)**
-    - Model version: **Use the default version(3)**
+    - Model version: **Use the default version (3)**
     - Tokens per Minute Rate Limit (thousands): **20K (4)**
     - Enable dynamic quota: **Enabled (5)**
     - Click on **Deploy (6)**
@@ -174,7 +174,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
 - Successful deployment of the Azure OpenAI Service.
 
-- Deploying Large Language Models (LLM) with the OpenAI Service.
+- Deploying Large Language Models (LLMs) with the OpenAI Service.
 
 
 ## Additional Resources:
