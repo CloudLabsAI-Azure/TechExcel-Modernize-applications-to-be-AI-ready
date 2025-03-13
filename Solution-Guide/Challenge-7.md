@@ -95,7 +95,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia10.png)
 
-1. Once your account is created or you've successfully logged in.
+1. Once your account is created or you have successfully logged in.
 
 1. You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either **close** it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
 
@@ -163,7 +163,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     - **Subscription**: Select available Subscription.
     - **Resource group**: Select **Appmod**.
-    - **Virtual machine name**: Provide a unique Virtual machine name (e.g, nvidia-gpu)
+    - **Virtual machine name**: Provide a unique Virtual machine name (e.g. nvidia-gpu)
     - **Region**:
     - **Availability options**: from the drop-down, select **no infrastructure redundancy required**
     - **Security type**: from the drop-down, select **Standard**
@@ -202,7 +202,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/select-deployed-vm.png)
 
-8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copy the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
+8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copying the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
 
     ![](../media/vmsshcopy.png)
 
