@@ -208,7 +208,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h104.png)  
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key** to update the value for the **$PATH_TO_UPDATED_APP** variable to point to the **UpdatedApp** folder.
+1. Enter the following commands at the Terminal window prompt and press **Enter** to update the value for the **$PATH_TO_UPDATED_APP** variable to point to the **UpdatedApp** folder.
 
    ```
    $PATH_TO_UPDATED_APP = "C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp"
@@ -224,7 +224,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h106.png)  
 
-1. Enter the following command at the Terminal window prompt and press the **Enter Key** after the last command. This command builds the container for the frontend app components.
+1. Enter the following command at the Terminal window prompt and press **Enter** after the last command. This command builds the container for the frontend app components.
 
    >**Note:** Before running the command, ensure that Docker is running.
 
@@ -237,7 +237,7 @@ In this task, you will build separate containers for frontend and backend compon
 
      >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following command at the Terminal window prompt and then press the **Enter Key**. This command signs you into the ACR instance. 
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you into the ACR instance. 
 
    ```
    az acr login --name "$ACR_NAME"
@@ -245,7 +245,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h54.png)       
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key**. These commands tag the frontend container and push the container to ACR.  
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the frontend container and push the container to ACR.  
 
    ```
    docker tag "pycontosohotel-frontend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0"
@@ -254,7 +254,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h109.png)  
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key** twice. These commands switch the context to the Backend folder and then build the Docker container for the backend app components.    
+1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands switch the context to the Backend folder and then build the Docker container for the backend app components.    
 
    ```
    cd  $PATH_TO_UPDATED_APP\Backend
@@ -264,7 +264,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key**. These commands tag the backend container and push the container to ACR.
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the backend container and push the container to ACR.
 
    ```
    docker tag "pycontosohotel-backend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0"
@@ -273,7 +273,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h110.png) 
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key**. These commands register app providers.    
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands register app providers.    
 
    ```
    az provider register --namespace Microsoft.App
@@ -284,7 +284,7 @@ In this task, you will build separate containers for frontend and backend compon
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenge 01 Task 01. Then, enter the command at the Terminal window prompt and then press the **Enter Key**.   
+1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenge 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
 
    ```
    $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
@@ -292,7 +292,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h112.png) 
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key** after the last command. These commands create the container app environment.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the container app environment.
 
    ```
    $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
@@ -315,7 +315,7 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h114.png) 
 
-1. Enter the following commands at the Terminal window prompt and press the **Enter Key** after the last command. These commands create the **container app** for the **frontend** app components.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the **container app** for the **frontend** app components.
 
    ```
    az containerapp create --name "frontend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
@@ -359,7 +359,7 @@ In this task, you will build separate containers for frontend and backend compon
 
 - You have created the UpdatedApp folder and the Frontend and Backend subfolders.
 - You have copied the required files to the Frontend and Backend subfolders.
-- You have updated views.py, Dockerfile, and requirements.txt files in the Frontend folder and removed backend code and references to data libraries.
+- You have updated the views.py, Dockerfile, and requirements.txt files in the Frontend folder and removed backend code and references to data libraries.
 - You have updated the views.py in the Backend folder and removed the frontend code.
 - You have created Docker containers for frontend and backend application components.
 - You have created an ACR environment and container apps.
