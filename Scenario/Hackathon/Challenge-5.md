@@ -100,6 +100,6 @@ Here is a simple overview of each service used:
 
 -  Refer to the [Secure Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/training/modules/secure-azure-database-for-postgresql/) to learn about the security features of Azure Database for PostgreSQL.
 -  Refer to [Get Started with Prompt Flow](https://learn.microsoft.com/en-us/training/modules/get-started-prompt-flow-ai-studio/) to learn about how to use Prompt Flow to develop applications that leverage language models in the Azure AI Foundry.
--  Refer to the [Deploy a Flow in Prompt Flow](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-deploy-for-real-time-inference?view=azureml-api-2) to learn about how to deploy a flow as a managed online endpoint for real-time inference
+-  Refer to the [Deploy a Flow in Prompt Flow](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-deploy-for-real-time-inference?view=azureml-api-2) to learn about how to deploy a flow as a managed online endpoint for real-time inference.
 - [az network nsg rule](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create)
 
