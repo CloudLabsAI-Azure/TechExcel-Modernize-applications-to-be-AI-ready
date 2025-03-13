@@ -13,13 +13,13 @@ Here's a simple overview of each service used:
 
 ### Task 1: Create a PostgreSQL user and set up an AI Hub and Prompt Flow
 
-In this task, you will create a hub and then create a project within the hub. You’ll also create a PostgreSQL user so that the flow can access the database records.
+In this task, you will create a hub and then create a project within the hub. You will also create a PostgreSQL user so that the flow can access the database records.
 
-1. On the Azure Home page, select the **PostgreSQL database** that you created in a previous challenge.
+1. On the Azure home page, select the **PostgreSQL database** that you created in a previous challenge.
 
     ![](../media/h150.png)
 
-1. Copy and paste the **Server name** that appears in the **Overview** section of your database server into a notepad.
+1. Copy and paste the **Server name** that appears in the **Overview** section of your database server into Notepad.
 
     ![](../media/h151.png)
 
@@ -116,7 +116,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
 1. Navigate back to the **Azure portal**.
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. You should see two storage accounts. The first is the storage account that you created earlier in the lab. *The other was created by the AI Hub. Select the storage account that was created by AI Hub*.
 
@@ -128,7 +128,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h164.png)
 
-1. In the Search field, enter **Storage Blob Data Owner (1)** and then select **Storage Blob Data Owner (2)** from the search results list. Select **Next (3)**.
+1. In the search field, enter **Storage Blob Data Owner (1)** and then select **Storage Blob Data Owner (2)** from the search results list. Select **Next (3)**.
 
     ![](../media/h165.png)
 
@@ -148,7 +148,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h169.png)
 
-1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for and select the name for the *AI Hub that you created in Step 9 of this task* **(2) (3)** and then choose **Select (4)**.
+1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, **search (2)** for and **select (3)** the name for the *AI Hub that you created in Step 9 of this task* and then choose **Select (4)**.
 
     ![](../media/h170.png)
 
@@ -213,7 +213,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
 1. Navigate back to the **Azure portal.**
 
-1. On the Azure Home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. Select the PostgreSQL database that you created in a previous challenge.
 
@@ -295,7 +295,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
     ![](../media/h192.png)
 
-1. Select **Azure AI Search (1)** and select **Azure AI Search (2)**.
+1. Search **Azure AI Search (1)** and select **Azure AI Search (2)**.
 
     ![](../media/h193.png)
 
@@ -323,7 +323,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
     ![](../media/h202.png)
 
-1. Scroll down to the **chat_with_data** tile and below the Inputs section.   
+1. Scroll down to the **chat_with_data** tile and under the **Inputs** section.   
 
     - Select the value of **search_connection** and then select your Azure AI Search Service from the drop-down list **(1)**.
     - Select the value of **ai_connection** and then select your Azure OpenAI resource from the drop-down list **(2)**.
