@@ -1,8 +1,8 @@
-# Challenge 06: Configure an AI Hub and Promptflow
+# Challenge 06: Configure an AI Hub and Prompt Flow
 ### Estimated Time: 60 Minutes
 ## Introduction
 
-There are a lot of ways to create a chatbot. For this challenge, you will use Prompt Flow within Azure AI Studio. Azure OpenAI Prompt Flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt Flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
+There are a lot of ways to create a chatbot. For this challenge, you will use prompt flow within Azure AI Studio. Azure OpenAI prompt flow is a development tool designed to streamline the entire lifecycle of AI applications powered by Large Language Models (LLMs). Prompt flow simplifies the process of prototyping, experimenting, iterating, and deploying AI applications.
 
 Here's a simple overview of each service used:
 
@@ -48,7 +48,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h155.png)
 
-1. Next to `pycontosohotel`, enter the following SQL statement at the Cloud Shell prompt and press **Enter**. This statement creates a read-only user for the Prompt flow chatbot:
+1. Next to `pycontosohotel`, enter the following SQL statement at the Cloud Shell prompt and press **Enter**. This statement creates a read-only user for the prompt flow chatbot:
 
    ```
    CREATE USER promptflow WITH PASSWORD '1234ABCD!';
@@ -76,7 +76,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h158.png)
 
-     >**Note:** Record the name of the AI Hub. You’ll use the name later in this task.
+     >**Note:** Record the name of the AI Hub. You will use the name later in this task.
 
 1. Open a **New InPrivate window** and navigate to `https://ai.azure.com/`.     
 
@@ -207,7 +207,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
      >**Note:** It may take several minutes to upload the flow. Separately, if the Upload button becomes available again, keep clicking on the Upload button.  
 
-1. This will load the prompt flow once uploaded. In the middle pane for the flow, you’ll see one flow for each of the four logical steps in the flow. Review the information in each tile. This will help you understand how the flow functions.
+1. This will load the prompt flow once uploaded. In the middle pane for the flow, you will see one flow for each of the four logical steps in the flow. Review the information in each tile. This will help you understand how the flow functions.
 
     ![](../media/h183.png)
 
