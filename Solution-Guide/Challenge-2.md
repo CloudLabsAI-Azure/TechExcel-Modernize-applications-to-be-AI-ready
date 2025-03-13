@@ -1,4 +1,4 @@
-# Challenge 03: Deploy and Review the Legacy Contoso Hotel app
+# Challenge 03: Deploy and Review the Legacy Contoso Hotel App
 ### Estimated Time: 60 Minutes
 ## Introduction
 
@@ -236,7 +236,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
     ![](../media/h53.png)  
 
-     >**Note:** Record the ACR name. You’ll need to supply the ACR name again later in the challenge.
+     >**Note:** Record the ACR name. You will need to supply the ACR name again later in the challenge.
 
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you into the ACR instance. 
 
@@ -266,7 +266,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
      >**Note:** It may take 1-2 minutes to push the app container to ACR.
 
-1. Leave Visual Studio Code open. You’ll use the tool in the next task.     
+1. Leave Visual Studio Code open. You will use the tool in the next task.     
 
 
 ### Task 4: Provision a PostgreSQL Database to Support the App
