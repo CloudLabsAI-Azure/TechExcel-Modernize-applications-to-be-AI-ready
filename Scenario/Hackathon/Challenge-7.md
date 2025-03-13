@@ -8,7 +8,7 @@ In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech
 
 Riva ASR NIM APIs provide easy access to state-of-the-art automatic speech recognition (ASR) models for multiple languages. Riva ASR NIM models are built on the NVIDIA software platform, incorporating CUDA, TensorRT, and Triton to offer out-of-the-box GPU acceleration.
 
-Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do not have a speech file, use a sample speech file embedded in the Docker container launched in the previous section.
+Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do not have a speech file, use a sample speech file embedded in the Docker container launched in the previous section.
 
 ## Prerequisites
 
@@ -21,9 +21,9 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
 1. **Generate NGC API KEY**
 
-   - Login or Create a Nvidia account 
+   - Log in or create an Nvidia account. 
 
-   - Navigate to https://build.nvidia.com/ and log in using your email id. If not, create an account.
+   - Navigate to https://build.nvidia.com/ and log in using your email ID. If not, create an account.
 
    - Verify you are provided with 1000 free credits, each translating into one API call, by clicking on **Profile**. 
    
@@ -41,7 +41,7 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](../../media/nv6.png)
 
-   - On the left-hand side, click **Get Container**.
+   - On the left side, click **Get Container**.
 
       ![](../../media/nv5.png)
 
@@ -79,7 +79,7 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
 2. **Create and Connect to a GPU-Enabled Virtual Machine in Azure**
 
-   - **Create a GPU Virtual Machine**: Select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** as the image and Choose **NC4as_T4_v3** as the VM size.
+   - **Create a GPU Virtual Machine**: Select **NVIDIA GPU-Optimized VMI with vGPU driver - v22.08.0 - x64 Gen 2** as the image and choose **NC4as_T4_v3** as the VM size.
 
    - **Configure Storage**: Set **OS disk size** to **128 GB,** select **Standard SSD (locally redundant storage)** as the OS disk type and create.
 
@@ -136,7 +136,7 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
      curl -X 'GET' 'http://localhost:9000/v1/health/ready'
      ```
 
-   - If the service is ready, you get a response similar to the following.
+   - If the service is ready, you will get a response similar to the following:
 
      ```
      {"status":"ready"}
@@ -144,7 +144,7 @@ Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
 ## Success Criteria
 
-- Successfully generate the NGC API Key through the NVIDIA build platform.
+- Successfully generate the NGC API key through the NVIDIA build platform.
 - Create and connect to a GPU-enabled virtual machine in Azure.
 - Set up and run the NVIDIA Riva ASR container within the virtual machine.
 
