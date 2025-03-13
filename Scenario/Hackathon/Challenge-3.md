@@ -12,14 +12,14 @@ To improve the app's scalability, Contoso plans to split the frontend components
 
 1. **Separate frontend components from backend components:**
 
-   - Create a folder named **UpdatedApp** with subfolders **FrontEnd** and **Backend**.
-   - Copy all frontend files to the **FrontEnd** folder and all backend files to the **Backend** folder.
+   - Create a folder named **UpdatedApp** with subfolders **Frontend** and **Backend**.
+   - Copy all frontend files to the **Frontend** folder and all backend files to the **Backend** folder.
 
 1. **Refactor Files:**
 
    - **Frontend Folder**:
 
-      - Open **views.py** from the FrontEnd folder in Visual Studio Code and remove the **Backend API endpoints** section.
+      - Open **views.py** from the Frontend folder in Visual Studio Code and remove the **Backend API endpoints** section.
       - Remove the **dblayer** reference from the **views.py Imports** section.
       - Remove the code from **views.py** that checks to see if the database is set up.
       - Update the **Dockerfile** to remove the code that installs the **MSSQL ODBC driver**.
@@ -27,7 +27,7 @@ To improve the app's scalability, Contoso plans to split the frontend components
 
    - **Backend Folder**:   
 
-      - Open **views.py** from the BackEnd folder in Visual Studio Code and remove the **Frontend API endpoints** section.
+      - Open **views.py** from the Backend folder in Visual Studio Code and remove the **Frontend API endpoints** section.
 
 1. **Build the containers for frontend and backend components and push the containers to Azure:**   
 
@@ -42,7 +42,7 @@ To improve the app's scalability, Contoso plans to split the frontend components
 
 - You have created the UpdatedApp folder and the frontend and backend subfolders.
 - You have copied the required files to the frontend and backend subfolders.
-- You have updated the views.py, Dockerfile, and requirements.txt files in the FrontEnd folder and removed backend code and references to data libraries.
+- You have updated the views.py, Dockerfile, and requirements.txt files in the Frontend folder and removed backend code and references to data libraries.
 - You have updated views.py in the Backend folder and removed the frontend code.
 - You have created Docker containers for frontend and backend application components.
 - You have created an ACR environment and container apps.
