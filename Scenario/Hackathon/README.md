@@ -40,7 +40,7 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 
 1. **Challenge 04: Split and repackage the Contoso Hotel app components and deploy the updated app**
 
-   - You will split the components and refactor some code. Then, you will deploy the front-end and back-end components to separate containers. Finally, you will push the containers to ACR and run the updated app.   
+   - You will split the components and refactor some code. Then, you will deploy the frontend and backend components to separate containers. Finally, you will push the containers to ACR and run the updated app.   
 
 1. **Challenge 05: Set up Azure resources and extract data from hotel brochures**
 
