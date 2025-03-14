@@ -319,7 +319,7 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
    ![](../media/h247.png)  
 
-1. Open a new web browser window and go to the URL for the front-end container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calendar** icon.  
+1. Open a new web browser window and go to the URL for the frontend container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calendar** icon.  
 
    ![](../media/h250.png)  
 
