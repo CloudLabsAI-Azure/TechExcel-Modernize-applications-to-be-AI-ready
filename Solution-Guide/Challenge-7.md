@@ -1,14 +1,14 @@
 # Challenge  02: Deploy and Utilize NVIDIA Riva ASR on Azure
 
-### Estimated Time: 45 minutes
+### Estimated Time: 45 Minutes
 
 ## Introduction
 
-In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience with deploying AI models and using cloud resources to create AI-ready applications.
+In this challenge, you will deploy and utilize NVIDIA Riva ASR (Automatic Speech Recognition) on an Azure GPU-enabled virtual machine. You will generate the necessary NVIDIA API keys, create and configure a GPU-enabled virtual machine in Azure, set up and run the NVIDIA Riva ASR container, and configure network security group rules for external access. This challenge aims to provide hands-on experience deploying AI models and using cloud resources to create AI-ready applications.
 
 Riva ASR NIM APIs provide easy access to state-of-the-art automatic speech recognition (ASR) models for multiple languages. Riva ASR NIM models are built on the NVIDIA software platform, incorporating CUDA, TensorRT, and Triton to offer out-of-the-box GPU acceleration.
 
-Riva ASR supports Mono, 16-bit audio in WAV, OPUS, and FLAC formats. In case you do not have a speech file available, you can use a sample speech file embedded in the Docker container launched in the previous section.
+Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do not have a speech file, use a sample speech file embedded in the Docker container launched in the previous section.
 
 > **Note**: This challenge must be completed successfully as it is a prerequisite for Challenge 6. Ensure that all tasks and steps outlined in this challenge are executed properly and that the desired outcomes are achieved before proceeding to Challenge 6.
 
@@ -21,67 +21,67 @@ The NVIDIA API key is a unique identifier used to authenticate requests to NVIDI
 1. **Go to [build.nvidia.com](https://build.nvidia.com)**
 
 1. **Login or Create an Account**:
-Click on the **Login** button in the top-right corner to create a new account. Enter your organization email to receive free credits to use NVIDIA NIM and click **Next**.
+Click on the **Login** button in the top-right corner to create a new account. Enter your organization email to receive free credits for using NVIDIA NIM, and click **Next**.
 
    ![build.nvidia.com](../media/nvaie-1.png)
 
-   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account; however, this option does not include free credits.
+   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account. However, this option does not include free credits.
 
 1. **Create Your NVIDIA Account**:
 You will be redirected to a page where you can create your NVIDIA account. Provide your **Personal email address** **(1)** and then click on **Create (2)**.This account is required to download RIVA and start using it in your Azure platform.
 
    ![](../media/i-13.png)
 
-1. On the **Create your Account**, page provide the following details and then click on **Create account (6)**.  
+1. On the **Create your Account** page, provide the following details and then click on **Create account (6)**.  
 
    - Email: Provide your **Personal email address (1)**
    - Password: Provide your **Password (2)**
    - Confirm password: Enter your password again **(3)**
    - Stay logged in: Check the box **(4)**
-   - Enable **I am human** check box **(5)**
+   - Enable the **I am human** check box **(5)**
 
      >**Note:** You may be asked to choose the pictures. If requested, please complete and verify.
 
    ![](../media/i-14.png)
 
 1. **Verify Your Email Address**:
-Log into your **email** and you will get a verification code to your email to complete the verification process.
+Log into your **email,** and you will get a verification code to complete the verification process.
 
 1. Enter the **code (1)** and click on **Continue (2)**.
 
    ![](../media/i15.png)
 
 1. **Privacy Settings**:
-Once verification is complete, you'll be redirected to a page with privacy-related questions. Choose your privacy settings and click **Submit**.
+Once verification is complete, you will be redirected to a page with privacy-related questions. Choose your privacy settings and click **Submit**.
 
    ![](../media/nvaie-5.png)
 
 1. **Create Your NGC (NVIDIA GPU Cloud) Account**:
-In the next step, create your NGC account by providing your NVIDIA cloud account name. Provide any name for Account name and click on **Create NVDIA Cloud Account**.
+In the next step, create your NGC account by providing your NVIDIA cloud account name. Provide a name for the account and click on **Create NVIDIA Cloud Account**.
 
    ![](../media/nvaie-6.png)
 
 ### Success!
 
-You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with free 1000 credits to try out RIVA.
+You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 1000 free credits to try out RIVA.
 
    ![](../media/nvaie-credits.png)
 
 ### Explore RIVA:
 
-- Now you can explore all available RIVA! Use the search bar at the top to search for any model or RIVA task (e.g., search for "parakeet-ctc-1.1b-asr").
+- Now, you can explore all available RIVA! Use the search bar at the top to search for any model or RIVA task (e.g., search for "parakeet-ctc-1.1b-asr").
 - Explore the search results, open the NIM of interest, and experiment with it.
 - You are provided with **1000 free credits**, each translating into one API call. Therefore, you have **1000 API calls** to try out the RIVA.
 
    ![](../media/nvaie-7.png)
   
-- You can also call these RIVA in your Python application using the OpenAI library (refer to the Python code on the right) or using [Riva Python client API and CLI utils](https://github.com/nvidia-riva/python-clients.git).
+- You can also call these RIVA in your Python application using the OpenAI library (refer to the Python code on the right) or using the [Riva Python client API and CLI utils](https://github.com/nvidia-riva/python-clients.git).
 
    ![](../media/nvaie-8.png)
 
 ### Generate API Key
 
-1. Now log in to [nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed. 
+1. Now, log in to your [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed. 
 
 1. Enter your **Email address (1)** and click on **Continue (2)**.
 
@@ -95,7 +95,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia10.png)
 
-1. Once your account is created or you've successfully logged in.
+1. Once your account is created or you have successfully logged in.
 
 1. You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either **close** it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
 
@@ -121,17 +121,17 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/i19.png)
 
-1. click **Subscriptions (1)** on the left. Here, you will see the **Active (2)** status for the NVIDIA AI Enterprise Essentials.
+1. Click **Subscriptions (1)** on the left. Here, you will see the **Active (2)** status for the NVIDIA AI Enterprise Essentials.
 
    ![](../media/i20.png)
 
-    >**Note**: Click on **Close**, if **Set Email Preferences For Your Services** pop up appears. 
+    >**Note**: Click on **Close** if the **Set Email Preferences For Your Services** pop-up appears. 
 
 1. Click on **Account** at the top of the page and navigate to the **Setup** section.
 
    ![](../media/nvidia4.png)
 
-1. Click on **Generate API Key** to create a new key for accessing the necessary services.
+1. Click on **Generate API Key** to create a new key to access the necessary services.
 
    ![](../media/nvidia5.png)
 
@@ -143,7 +143,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia9.png)
 
-1. Carefully copy and paste your generated **API key** in a notepad, essential for accessing various services and features paste the API key in the notebook. Ensure you store it securely, as it may not be displayed again after you leave the page.
+1. Carefully copy and paste your generated API key into a notepad, essential for accessing various services and features. Paste the API key into the notebook. Store it securely, as it may not be displayed again after you leave the page.
 
    ![](../media/nvidia7.png)
 
@@ -151,7 +151,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
 Looking at your document, Task 2 needs a proper title to match the formatting of the other tasks. Based on the content that follows (creating a VM with NVIDIA GPU capabilities and connecting to it via SSH), this title accurately describes the actions being performed.
 
-1. Navigate back to **Azure Portal**, in the search bar search and select **Virtual machines** 
+1. Navigate back to **Azure Portal.** In the search bar, search for and select **Virtual machines.** 
 
     ![](../media/vmselect.png)
 
@@ -159,23 +159,23 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/vmcreate.png)
 
-3. In the Create a virtual machine enter the following details
+3. In the Create a virtual machine, enter the following details:
 
-    - **Subscription**: Select avaliable Subscription.
+    - **Subscription**: Select available Subscription.
     - **Resource group**: Select **Appmod**.
-    - **Virtual machine name**: Provide a unique Virtual machine name (e.g nvidia-gpu)
+    - **Virtual machine name**: Provide a unique Virtual machine name (e.g. nvidia-gpu)
     - **Region**:
-    - **Availability options**: from the drop-down select **no infrastructure redundancy required**
-    - **Security type**: from the drop-down select **Standard**
+    - **Availability options**: from the drop-down, select **no infrastructure redundancy required**
+    - **Security type**: from the drop-down, select **Standard**
     - **Image**: click on **see all images**
 
-        - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI** **(1)** and in the **NVIDIA GPU-Optimized VMI** click on **Select** **(2)** drop-dowm and select **NVIDIA GPU-Optimized VMI - v24.10.1 - x64 Gen 2** **(3)** .
+        - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI** **(1),** and in the **NVIDIA GPU-Optimized VMI,** click on **Select** **(2)** drop-down, and select **NVIDIA GPU-Optimized VMI - v24.10.1 - x64 Gen 2** **(3)** .
 
             ![](../media/vmimageselect.png)
 
-    - **Size**: click on **See all size** 
+    - **Size**: Click on **See all size** 
 
-        - In the **Select a VM size** search **NC4as** **(1)** and select **NC4as_T4_v3** **(2)** and click on **Select** **(3)**.
+        - In the **Select a VM size,** search **NC4as** **(1),** and select **NC4as_T4_v3** **(2),** and click on **Select** **(3)**.
 
             ![](../media/vmsize.png)
     
@@ -184,43 +184,43 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 4. Under **Administrator account**, select the following details and click on **Next: Disks** **(5)**
 
     - **Authentication type**: Select Password **(1)**
-    - **Username**: Provide a Username for vm **(2)**
+    - **Username**: Provide a Username for VM **(2)**
     - **password**: Enter the password **(3)**
     - **Confirm password**: Enter the password **(4)**
 
         ![](../media/vmbasic2.png)
 
-5. In the **Disks** tab select the **OS disk size** from the drop-down **128 GiB** **(1)** and **OS disk type** as **Standard SSD (locally-redudant storage)** **(2)** and click on **Review + Create** **(3)**.
+5. In the **Disks** tab, select the **OS disk size** from the drop-down **128 GiB** **(1)** and **OS disk type** as **Standard SSD (locally-redudant storage)** **(2)** and click on **Review + Create** **(3)**.
 
     ![](../media/vmdisks.png)
 
-6. In the **Review + Create** tab click on **Create**.
+6. In the **Review + Create** tab, click on **Create**.
 
     ![](../media/review+create.png)
 
-7. Once the deployment has succeeded click on **Microsoft.Compute/virtualMachines**
+7. Once the deployment has succeeded, click on **Microsoft.Compute/virtualMachines**
 
     ![](../media/select-deployed-vm.png)
 
-8. In the **Virtual machines**, expend the **Connect** **(1)** tab, click on **Connect** **(2)**, in the Connect click on **Select** **(3)** under Navtive SSH and once the Configure prerequisites for Native SSH succeeded under Copy and execute SSH command copy the **SSH to VM with specified private key** **Select** **(4)**.
+8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copying the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
 
     ![](../media/vmsshcopy.png)
 
-    > **Note**: Paste the SSH endpoint in a not notebook
+    > **Note**: Paste the SSH endpoint in a Notepad
 
-9. In the JumpVM search for **cmd** **(1)** and select **Command Prompt** **(2)**
+9. In the JumpVM, search for **cmd** **(1)** and select **Command Prompt** **(2)**
 
     ![](../media/select-cmd.png)
 
-10. Paste the recoded **SSH endpoint** **(1)** and hit the **Enter** button, in **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button and enter the **password** **(3)** and hit **Enter** button.
+10. Paste the recoded **SSH endpoint** **(1)** and hit the **Enter** button. In **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button, and write the **password** **(3).** Click on the **Enter** button again.
 
     ![](../media/connectssh.png)
 
-    > **Note**: Once you are connected to the virtual Machines takes 2-3 minutes to complete the setup process please wait till it gets completed.
+    > **Note**: Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 
-1. Run the following command to set up the NVIDIA Container Toolkit by adding your user to the docker group:
+1. Run the following command to set up the NVIDIA Container Toolkit by adding your user to the Docker group:
    
    ```bash
    sudo gpasswd -a $USER docker
@@ -229,7 +229,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/exit.png)   
 
-2. Relogin into the VM by paste the recoded **SSH endpoint** **(1)**, hit the **Enter** button and enter the **password** **(2)**.
+2. Re-login into the VM by pasting the recorded **SSH endpoint** **(1).** Hit the **Enter** button and include the **password** **(2)**.
 
    ![](../media/reconnect.png)
 
@@ -249,7 +249,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: Replace your-ngc-api-key with your generated NGC_API_KEY in task 1.
 
-4. Run the following command to download, deploy, and run the NVIDIA Riva model into the docker desktop:
+4. Run the following command to download, deploy, and run the NVIDIA Riva model into the Docker desktop:
    
    ```bash
    # Set model selector
@@ -272,7 +272,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
 
-6. Once the NVIDIA Riva model has succeeded start the new CMD session and connect to the VM through SSH.
+6. Once the NVIDIA Riva model has succeeded, start the new CMD session and connect it to the VM through SSH.
 
    ![](../media/succedded-nvidiamodel.png)
 
@@ -282,7 +282,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
      curl -X 'GET' 'http://localhost:9000/v1/health/ready'
      ```
 
-   - If the service is ready, you get a response similar to the following.
+   - If the service is ready, you will get a response similar to the following.
 
      ```
      {"status":"ready"}
@@ -293,7 +293,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 ## Success Criteria
 
-- Successfully generate the NGC API Key through the NVIDIA build platform.
+- Successfully generate the NGC API key through the NVIDIA build platform.
 - Create and connect to a GPU-enabled virtual machine in Azure.
 - Set up and run the NVIDIA Riva ASR container within the virtual machine.
 

@@ -1,12 +1,12 @@
-# Challenge 07: Integrate the chatbot with the Contoso Hotel application
-### Estimated Time: 30 minutes
+# Challenge 07: Integrate the Chatbot with the Contoso Hotel Application
+### Estimated Time: 30 Minutes
 ## Introduction
 
-At this point you have a chatbot that can query the hotel brochures. In this Challenge, you will integrate the chatbot into the updated Contoso Hotel application.
+At this point, you have a chatbot that can query the hotel brochures. In this challenge, you will integrate the chatbot into the updated Contoso Hotel application.
 
-### Task 1: Set up Visual Studio Code and run the flow locally
+### Task 1: Set up Visual Studio Code and Run the Flow Locally
 
-In this task you’ll test the chatbot locally before you publish the chatbot.
+In this task, you will test the chatbot locally before you publish the chatbot.
 
 1. Open **File Explorer** from the bottom menu.
 
@@ -28,19 +28,19 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
    ![](../media/h214.png)
 
-1. From the menu bar, select **File** and then select **Open Folder**.  
+1. From the menu bar, select **File (1)** and then select **Open Folder (2)**.  
 
    ![](../media/h73.png)
 
-1. Navigate into `C:\Users\demouser\AssetsRepo\Assets` folder, select **lab-6-promptflow (1)** folder, and then select **Select folder (2)**
+1. Navigate into `C:\Users\demouser\AssetsRepo\Assets`. Select **lab-6-promptflow (1)** folder, and then select **Select folder (2).**
 
    ![](../media/h220.png)
 
-1. If **Do you trust the authors of the files in this folder?** prompted click on **Yes, I trust the authors**.
+1. If prompted, **Do you trust the authors of the files in this folder?** option, click on **Yes, I trust the authors**.
 
    ![](../media/h27.png)  
 
-1. In the Explorer pane, expand **lab-6-promptflow (1)**. Right-click **.env.sample (2)** and then select **Rename (3)**. 
+1. In the **Explorer pane**, expand **lab-6-promptflow (1)**. Right-click **.env.sample (2)** and select **Rename (3)**. 
 
    ![](../media/h221.png)  
 
@@ -73,11 +73,11 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
       ![](../media/h224.png)   
 
-    - In the left hand navigation pane, in the Search Management section, select **Indexes**. Use the index name for **AZURE_AI_SEARCH_INDEX**.      
+    - In the left navigation pane, in the Search Management section, select **Indexes**. Use the index name for **AZURE_AI_SEARCH_INDEX**.      
 
       ![](../media/h225.png)
 
-    - In the left navigation pane, in the Settings section, select **Keys (1)**. Use **Primary admin key** for AZURE_AI_SEARCH_API_KEY **(2)**.                  
+    - In the left navigation pane, in the Settings section, select **Keys (1)**. Use the **Primary admin key** for AZURE_AI_SEARCH_API_KEY **(2)**.                  
 
       ![](../media/h226.png)   
 
@@ -86,7 +86,7 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
     - PGDATABASE=**pycontosohotel**
     - PGPASSWORD=**1234ABCD!**     
 
-1. Save your changes to the **.env** file by pressing **Ctrl+S** in your keyboard.
+1. Save your changes to the **.env** file by pressing **Ctrl+S** on your keyboard.
 
    ![](../media/h227.png)  
 
@@ -147,10 +147,10 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
 
    ![](../media/h235.png)  
 
-1. If you encuner this error **Error: “pf.flow.test failed with UserErrorException: TypeError: Execution failure in ‘chat_with_data’**.
+1. If you encounter this error, **Error: “pf.flow.test failed with UserErrorException: TypeError: Execution failure in ‘chat_with_data’**.
 
-    - The installed **openai** Python package may be incompatible with the script and throw the error shown. 
-    - In the terminal you can check its version using `pip show openai`.
+    - The installed **OpenAI** Python package may be incompatible with the script and throw the error shown. 
+    - In the terminal, you can check its version using `pip show openai`.
     - Downgrade the package by using `pip install openai==1.58.1`.
     
 1. Run the interactive flow again:    
@@ -159,19 +159,19 @@ In this task you’ll test the chatbot locally before you publish the chatbot.
    pf flow test --flow . --interactive
    ```
 
-### Task 2: Deploy the flow to Azure Container apps and test the app
+### Task 2: Deploy the Flow to Azure Container Apps and Test the App
 
-In this task you’ll prepare the flow for deployment and deploy the flow. You’ll update the app to display the chatbot page.
+In this task, you will prepare the flow for deployment and deploy the flow. You will update the app to display the chatbot page.
 
-1. Navigate back to the Visual Studio Code.
+1. Navigate back to Visual Studio Code.
 
-1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
+1. Run the following command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
 
    ```
    az acr list --query "[].{Name:name}" --output table
    ```
 
-1. Enter the below command and press **Enter**, update the following variable, replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
+1. Enter the following command and press **Enter**. Update the following variable; replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one that you got in the above command.   
 
    ```
    $ACR_NAME="ACR_NAME_FROM_CHALLENGE2_TASK03"
@@ -185,7 +185,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
    az login
    ```
 
-1. Minimize the Visual Studio Code.
+1. Minimize Visual Studio Code.
 
     - On the Let’s get you signed in page, select **Work or School account (1)** and then select **Continue (2)**. 
 
@@ -193,21 +193,21 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
     - Sign in using your Azure credentials.
 
-    - On the **Sign in** page, Enter the **Username (1)** and click on **Next (2)**.
+    - On the **Sign in** page, enter the **Username (1)** and click on **Next (2)**.
 
       ![](../media/h48.png)     
 
-       >**Note:** **Username**, you can find in the Lab VM's **Environment** page.
+       >**Note:** You can find the **Username** on the Lab VM's **Environment** page.
 
     - Enter the **Password (1)** and then click on **Sign in (2)**.  
 
       ![](../media/h49.png)     
 
-       >**Note:** **Password**, you can find in the Lab VM's **Environment** page.   
+       >**Note:** You can find the **Password** on the Lab VM's **Environment** page.   
 
     - If prompted, on the **Stay signed in to all your apps** page, select **No sign in to this app only.**
 
-1. Naviagte back to the Visual Studio code, press **Enter** for **Select a subscription and tenant**.      
+1. Navigate to Visual Studio Code, press **Enter** to **select a subscription and tenant**.      
 
    ![](../media/h51.png)
 
@@ -234,9 +234,9 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h238.png)    
 
-    >**Note:** This command will take around 5 mins to run completely.
+    >**Note:** This command will take around 5 minutes to run completely.
 
-1. Configure and update the following variables based on your previous configurations and select **Enter**.  `$CONTOSO_HOTEL_ENV` will be name of your Container Apps Environment found in the **Appmod** Resource Group. The **_API_KEY**, **_ENDPOINT**, and **PGHOST** variable values can be found in the `.env` file from the last task.      
+1. Configure and update the following variables based on your previous configurations and select **Enter**.  `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **Appmod** Resource Group. The **_API_KEY**, **_ENDPOINT**, and **PGHOST** variable values can be found in the `.env` file from the last task.      
 
    ```
    $CONTOSO_HOTEL_ENV = "contosoenvxxxxx"
@@ -249,11 +249,11 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h240.png)   
 
-    - `$CONTOSO_HOTEL_ENV` will be name of your Container Apps Environment found in the **Appmod** Resource Group.
+    - `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **Appmod** Resource Group.
 
       ![](../media/h239.png)     
 
-1. Enter the following to set the variables for values we’ve used previously and press **Enter** after the last command.        
+1. Enter the following to set the variables for values we have used previously and press **Enter** after the last command.        
 
    ```
    $RG_NAME = "Appmod"
@@ -282,13 +282,13 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h242.png)      
 
-    >**Note:** Please do copy and paste the **Prompflow URL** in a notepad.   
+    >**Note:** Please copy and paste the **Prompflow URL** on a notepad.   
 
-1. You can also see the newly created **Chatbot**, in **Appmod** resource group.
+1. You can also see the newly created **Chatbot** in the **Appmod** resource group.
 
    ![](../media/h243.png)  
 
-1. Please do copy and paste the **Application URL** in a notepad. This is same as the one which you have copied in 10.     
+1. Please copy and paste the **Application URL** into a notepad. This is the same as the one that you have copied in 10.     
 
    ![](../media/h245.png)  
 
@@ -300,7 +300,7 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h244.png)         
 
-1. Enter the following commands in the Visual Studio Code Terminal window prompt and press **Enter** after the last command. These commands update the application front-end. 
+1. Enter the following commands in the Visual Studio Code Terminal window prompt and press **Enter** after the last command. These commands update the application frontend. 
 
    ```
    az containerapp update --name "frontend" --resource-group "$RG_NAME" --set-env-vars "CHATBOT_BASEURL=$CONTOSO_BACKEND_URL"
@@ -319,11 +319,11 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h247.png)  
 
-1. Open a new web browser window and go to the URL for the front-end container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calender** icon.  
+1. Open a new web browser window and go to the URL for the frontend container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calendar** icon.  
 
    ![](../media/h250.png)  
 
-1. Click on the **chatbot** icon from the bottom right corner.There you can see the chatbot from within the updated Contoso Hotel app.   
+1. Click on the **chatbot** icon from the bottom right corner. There you can see the chatbot from within the updated Contoso Hotel app.   
 
    ![](../media/h251.png)   
 
@@ -331,17 +331,17 @@ In this task you’ll prepare the flow for deployment and deploy the flow. You�
 
    ![](../media/h252.png)   
 
-1. Try another query, enter `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` and click on the **Send** button.
+1. Try another query. Enter `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` and click on the **Send** button.
 
    ![](../media/h253.png)   
 
 ## Success Criteria:
 
-- You’ve set up your development environment.
-- You’ve tested the chatbot locally.
-- You’ve updated the app to include the chatbot feature.
+- You have set up your development environment.
+- You have tested the chatbot locally.
+- You have updated the app to include the chatbot feature.
 
 
 ## Additional Resources:
 
--  Refer to the  [Prompt flow documentation](https://microsoft.github.io/promptflow/reference/pf-command-reference.html#pf-flow) to learn about the Promt flow.
+-  Refer to the  [Prompt flow documentation](https://microsoft.github.io/promptflow/reference/pf-command-reference.html#pf-flow) to learn about the Prompt flow.

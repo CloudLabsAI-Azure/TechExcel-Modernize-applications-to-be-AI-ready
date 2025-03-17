@@ -1,14 +1,14 @@
-# Challenge 04: Split and repackage the Contoso Hotel app components and deploy the updated app
-### Estimated Time: 60 minutes
+# Challenge 04: Split and Repackage the Contoso Hotel App Components and Deploy the Updated App
+### Estimated Time: 60 Minutes
 ## Introduction
 
-To improve the scalability of the app, Contoso plans to split the front-end components (HTML, CSS, and JavaScript files) from back-end components (APIs). In this Challenge you’ll split the components and refactor some code. Then, you’ll deploy the front-end and back-end components to separate containers. Finally, you’ll push the containers to ACR and run the updated app.
+To improve the scalability of the app, Contoso plans to split the frontend components (HTML, CSS, and JavaScript files) from backend components (APIs). In this challenge, you will split the components and refactor some code. Then, you will deploy the frontend and backend components to separate containers. Finally, you will push the containers to ACR and run the updated app.
 
 ## Solution Guide
 
-### Task 1: Separate front-end components from back-end components
+### Task 1: Separate Frontend Components from Backend Components
 
-In this task, you’ll manually separate front-end and back-end components into separate folders.
+In this task, you will manually separate frontend and backend components into separate folders.
 
 1. Open Visual Studio Code.
 
@@ -16,11 +16,11 @@ In this task, you’ll manually separate front-end and back-end components into 
 
    ![](../media/h72.png)
 
-1. Make sure your in **ContosoHotel** folder.  
+1. Make sure you are in the **ContosoHotel** folder.  
 
    ![](../media/h76.png)
   
-1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for front-end components.
+1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for frontend components.
 
    ```
    mkdir -p ContosoHotel/UpdatedApp/Frontend 
@@ -28,18 +28,18 @@ In this task, you’ll manually separate front-end and back-end components into 
 
     ![](../media/h77.png)
 
-1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for back-end components.
+1. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a directory for backend components.
 
    ```
    mkdir -p ContosoHotel/UpdatedApp/Backend
    ```
     ![](../media/h78.png)    
 
-1. From the top left corncer menu select **File (1)** >  **Open Folder (2)**.
+1. From the top left corner menu, select **File (1)** >  **Open Folder (2)**.
 
    ![](../media/h73.png)
 
-1. Naviagte to `C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp` in the File explorer and press **Enter**.
+1. Navigate to `C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp` in the File Explorer and press **Enter**.
 
    ![](../media/h79.png)
 
@@ -47,7 +47,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 
    ![](../media/h80.png)
 
-1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands copy all necessary files to the **Frontend** folder for the updated app.   
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands will copy all the necessary files to the **Frontend** folder for the updated app.   
 
    ```
    cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
@@ -59,11 +59,11 @@ In this task, you’ll manually separate front-end and back-end components into 
 
     ![](../media/h81.png)  
 
-1. Click on the **Frontend** drop down in the explorer, you can see all the copied files  appear under **Frontend** folder.   
+1. Click on the **Frontend** drop-down in the Explorer. You will be able to see all the copied files here, appearing under the **Frontend** folder.   
 
     ![](../media/h82.png)  
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands create a subfolder in the **Frontend** folder and copy all necessary files to subfolder.    
+1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands create a subfolder in the **Frontend** folder and copy all necessary files to the subfolder.    
 
    ```
    cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
@@ -73,7 +73,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 
     ![](../media/h83.png)   
 
-1. Click on the **contoso_hotel** drop down under the **Frontend** folder in the Explorer. You can see the copied files.
+1. Click on the **contoso_hotel** drop-down under the **Frontend** folder in Explorer. You will be able to see all the copied files.
 
     ![](../media/hh1.png)  
 
@@ -93,11 +93,11 @@ In this task, you’ll manually separate front-end and back-end components into 
 
     ![](../media/h85.png)    
 
-1. Click on the **Backend** drop down in the explorer, you can see all the copied files  appear under **Backend** folder.   
+1. Click on the **Backend** drop-down in the Explorer. You will be able to see all the copied files appearing here under the **Backend** folder.   
 
     ![](../media/h86.png)      
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands create a subfolder in the **Backend** folder and copy all necessary files to subfolder.    
+1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands create a subfolder in the **Backend** folder and copy all necessary files to the subfolder.    
 
    ```
    cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
@@ -106,7 +106,7 @@ In this task, you’ll manually separate front-end and back-end components into 
 
     ![](../media/h87.png)  
 
-1. Click on the **contoso_hotel** drop down under the **Backend** folder in the Explorer. You can see the copied files.
+1. Click on the **contoso_hotel** drop-down under the **Backend** folder in Explorer. Check out the copied files.
 
     ![](../media/h255.png)   
 
@@ -116,13 +116,13 @@ In this task, you’ll manually separate front-end and back-end components into 
 
 ### Task 2: Refactor files
 
-In the previous task, you added a copy of **views.py** to both the **FrontEnd** and **Backend** folders. You added the **Dockerfile file** and the **requirements.txt** file to the FrontEnd folder. In this task, you’ll modify all three files to remove references to back-end functionality. You’ll also modify the copy of **views.py** in the **Backend** folder to remove references to front-end functionality.
+In the previous task, you added a copy of **views.py** to the **Frontend** and **Backend** folders. You added the **Dockerfile** and the **requirements.txt** file to the Frontend folder. In this task, you will modify all three files to remove references to backend functionality. You will also modify the copy of **views.py** in the **Backend** folder to remove references to frontend functionality.
 
 1. In the Explorer pane, expand the **Frontend (1)** folder and then expand the **contoso_hotel (2)** folder.
 
     ![](../media/h258.png)     
 
-1. Select **views.py**. The file displays in the right side of the Visual Studio Code window.    
+1. Select **views.py**. The file is displayed on the left side of the Visual Studio Code window.    
 
     ![](../media/h90.png)  
 
@@ -152,7 +152,7 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
     ![](../media/h95.png) 
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File** >  **Save** and then close the file.
+1. Save your changes by pressing **Ctrl+S** on your keyboard or from the top left corner menu, select **File** >  **Save,** and then close the file.
 
 1. In the Visual Studio Code Explorer pane, select **Dockerfile**. 
 
@@ -166,13 +166,13 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
     ![](../media/h98.png) 
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File** >  **Save** and then close the file.
+1. Save your changes by pressing **Ctrl+S** on your keyboard or from the top left corner menu, select **File** >  **Save,** and then close the file.
 
 1. In the Visual Studio Code Explorer pane, select **requirements.txt (1)** and then delete the **pyodbc** and **psycopg2-binary** **(2)** libraries.
 
     ![](../media/h99.png) 
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File** >  **Save** and then close the file.
+1. Save your changes by pressing **Ctrl+S** on your keyboard or from the top left corner menu, select **File** >  **Save,** and then close the file.
 
     ![](../media/h100.png) 
 
@@ -180,17 +180,17 @@ In the previous task, you added a copy of **views.py** to both the **FrontEnd** 
 
     ![](../media/h259.png) 
 
-1. Select **views.py**. Delete all code between the following region markers in the code for **Frontend API Endpoints** (around lines 312 - 335):   
+1. Select **views.py**. Delete all codes between the following region markers in the code for **Frontend API Endpoints** (around lines 312 - 335):   
 
     ![](../media/h102.png) 
 
-1. Save your changes by pressing **Ctrl+S** in your keyboard or from the top left corner menu select **File** >  **Save** and then close the file.
+1. Save your changes by pressing **Ctrl+S** on your keyboard or from the top left corner menu, select **File** >  **Save,** and then close the file.
 
-1. Leave Visual Studio Code open. You’ll run additional commands in the next task.
+1. Leave Visual Studio Code open. You will run additional commands in the next task.
 
-### Task 3: Build the containers for front-end and back-end components and push the containers to Azure
+### Task 3: Build the Containers for Frontend and Backend Components and Push the Containers to Azure
 
-In this task, you’ll build separate containers for front-end and back-end components.
+In this task, you will build separate containers for frontend and backend components.
 
 1. Run the below command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
 
@@ -200,7 +200,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h103.png)  
 
-1. Run the below command, update the following variable, replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one which you got in the above command.   
+1. Run the command below, update the following variable, and replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you created in Challenge 02 Task 03. The one that you got in the above command.   
 
    ```
    $ACR_NAME="ACR_NAME_FROM_CHALLENGE2_TASK03"
@@ -224,9 +224,9 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h106.png)  
 
-1. Enter the following command at the Terminal window prompt and press **Enter** after the last command. This command builds the container for the front-end app components.
+1. Enter the following command at the Terminal window prompt and press **Enter** after the last command. This command builds the container for the frontend app components.
 
-   >**Note:** Before running the command ensure that the Docker is running.
+   >**Note:** Before running the command, ensure that Docker is running.
 
    ```
    docker pull python:slim-bookworm
@@ -237,7 +237,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
      >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you in to the ACR instance. 
+1. Enter the following command at the Terminal window prompt and then press **Enter**. This command signs you into the ACR instance. 
 
    ```
    az acr login --name "$ACR_NAME"
@@ -245,7 +245,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h54.png)       
 
-1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the front-end container and push the container to ACR.  
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the frontend container and push the container to ACR.  
 
    ```
    docker tag "pycontosohotel-frontend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0"
@@ -254,7 +254,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h109.png)  
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands switch the context to the Backend folder and then build the Docker container for the back-end app components.    
+1. Enter the following commands at the Terminal window prompt and press **Enter** twice. These commands switch the context to the Backend folder and then build the Docker container for the backend app components.    
 
    ```
    cd  $PATH_TO_UPDATED_APP\Backend
@@ -264,7 +264,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     >**Note:** It may take 2-3 minutes to build the Docker container.
 
-1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the back-end container and push the container to ACR.
+1. Enter the following commands at the Terminal window prompt and press **Enter**. These commands tag the backend container and push the container to ACR.
 
    ```
    docker tag "pycontosohotel-backend:v1.0.0" "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0"
@@ -284,7 +284,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenege 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
+1. Update the value of the **AZURE_REGION_FROM_CHALLENGE1_TASK01** variable to use the region that you selected in Challenge 01 Task 01. Then, enter the command at the Terminal window prompt and then press **Enter**.   
 
    ```
    $AZURE_REGION="AZURE_REGION_FROM_CHALLENGE01_TASK01"
@@ -305,7 +305,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04* . Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the back-end app components.
+1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the backend app components.
 
    ```
    az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04"
@@ -315,7 +315,7 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h114.png) 
 
-1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the **container app** for the **front-end** app components.
+1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the **container app** for the **frontend** app components.
 
    ```
    az containerapp create --name "frontend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
@@ -325,11 +325,11 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h115.png) 
 
-     >**Note:** Record the value for the front-end URL. You’ll use the value later in the next steps.
+     >**Note:** Record the value for the frontend URL. You will use the value later in the next steps.
 
 1. Navigate to the Azure portal. If not signed in, sign in with the credentials given in the **Environment** tab.
 
-1. In the top search bar, search for **Resource group (1)**, select **Resource group (2)** from the services.
+1. In the top search bar, search for **Resource groups (1)** and select **Resource groups (2)** from the services.
 
     ![](../media/h116.png) 
 
@@ -345,25 +345,25 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
     ![](../media/h119.png) 
 
-1. In the **Allowed Origins (1)** field, enter the value for the front-end URL that you recorded in Step 14 of this task and then navigate to **Allowed Methods (2)** field.   
+1. In the **Allowed Origins (1)** field, enter the value for the frontend URL that you recorded in Step 14 of this task, and then navigate to the **Allowed Methods (2)** field.   
 
     ![](../media/h120.png) 
 
-1. Enter an asterisk `***` **(1)** and then select **Apply(2)** to create the CORS policy.  
+1. Enter an asterisk `***` **(1)** and select **Apply (2)** to create the CORS policy.  
 
     ![](../media/h121.png) 
 
-1. Leave Visual Studio Code open. You’ll run additional commands in the next challenge.
+1. Leave Visual Studio Code open. You will run additional commands in the next challenge.
 
 ## Success Criteria:
 
-- You’ve created the UpdatedApp folder and the FrontEnd and Backend subfolders.
-- You’ve copied the required files to the FrontEnd and Backend subfolders.
-- You’ve updated views.py, Dockerfile, and requirements.txt files in the FrontEnd folder and removed back-end code and references to data libraries.
-- You’ve updated views.py in the BackEnd folder and removed front-end code.
-- You’ve created Docker containers for front-end and back-end application components.
-- You’ve created an ACR environment and container apps.
-- You’ve configured CORS policies.
+- You have created the UpdatedApp folder and the Frontend and Backend subfolders.
+- You have copied the required files to the Frontend and Backend subfolders.
+- You have updated the views.py, Dockerfile, and requirements.txt files in the Frontend folder and removed backend code and references to data libraries.
+- You have updated the views.py in the Backend folder and removed the frontend code.
+- You have created Docker containers for frontend and backend application components.
+- You have created an ACR environment and container apps.
+- You have configured CORS policies.
 
 ## Additional Resources:
 
@@ -371,4 +371,4 @@ In this task, you’ll build separate containers for front-end and back-end comp
 
 -  [az containerapp create](https://learn.microsoft.com/en-us/cli/azure/containerapp?view=azure-cli-latest#az-containerapp-create)
 
-## Proceed with the next Challenge by clicking on **Next**>>.
+## Proceed with the next challenge by clicking on **Next**>>.
