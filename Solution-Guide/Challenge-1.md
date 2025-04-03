@@ -137,7 +137,9 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio, that you can
     - Enable dynamic quota: **Enabled (5)**
     - Click on **create resource and Deploy (6)**
         
-      ![](../media/h5.png)
+      ![](../media/4o-01.png)
+  
+      ![](../media/4o-02.png)
 
       >**Note:** If the **Customize** option doesn't appear, you can directly enter the model deployment details. 
 
