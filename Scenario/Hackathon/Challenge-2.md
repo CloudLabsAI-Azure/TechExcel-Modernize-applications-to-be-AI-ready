@@ -40,7 +40,7 @@ Here's a simple overview of each service used by the app:
    > **Note**: Use the same region you used in Challenge 1.  
    > **Note**: Make sure to use the **Appmod** resource group.
 
-     <validation step="f093ed04-190b-4416-bd7a-59a113e42a4e" />   
+     <validation step="86139f4d-d94b-44f4-aef0-be0923be574f" />   
 
 1. **Run the Containerized App and Add a Booking:**
 
