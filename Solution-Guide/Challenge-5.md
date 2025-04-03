@@ -319,21 +319,21 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     ![](../media/h201.png)
 
-1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop down, select the connection that displays **(2)**.
+1. Locate the **check_question_intent** tile Click on the Connection field drop down, select the connection that displays and Select the **Deployment name** as **text-turbo**.
 
-    ![](../media/h202.png)
+    ![](../media/chat-01.png)
 
 1. Scroll down to the **chat_with_data** tile and below the Inputs section.   
 
     - Select Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
     - Select Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
-    - Change the Value of **search_index** to **brochures-vector (3)**.
+    - Change the Value of **search_index** to **brochure-vector (3)**.
 
       ![](../media/h203.png)
 
-1. Scroll down to the **generate_sql** tile. In the **Connection** field, select the connection that displays.      
+1. Scroll down to the **generate_sql** tile. In the **Connection** field, select the connection that displays and Select the **Deployment name** as **text-turbo**.      
 
-    ![](../media/h204.png)
+    ![](../media/chat-02.png)
 
 1. Scroll down to the bottom of the **conclude_answer** tile. We’ll input a value into the field that will populate after testing the next steps. 
 
