@@ -327,7 +327,7 @@ In this task, you’ll import a pre-built flow, configure flow settings, and the
 
     - Select Value of **search_connection** and then select your Azure AI Search Service from the dropdown list **(1)**.
     - Select Value of **ai_connection** and then select your Azure OpenAI resource from the dropdown list **(2)**.
-    - Change the Value of **search_index** to **brochure-vector (3)**.
+    - Change the Value of **search_index** to **brochures-vector (3)**.
 
       ![](../media/h203.png)
 
