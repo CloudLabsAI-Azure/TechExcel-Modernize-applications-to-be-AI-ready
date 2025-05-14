@@ -21,13 +21,11 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
 1. **Generate NGC API KEY**
 
-   - Log in or create an Nvidia account. 
+   - Log in or create an Nvidia account 
 
-   - Navigate to https://build.nvidia.com/ and log in using your email ID. If not, create an account.
+   - Navigate to https://build.nvidia.com/ and log in using your personal email ID. If not, create an account.
 
-   - Verify you are provided with 1000 free credits, each translating into one API call, by clicking on **Profile**. 
-   
-   -  Navigate to the [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed and click on the **join** button.
+   - Complete account verification to gain API access. Once verified, your rate limit will increase to 40 requests per minute (RPM).
     
    - Once your account is created or you've successfully logged in.
 
