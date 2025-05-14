@@ -164,7 +164,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
     - **Subscription**: Select available Subscription.
     - **Resource group**: Select **Appmod**.
     - **Virtual machine name**: Provide a unique Virtual machine name (e.g. nvidia-gpu)
-    - **Region**:
+    - **Region**: East US
     - **Availability options**: from the drop-down, select **no infrastructure redundancy required**
     - **Security type**: from the drop-down, select **Standard**
     - **Image**: click on **see all images**
@@ -206,7 +206,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/vmsshcopy.png)
 
-    > **Note**: Paste the SSH endpoint in a Notepad
+    > **Note**: Paste the SSH endpoint in Notepad
 
 9. In the JumpVM, search for **cmd** **(1)** and select **Command Prompt** **(2)**
 
@@ -249,7 +249,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    > **Note**: Replace your-ngc-api-key with your generated NGC_API_KEY in task 1.
 
-4. Run the following command to download, deploy, and run the NVIDIA Riva model into the Docker desktop:
+4. Run the following command to download, deploy, and run the NVIDIA Riva model in Docker Desktop:
    
    ```bash
    # Set model selector
