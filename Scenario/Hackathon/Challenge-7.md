@@ -26,7 +26,11 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
    - Navigate to https://build.nvidia.com/ and log in using your personal email ID. If not, create an account.
 
    - Complete account verification to gain API access. Once verified, your rate limit will increase to 40 requests per minute (RPM).
-    
+
+      ![](media/nvaie-7-1.png) 
+   
+   -  Navigate to [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed and Click on the **join**.
+
    - Once your account is created or you've successfully logged in.
 
    - You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either close it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
@@ -37,11 +41,11 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
    - Scroll down and select **parakeet-ctc-1.1b-asr**. 
 
-      ![](../../media/nv6.png)
+      ![](media/imageupdatencg.png)
 
    - On the left side, click **Get Container**.
 
-      ![](../../media/nv5.png)
+      ![](media/nv5.png)
 
    - A pop-up will appear on the **Approval Required** page. Click on **Join** for the **NVIDIA Developer Program**, which will redirect you to the NVIDIA Developer Portal.
 
@@ -71,9 +75,9 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](../../media/nvidia9.png)
 
-   - Carefully copy your generated API key, essential for accessing various services and features. Paste the API key in the notebook. Store it securely, as it may not be displayed again after you leave the page.
+   - Generate Personal Key rrants your key permission to access or download containers and artifacts from the NGC Catalog.
 
-      ![](../../media/nvidia7.png)
+   - Carefully copy your generated API key, essential for accessing various services and features. Paste the API key in the notebook. Store it securely, as it may not be displayed again after you leave the page.
 
 2. **Create and Connect to a GPU-Enabled Virtual Machine in Azure**
 

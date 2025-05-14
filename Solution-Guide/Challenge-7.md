@@ -63,18 +63,17 @@ In the next step, create your NGC account by providing your NVIDIA cloud account
 
 ### Success!
 
-You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 1000 free credits to try out RIVA.
+You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
 
-   ![](../media/nvaie-credits.png)
+   ![](../Scenario/Hackathon/media/nvaie-7-1.png)
 
 ### Explore RIVA:
 
 - Now, you can explore all available RIVA! Use the search bar at the top to search for any model or RIVA task (e.g., search for "parakeet-ctc-1.1b-asr").
 - Explore the search results, open the NIM of interest, and experiment with it.
-- You are provided with **1000 free credits**, each translating into one API call. Therefore, you have **1000 API calls** to try out the RIVA.
+- You are provided with **40 requests per minute (RPM)**, each translating into one API call. Therefore, you have **40 requests per minute (RPM)** to try out the RIVA.
 
-   ![](../media/nvaie-7.png)
-  
+
 - You can also call these RIVA in your Python application using the OpenAI library (refer to the Python code on the right) or using the [Riva Python client API and CLI utils](https://github.com/nvidia-riva/python-clients.git).
 
    ![](../media/nvaie-8.png)
@@ -143,9 +142,19 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia9.png)
 
+1. In Generate Personal Key fill the following details and click on **Generate Personal Key** **(4)**.
+
+   - Key name: Provide a name to the key (i.e app-mod) **(1)**
+   - Expiration: 12 months **(2)**
+   - Key Permissions: **NGC Catalog** **(3)**
+
+      > Grants your key permission to access or download containers and artifacts from the NGC Catalog. The permission level matches your account's permissions for the catalog.
+
+      ![](../Scenario/Hackathon/media/ngc-key-sett.png)
+ 
 1. Carefully copy and paste your generated API key into a notepad, essential for accessing various services and features. Paste the API key into the notebook. Store it securely, as it may not be displayed again after you leave the page.
 
-   ![](../media/nvidia7.png)
+   ![](../Scenario/Hackathon/media/nvidia7.png)
 
 ## Task 2: Create and Connect to a GPU-Enabled Virtual Machine in Azure
 
