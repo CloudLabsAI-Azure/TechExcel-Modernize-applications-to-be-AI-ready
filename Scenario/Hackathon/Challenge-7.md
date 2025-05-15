@@ -37,17 +37,17 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](../../media/nv8.png)
 
-   - In the search bar, look for **parakeet-ctc-1.1b-asr**.
+   - In the search bar, look for **Riva ASR NIM**.
 
-   - Scroll down and select **parakeet-ctc-1.1b-asr**. 
+   - Scroll down and select **Riva ASR NIM**. 
 
-      ![](media/imageupdatencg.png)
+     ![](../../media/nv6.png)
 
    - On the left side, click **Get Container**.
 
       ![](media/nv5.png)
 
-   - A pop-up will appear on the **Approval Required** page. Click on **Join** for the **NVIDIA Developer Program**, which will redirect you to the NVIDIA Developer Portal.
+   - A pop-up will appear on the **Approval Required** page. Click on **Join** for the **NVIDIA AI Enterprise Essentials**, which will redirect you to the NVIDIA Developer Portal.
 
       ![](../../media/nv4.png)
 
@@ -55,7 +55,7 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](../../media/nv3.png)
 
-   - Navigate back to your **NVIDIA Account**. From **Organization**, click **Subscriptions** on the left. Here, you will see the **Active** status of the NVIDIA Developer Program.
+   - Navigate back to your **NVIDIA Account**. From **Organization**, click **Subscriptions** on the left. Here, you will see the **Active** status of the NVIDIA AI Enterprise Essentials.
 
       ![](../../media/nv2.png)
 
@@ -75,7 +75,7 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](../../media/nvidia9.png)
 
-   - Generate Personal Key rrants your key permission to access or download containers and artifacts from the NGC Catalog.
+   - Generate Personal Key: Grant your key permission to access or download containers and artifacts from the NGC Catalog.
 
    - Carefully copy your generated API key, essential for accessing various services and features. Paste the API key in the notebook. Store it securely, as it may not be displayed again after you leave the page.
 
