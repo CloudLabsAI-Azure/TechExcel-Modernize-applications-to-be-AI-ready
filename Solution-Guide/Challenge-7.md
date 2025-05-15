@@ -142,7 +142,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nvidia9.png)
 
-1. In Generate Personal Key fill the following details and click on **Generate Personal Key** **(4)**.
+1. In Generate Personal Key, fill in the following details and click on **Generate Personal Key** **(4)**.
 
    - Key name: Provide a name to the key (i.e app-mod) **(1)**
    - Expiration: 12 months **(2)**
@@ -278,6 +278,12 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    ```
 
    ![](../media/download-deploy-run.png)
+
+   > **Note**: Please use the NGC keys provided below.
+  
+     ```
+     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
+     ```
 
    > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
 
