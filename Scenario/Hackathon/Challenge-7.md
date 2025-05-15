@@ -111,6 +111,12 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
       echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
       ```
 
+      > **Note**: Please use any one of the NGC keys provided below.
+  
+        ```
+        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
+        ```
+
    - Run the NVIDIA Riva ASR Container:
       
       ```bash
